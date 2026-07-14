@@ -17,17 +17,20 @@ import org.bukkit.entity.Chicken;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.data.persistent.PersistentDataAPI;
+import io.github.thebusybiscuit.slimefun5.api.MinecraftVersion;
+import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
+import io.github.thebusybiscuit.slimefun5.libraries.xseries.XMaterial;
+import io.github.thebusybiscuit.slimefun5.utils.compatibility.PdcCompat;
 
 import net.guizhanss.gcereborn.GeneticChickengineering;
 import net.guizhanss.gcereborn.core.genetics.DNA;
+import net.guizhanss.gcereborn.core.services.LocalizationService;
 import net.guizhanss.gcereborn.items.GCEItems;
 import net.guizhanss.gcereborn.items.chicken.ChickenTypes;
 import net.guizhanss.gcereborn.items.chicken.PocketChicken;
 import net.guizhanss.gcereborn.setup.Groups;
 import net.guizhanss.gcereborn.setup.RecipeTypes;
-import net.guizhanss.guizhanlib.minecraft.utils.MinecraftVersionUtil;
 
 import lombok.experimental.UtilityClass;
 
@@ -44,7 +47,7 @@ public final class ChickenUtils {
      * @return Whether the {@link ItemStack} is a {@link PocketChicken}.
      */
     public boolean isPocketChicken(@Nullable ItemStack item) {
-        return item != null && !item.getType().isAir() && item.hasItemMeta() && PersistentDataAPI.hasIntArray(item.getItemMeta(), Keys.POCKET_CHICKEN_DNA);
+        return item != null && !item.getType().isAir() && item.hasItemMeta() && hasDnaState(item.getItemMeta());
     }
 
     /**
@@ -89,13 +92,11 @@ public final class ChickenUtils {
     public static ItemStack capture(@Nonnull Chicken chicken) {
         GeneticChickengineering.getIntegrationService().captureChicken(chicken);
         JsonObject json = PocketChicken.ADAPTER.saveData(chicken);
-        ItemStack item = GCEItems.POCKET_CHICKEN.clone();
+        ItemStack item = GCEItems.POCKET_CHICKEN.clone().item();
 
         DNA dna;
-        String uuid = chicken.getUniqueId().toString();
-
-        if (PersistentDataAPI.hasString(chicken, Keys.CHICKEN_DNA)) {
-            String dnaStr = PersistentDataAPI.getString(chicken, Keys.CHICKEN_DNA);
+        String dnaStr = PdcCompat.getString(chicken, Keys.CHICKEN_DNA);
+        if (dnaStr != null) {
             GeneticChickengineering.debug("captured chicken has data in pdc: {0}", dnaStr);
             dna = new DNA(dnaStr);
         } else {
@@ -139,9 +140,9 @@ public final class ChickenUtils {
 
         ItemMeta c1m = chick1.getItemMeta();
         ItemMeta c2m = chick2.getItemMeta();
-        if (PersistentDataAPI.hasIntArray(c1m, Keys.POCKET_CHICKEN_DNA) && PersistentDataAPI.hasIntArray(c2m, Keys.POCKET_CHICKEN_DNA)) {
-            DNA c1d = new DNA(PersistentDataAPI.getIntArray(c1m, Keys.POCKET_CHICKEN_DNA));
-            DNA c2d = new DNA(PersistentDataAPI.getIntArray(c2m, Keys.POCKET_CHICKEN_DNA));
+        if (hasDnaState(c1m) && hasDnaState(c2m)) {
+            DNA c1d = new DNA(getDnaState(c1m));
+            DNA c2d = new DNA(getDnaState(c2m));
             return fromDNA(new DNA(c1d.split(), c2d.split()), true);
         }
         return null;
@@ -153,7 +154,7 @@ public final class ChickenUtils {
      * @param typing The type of chicken.
      */
     public static void createProductDisplay(int typing) {
-        ItemStack fake = GCEItems.POCKET_CHICKEN.clone();
+        ItemStack fake = GCEItems.POCKET_CHICKEN.clone().item();
         DNA dna = new DNA(typing);
         String productRawName = ChickenTypes.getName(typing);
         setPocketChicken(fake, null, dna);
@@ -164,7 +165,7 @@ public final class ChickenUtils {
         // Since these will be "Pocket Chickens", they will spawn chickens when cheated into a player's inventory
         // We set the DNA on the icon so that it will spawn a chicken of the correct type
         ItemMeta meta = displayItem.getItemMeta();
-        PersistentDataAPI.setIntArray(meta, Keys.POCKET_CHICKEN_DNA, dna.getState());
+        setDnaState(meta, dna.getState());
         displayItem.setItemMeta(meta);
 
         // Register the display
@@ -193,7 +194,7 @@ public final class ChickenUtils {
     public static ItemStack fromDNA(@Nonnull DNA dna, boolean isBaby) {
         JsonObject json = getChickenJson(isBaby);
 
-        ItemStack item = GCEItems.POCKET_CHICKEN.clone();
+        ItemStack item = GCEItems.POCKET_CHICKEN.clone().item();
         setPocketChicken(item, json, dna);
         return item;
     }
@@ -201,7 +202,7 @@ public final class ChickenUtils {
     @Nonnull
     public static DNA getDNA(@Nonnull ItemStack chicken) {
         ItemMeta meta = chicken.getItemMeta();
-        return new DNA(PersistentDataAPI.getIntArray(meta, Keys.POCKET_CHICKEN_DNA));
+        return new DNA(getDnaState(meta));
     }
 
     /**
@@ -226,7 +227,7 @@ public final class ChickenUtils {
     @Nonnull
     private static List<String> getLore(@Nullable JsonObject json, @Nonnull DNA dna) {
         List<String> lore = new LinkedList<>();
-        var localization = GeneticChickengineering.getLocalization();
+        LocalizationService localization = GeneticChickengineering.getLocalization();
         if (json != null) {
             lore = PocketChicken.ADAPTER.getLore(json);
             if (GeneticChickengineering.getConfigService().isPainEnabled()) {
@@ -251,9 +252,9 @@ public final class ChickenUtils {
 
     public static void setPocketChicken(@Nonnull ItemStack item, @Nullable JsonObject json, @Nonnull DNA dna) {
         ItemMeta meta = item.getItemMeta();
-        PersistentDataAPI.setIntArray(meta, Keys.POCKET_CHICKEN_DNA, dna.getState());
+        setDnaState(meta, dna.getState());
         if (json != null) {
-            PersistentDataAPI.set(meta, Keys.POCKET_CHICKEN_ADAPTER, PocketChicken.ADAPTER, json);
+            setAdapterData(meta, json);
         }
         meta.setLore(getLore(json, dna));
 
@@ -265,7 +266,7 @@ public final class ChickenUtils {
             return 0d;
         }
         ItemMeta meta = chicken.getItemMeta();
-        JsonObject json = PersistentDataAPI.get(meta, Keys.POCKET_CHICKEN_ADAPTER, PocketChicken.ADAPTER);
+        JsonObject json = getAdapterData(meta);
         if (json != null) {
             return json.get("_health").getAsDouble();
         }
@@ -285,7 +286,7 @@ public final class ChickenUtils {
             return false;
         }
         ItemMeta meta = chicken.getItemMeta();
-        JsonObject json = PersistentDataAPI.get(meta, Keys.POCKET_CHICKEN_ADAPTER, PocketChicken.ADAPTER);
+        JsonObject json = getAdapterData(meta);
         if (json != null) {
             double oldHealth = json.get("_health").getAsDouble();
             double newHealth = Math.max(0d, Math.min(oldHealth - damage, 4d));
@@ -332,15 +333,19 @@ public final class ChickenUtils {
             return false;
         }
         Material type = item.getType();
-        if (type == Material.WHEAT_SEEDS || type == Material.BEETROOT_SEEDS || type == Material.MELON_SEEDS || type == Material.PUMPKIN_SEEDS) {
+        if (type == MaterialCompat.safe(XMaterial.WHEAT_SEEDS) || type == MaterialCompat.safe(XMaterial.BEETROOT_SEEDS)
+            || type == MaterialCompat.safe(XMaterial.MELON_SEEDS) || type == MaterialCompat.safe(XMaterial.PUMPKIN_SEEDS)) {
             return true;
         }
 
-        if (MinecraftVersionUtil.isAtLeast(19, 4) && type == Material.TORCHFLOWER_SEEDS) {
+        // Fine-grained (1.19.4) version checks aren't available on the fork's MinecraftVersion enum
+        // (only whole-minor-version constants); MaterialCompat.safe() degrades gracefully regardless
+        // (see its legacy-substitute map), so a slightly conservative gate here is harmless.
+        if (Slimefun.getMinecraftVersion().isAtLeast(MinecraftVersion.MINECRAFT_1_19) && type == MaterialCompat.safe(XMaterial.TORCHFLOWER_SEEDS)) {
             return true;
         }
 
-        if (MinecraftVersionUtil.isAtLeast(20) && type == Material.PITCHER_POD) {
+        if (Slimefun.getMinecraftVersion().isAtLeast(MinecraftVersion.MINECRAFT_1_20) && type == MaterialCompat.safe(XMaterial.PITCHER_POD)) {
             return true;
         }
 
@@ -354,7 +359,7 @@ public final class ChickenUtils {
      * @return Whether the chicken is an adult.
      */
     public boolean isAdult(@Nonnull ItemStack chicken) {
-        JsonObject json = PersistentDataAPI.get(chicken.getItemMeta(), Keys.POCKET_CHICKEN_ADAPTER, PocketChicken.ADAPTER);
+        JsonObject json = getAdapterData(chicken.getItemMeta());
         if (json != null) {
             return !json.get("baby").getAsBoolean();
         }
@@ -383,13 +388,70 @@ public final class ChickenUtils {
         ItemStack item = chicken.clone();
         ItemMeta meta = item.getItemMeta();
 
-        if (PersistentDataAPI.hasIntArray(meta, Keys.POCKET_CHICKEN_DNA)) {
-            DNA dna = new DNA(PersistentDataAPI.getIntArray(meta, Keys.POCKET_CHICKEN_DNA));
+        if (hasDnaState(meta)) {
+            DNA dna = new DNA(getDnaState(meta));
             dna.learn();
-            JsonObject json = PersistentDataAPI.get(meta, Keys.POCKET_CHICKEN_ADAPTER, PocketChicken.ADAPTER);
+            JsonObject json = getAdapterData(meta);
             setPocketChicken(item, json, dna);
         }
 
         return item;
+    }
+
+    // --- PDC helpers ---
+    //
+    // The upstream Reborn build persisted the chicken DNA (int[]) and the full mob snapshot
+    // (a JsonObject, via a custom PersistentDataType adapter) directly through dough's
+    // PersistentDataAPI. Neither is 1.8-safe: PersistentDataType/PersistentDataContainer are 1.14+
+    // APIs. Both are now string-encoded and stored through PdcCompat, whose fallback path (real item
+    // NBT for ItemMeta, a YAML store keyed by entity UUID for live entities) keeps this working on
+    // legacy servers, see io.github.thebusybiscuit.slimefun5.utils.compatibility.PdcCompat.
+
+    public static boolean hasDnaState(@Nonnull Object holder) {
+        return PdcCompat.has(holder, Keys.POCKET_CHICKEN_DNA, "STRING");
+    }
+
+    @Nonnull
+    public static int[] getDnaState(@Nonnull Object holder) {
+        return decodeIntArray(PdcCompat.getString(holder, Keys.POCKET_CHICKEN_DNA));
+    }
+
+    public static void setDnaState(@Nonnull Object holder, @Nonnull int[] state) {
+        PdcCompat.setString(holder, Keys.POCKET_CHICKEN_DNA, encodeIntArray(state));
+    }
+
+    @Nullable
+    public static JsonObject getAdapterData(@Nonnull Object holder) {
+        String raw = PdcCompat.getString(holder, Keys.POCKET_CHICKEN_ADAPTER);
+        return raw != null ? PocketChicken.ADAPTER.fromPrimitive(raw) : null;
+    }
+
+    public static void setAdapterData(@Nonnull Object holder, @Nonnull JsonObject json) {
+        PdcCompat.setString(holder, Keys.POCKET_CHICKEN_ADAPTER, PocketChicken.ADAPTER.toPrimitive(json));
+    }
+
+    @Nonnull
+    private static String encodeIntArray(@Nonnull int[] values) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < values.length; i++) {
+            if (i > 0) {
+                sb.append(',');
+            }
+            sb.append(values[i]);
+        }
+        return sb.toString();
+    }
+
+    @Nonnull
+    private static int[] decodeIntArray(@Nullable String raw) {
+        if (raw == null || raw.isEmpty()) {
+            return new int[7];
+        }
+        String[] parts = raw.split(",");
+        int[] values = new int[parts.length];
+        for (int i = 0; i < parts.length; i++) {
+            values[i] = Integer.parseInt(parts[i].trim());
+        }
+        return values;
     }
 }

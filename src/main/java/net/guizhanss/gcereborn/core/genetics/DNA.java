@@ -6,6 +6,7 @@ import java.util.concurrent.ThreadLocalRandom;
 import javax.annotation.Nonnull;
 
 import net.guizhanss.gcereborn.GeneticChickengineering;
+import net.guizhanss.gcereborn.core.services.ConfigurationService;
 
 import lombok.Getter;
 import lombok.experimental.Accessors;
@@ -96,7 +97,7 @@ public class DNA {
      * Create random DNA sequence, for new captured chickens.
      */
     public DNA() {
-        var config = GeneticChickengineering.getConfigService();
+        ConfigurationService config = GeneticChickengineering.getConfigService();
         this.sequence = new Gene[6];
         int[] mutations = ThreadLocalRandom.current().ints(0, 6)
             .distinct().limit(config.getMaxMutation()).toArray();

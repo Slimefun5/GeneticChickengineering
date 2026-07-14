@@ -7,8 +7,8 @@ import javax.annotation.ParametersAreNonnullByDefault;
 import org.bukkit.command.CommandSender;
 
 import net.guizhanss.gcereborn.GeneticChickengineering;
-import net.guizhanss.guizhanlib.minecraft.commands.AbstractCommand;
-import net.guizhanss.guizhanlib.minecraft.commands.SubCommand;
+import net.guizhanss.gcereborn.libs.guizhanlib.commands.AbstractCommand;
+import net.guizhanss.gcereborn.libs.guizhanlib.commands.SubCommand;
 
 import lombok.Getter;
 

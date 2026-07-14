@@ -8,7 +8,8 @@ import org.bukkit.command.PluginCommand;
 import net.guizhanss.gcereborn.GeneticChickengineering;
 import net.guizhanss.gcereborn.core.commands.subcommands.CalcChanceCommand;
 import net.guizhanss.gcereborn.core.commands.subcommands.MakeChickenCommand;
-import net.guizhanss.guizhanlib.minecraft.commands.BaseCommand;
+import net.guizhanss.gcereborn.core.services.ConfigurationService;
+import net.guizhanss.gcereborn.libs.guizhanlib.commands.BaseCommand;
 
 import lombok.Getter;
 
@@ -19,7 +20,7 @@ public final class GCECommand extends BaseCommand {
     public GCECommand(PluginCommand command) {
         super(command, (cmd, sender) -> "", "<subcommand>");
 
-        var config = GeneticChickengineering.getConfigService();
+        ConfigurationService config = GeneticChickengineering.getConfigService();
         if (config.isSubCommandEnabled("makechicken")) {
             addSubCommand(new MakeChickenCommand(this));
         }

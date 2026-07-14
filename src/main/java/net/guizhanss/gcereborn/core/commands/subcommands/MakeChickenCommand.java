@@ -1,11 +1,12 @@
 package net.guizhanss.gcereborn.core.commands.subcommands;
 
+import java.util.Arrays;
 import java.util.List;
 
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
-import net.guizhanss.guizhanlib.minecraft.commands.AbstractCommand;
+import net.guizhanss.gcereborn.libs.guizhanlib.commands.AbstractCommand;
 
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -15,7 +16,7 @@ import net.guizhanss.gcereborn.GeneticChickengineering;
 import net.guizhanss.gcereborn.core.commands.AbstractSubCommand;
 import net.guizhanss.gcereborn.core.genetics.DNA;
 import net.guizhanss.gcereborn.utils.ChickenUtils;
-import net.guizhanss.guizhanlib.minecraft.utils.InventoryUtil;
+import net.guizhanss.gcereborn.libs.guizhanlib.utils.InventoryUtil;
 
 public final class MakeChickenCommand extends AbstractSubCommand implements DnaCompletion {
 
@@ -30,10 +31,11 @@ public final class MakeChickenCommand extends AbstractSubCommand implements DnaC
             GeneticChickengineering.getLocalization().sendMessage(sender, "no-permission");
             return;
         }
-        if (!(sender instanceof Player p)) {
+        if (!(sender instanceof Player)) {
             GeneticChickengineering.getLocalization().sendMessage(sender, "no-console");
             return;
         }
+        Player p = (Player) sender;
 
         String notation = args[0];
         if (!DNA.isValidSequence(notation)) {
@@ -54,7 +56,7 @@ public final class MakeChickenCommand extends AbstractSubCommand implements DnaC
     @ParametersAreNonnullByDefault
     public List<String> onTab(CommandSender sender, String[] args) {
         if (args.length == 2) {
-            return List.of("true", "false");
+            return Arrays.asList("true", "false");
         }
         return tabComplete(sender, args, 0);
     }

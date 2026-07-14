@@ -4,7 +4,7 @@ import javax.annotation.Nonnull;
 
 import com.google.common.base.Preconditions;
 
-import org.bukkit.NamespacedKey;
+import io.github.thebusybiscuit.slimefun5.libraries.keys.NamespacedKey;
 
 import net.guizhanss.gcereborn.GeneticChickengineering;
 

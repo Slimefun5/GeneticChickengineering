@@ -6,26 +6,25 @@ import javax.annotation.Nonnull;
 
 import org.bukkit.GameMode;
 import org.bukkit.Material;
-import org.bukkit.Particle;
-import org.bukkit.Sound;
 import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.inventory.ItemStack;
 
-import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
-import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
-import io.github.thebusybiscuit.slimefun4.core.attributes.NotPlaceable;
-import io.github.thebusybiscuit.slimefun4.core.handlers.ItemUseHandler;
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
-import io.github.thebusybiscuit.slimefun4.implementation.items.SimpleSlimefunItem;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.items.ItemUtils;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.protection.Interaction;
+import io.github.thebusybiscuit.slimefun5.api.items.ItemGroup;
+import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun5.api.recipes.RecipeType;
+import io.github.thebusybiscuit.slimefun5.core.attributes.NotPlaceable;
+import io.github.thebusybiscuit.slimefun5.core.handlers.ItemUseHandler;
+import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
+import io.github.thebusybiscuit.slimefun5.implementation.items.SimpleSlimefunItem;
+import io.github.thebusybiscuit.slimefun5.libraries.dough.items.ItemUtils;
+import io.github.thebusybiscuit.slimefun5.libraries.dough.protection.Interaction;
 
 import net.guizhanss.gcereborn.GeneticChickengineering;
 import net.guizhanss.gcereborn.core.genetics.DNA;
 import net.guizhanss.gcereborn.items.GCEItems;
 import net.guizhanss.gcereborn.utils.ChickenUtils;
+import net.guizhanss.gcereborn.utils.CompatUtils;
 
 public class ResourceEgg extends SimpleSlimefunItem<ItemUseHandler> implements NotPlaceable {
 
@@ -42,7 +41,7 @@ public class ResourceEgg extends SimpleSlimefunItem<ItemUseHandler> implements N
     @Nonnull
     private static ItemStack[] makeRecipe(@Nonnull Material resource) {
         ItemStack[] recipe = new ItemStack[9];
-        ItemStack fake = GCEItems.POCKET_CHICKEN.clone();
+        ItemStack fake = GCEItems.POCKET_CHICKEN.clone().item();
         DNA dna;
         if (resource == Material.WATER) {
             dna = new DNA(62);
@@ -59,7 +58,7 @@ public class ResourceEgg extends SimpleSlimefunItem<ItemUseHandler> implements N
         return e -> {
             e.cancel();
             Optional<Block> block = e.getClickedBlock();
-            if (block.isEmpty()) {
+            if (!block.isPresent()) {
                 return;
             }
             Block b = block.get();
@@ -68,10 +67,12 @@ public class ResourceEgg extends SimpleSlimefunItem<ItemUseHandler> implements N
                 GeneticChickengineering.getLocalization().sendMessage(e.getPlayer(), "no-permission");
                 return;
             }
-            if (place.isReplaceable()) {
+            // Block#isReplaceable() postdates the fork's Java-8-compatible spigot-api compile baseline
+            // (1.16.5); air-or-liquid is a close approximation of the original "replaceable" check.
+            if (place.getType().isAir() || place.isLiquid()) {
                 if (resource == Material.WATER && !allowInNether && place.getWorld().getEnvironment() == World.Environment.NETHER) {
-                    place.getWorld().spawnParticle(Particle.CLOUD, place.getLocation().add(0.5, 0, 0.5), 5);
-                    place.getWorld().playSound(place.getLocation().toCenterLocation(), Sound.BLOCK_LAVA_EXTINGUISH, 1F, 1F);
+                    CompatUtils.spawnParticle(place.getLocation().add(0.5, 0, 0.5), "CLOUD", 5);
+                    CompatUtils.playSound(CompatUtils.centerLocation(place.getLocation()), "BLOCK_LAVA_EXTINGUISH", 1F, 1F);
                 } else {
                     place.setType(resource);
                 }

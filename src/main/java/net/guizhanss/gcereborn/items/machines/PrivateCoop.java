@@ -8,28 +8,28 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import org.bukkit.Location;
-import org.bukkit.Particle;
-import org.bukkit.Sound;
 import org.bukkit.block.Block;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
-import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
-import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
-import io.github.thebusybiscuit.slimefun4.core.machines.MachineProcessor;
-import io.github.thebusybiscuit.slimefun4.implementation.operations.CraftingOperation;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.inventory.InvUtils;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.items.ItemUtils;
+import io.github.thebusybiscuit.slimefun5.api.items.ItemGroup;
+import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun5.api.recipes.RecipeType;
+import io.github.thebusybiscuit.slimefun5.core.machines.MachineProcessor;
+import io.github.thebusybiscuit.slimefun5.implementation.operations.CraftingOperation;
+import io.github.thebusybiscuit.slimefun5.libraries.dough.inventory.InvUtils;
+import io.github.thebusybiscuit.slimefun5.libraries.dough.items.ItemUtils;
 
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.MachineRecipe;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 
 import net.guizhanss.gcereborn.GeneticChickengineering;
+import net.guizhanss.gcereborn.core.services.ConfigurationService;
 import net.guizhanss.gcereborn.items.GCEItems;
-import net.guizhanss.gcereborn.utils.GuiItems;
 import net.guizhanss.gcereborn.utils.ChickenUtils;
+import net.guizhanss.gcereborn.utils.CompatUtils;
+import net.guizhanss.gcereborn.utils.GuiItems;
 
 public class PrivateCoop extends AbstractMachine {
 
@@ -40,7 +40,7 @@ public class PrivateCoop extends AbstractMachine {
     @Override
     @Nonnull
     public ItemStack getProgressBar() {
-        return GCEItems.POCKET_CHICKEN.clone();
+        return GCEItems.POCKET_CHICKEN.clone().item();
     }
 
     @Override
@@ -50,8 +50,8 @@ public class PrivateCoop extends AbstractMachine {
         MachineProcessor<CraftingOperation> processor = getMachineProcessor();
         if (processor.getOperation(b) != null) {
             if (ThreadLocalRandom.current().nextDouble() < 0.25) {
-                Location l = b.getLocation().toCenterLocation();
-                l.getWorld().spawnParticle(Particle.HEART, l.add(0, 0.5, 0), 2, 0.2, 0, 0.2);
+                Location l = CompatUtils.centerLocation(b.getLocation());
+                CompatUtils.spawnParticle(l.add(0, 0.5, 0), "HEART", 2, 0.2, 0, 0.2);
             }
             BlockMenu inv = BlockStorage.getInventory(b);
             // Check if parent chickens have been removed
@@ -84,7 +84,7 @@ public class PrivateCoop extends AbstractMachine {
     @Override
     @Nullable
     protected MachineRecipe findNextRecipe(@Nonnull BlockMenu menu) {
-        var config = GeneticChickengineering.getConfigService();
+        ConfigurationService config = GeneticChickengineering.getConfigService();
         List<ItemStack> parents = getParents(menu);
         if (parents.size() != 2) {
             return null;
@@ -115,7 +115,7 @@ public class PrivateCoop extends AbstractMachine {
                 ChickenUtils.possiblyHarm(parent);
                 if (ChickenUtils.getHealth(parent) <= 0d) {
                     ItemUtils.consumeItem(parent, false);
-                    menu.getBlock().getWorld().playSound(menu.getLocation(), Sound.ENTITY_CHICKEN_DEATH, 1f, 1f);
+                    CompatUtils.playSound(menu.getLocation(), "ENTITY_CHICKEN_DEATH", 1f, 1f);
                     return null;
                 }
             }

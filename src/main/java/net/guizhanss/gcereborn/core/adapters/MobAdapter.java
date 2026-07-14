@@ -1,28 +1,22 @@
 package net.guizhanss.gcereborn.core.adapters;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
-import org.bukkit.attribute.Attribute;
-import org.bukkit.attribute.AttributeInstance;
-import org.bukkit.attribute.AttributeModifier;
-import org.bukkit.attribute.AttributeModifier.Operation;
 import org.bukkit.entity.LivingEntity;
-import org.bukkit.persistence.PersistentDataAdapterContext;
-import org.bukkit.persistence.PersistentDataType;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 import net.guizhanss.gcereborn.GeneticChickengineering;
 import net.guizhanss.gcereborn.core.services.LocalizationService;
+import net.guizhanss.gcereborn.utils.AttributeCompat;
+import net.guizhanss.gcereborn.utils.CompatUtils;
 
 /**
  * This class is a wholesale copy of TheBusyBiscuit's MobCapturer.
@@ -30,9 +24,16 @@ import net.guizhanss.gcereborn.core.services.LocalizationService;
  * This is a simple Adapter that allows conversion between a {@link LivingEntity} and
  * a {@link JsonObject}.
  * <p>
- * It also requires the implementation of {@link PersistentDataType}.
+ * Java-8 port note: this no longer {@code implements org.bukkit.persistence.PersistentDataType}
+ * (a 1.14+-only interface - implementing it would throw {@code NoClassDefFoundError} loading this
+ * class on 1.8-1.13). {@link #toPrimitive(JsonObject)}/{@link #fromPrimitive(String)} are now plain
+ * conversion methods; storage goes through
+ * {@link io.github.thebusybiscuit.slimefun5.utils.compatibility.PdcCompat}'s String primitive instead
+ * of a real {@code PersistentDataContainer} entry (see {@code ChickenUtils}/{@code PocketChicken}).
+ * Attribute snapshotting (1.9+) is isolated in {@link AttributeCompat}, gated by
+ * {@link CompatUtils#attributesSupported()}, for the same reason.
  */
-public interface MobAdapter<T extends LivingEntity> extends PersistentDataType<String, JsonObject> {
+public interface MobAdapter<T extends LivingEntity> {
 
     Class<T> getEntityClass();
 
@@ -55,51 +56,18 @@ public interface MobAdapter<T extends LivingEntity> extends PersistentDataType<S
         return lore;
     }
 
-    default Class<String> getPrimitiveType() {
-        return String.class;
-    }
-
-    default Class<JsonObject> getComplexType() {
-        return JsonObject.class;
-    }
-
-    default String toPrimitive(JsonObject json, PersistentDataAdapterContext context) {
+    default String toPrimitive(JsonObject json) {
         return json.toString();
     }
 
-    default JsonObject fromPrimitive(String primitive, PersistentDataAdapterContext context) {
+    default JsonObject fromPrimitive(String primitive) {
         return new JsonParser().parse(primitive).getAsJsonObject();
     }
 
     default void apply(T entity, JsonObject json) {
         // We need to apply Attributes before the health.
-        JsonObject attributes = json.getAsJsonObject("_attributes");
-
-        for (Map.Entry<String, JsonElement> entry : attributes.entrySet()) {
-            AttributeInstance instance = entity.getAttribute(Attribute.valueOf(entry.getKey()));
-
-            if (instance != null) {
-                for (AttributeModifier modifier : new ArrayList<>(instance.getModifiers())) {
-                    instance.removeModifier(modifier);
-                }
-
-                JsonObject attribute = entry.getValue().getAsJsonObject();
-                instance.setBaseValue(attribute.get("base").getAsDouble());
-
-                JsonArray modifiers = attribute.getAsJsonArray("modifiers");
-
-                for (JsonElement modifier : modifiers) {
-                    JsonObject obj = modifier.getAsJsonObject();
-
-                    String uuid = obj.get("uuid").getAsString();
-                    String name = obj.get("name").getAsString();
-                    double amount = obj.get("amount").getAsDouble();
-                    int operation = obj.get("operation").getAsInt();
-
-                    AttributeModifier mod = new AttributeModifier(UUID.fromString(uuid), name, amount, Operation.values()[operation]);
-                    instance.addModifier(mod);
-                }
-            }
+        if (CompatUtils.attributesSupported()) {
+            AttributeCompat.applyAttributes(entity, json.getAsJsonObject("_attributes"));
         }
 
         entity.setHealth(json.get("_health").getAsDouble());
@@ -161,33 +129,7 @@ public interface MobAdapter<T extends LivingEntity> extends PersistentDataType<S
         json.addProperty("_gravity", entity.hasGravity());
         json.addProperty("_fireTicks", entity.getFireTicks());
 
-        JsonObject attributes = new JsonObject();
-
-        for (Attribute attribute : Attribute.values()) {
-            AttributeInstance instance = entity.getAttribute(attribute);
-
-            if (instance != null) {
-                JsonObject obj = new JsonObject();
-                obj.addProperty("base", instance.getBaseValue());
-
-                JsonArray modifiers = new JsonArray();
-
-                for (AttributeModifier modifier : instance.getModifiers()) {
-                    JsonObject mod = new JsonObject();
-
-                    mod.addProperty("uuid", modifier.getUniqueId().toString());
-                    mod.addProperty("name", modifier.getName());
-                    mod.addProperty("operation", modifier.getOperation().ordinal());
-                    mod.addProperty("amount", modifier.getAmount());
-
-                    modifiers.add(mod);
-                }
-
-                obj.add("modifiers", modifiers);
-                attributes.add(attribute.toString(), obj);
-            }
-        }
-
+        JsonObject attributes = CompatUtils.attributesSupported() ? AttributeCompat.collectAttributes(entity) : new JsonObject();
         json.add("_attributes", attributes);
 
         JsonObject effects = new JsonObject();

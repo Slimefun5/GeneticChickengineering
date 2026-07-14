@@ -1,12 +1,12 @@
 package net.guizhanss.gcereborn.setup;
 
-import org.bukkit.Material;
-
-import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
+import io.github.thebusybiscuit.slimefun5.api.items.ItemGroup;
+import io.github.thebusybiscuit.slimefun5.libraries.xseries.XMaterial;
 
 import net.guizhanss.gcereborn.GeneticChickengineering;
 import net.guizhanss.gcereborn.utils.Heads;
 import net.guizhanss.gcereborn.utils.Keys;
+import net.guizhanss.gcereborn.utils.MaterialCompat;
 
 import lombok.experimental.UtilityClass;
 
@@ -18,14 +18,14 @@ public final class Groups {
         GeneticChickengineering.getLocalization().getItemGroupItem(
             "ICON",
             Heads.CHICKEN.getTexture()
-        )
+        ).item()
     );
 
     public static final ItemGroup DICTIONARY = new ItemGroup(
         Keys.get("genetic_chickengineering_chickens"),
         GeneticChickengineering.getLocalization().getItemGroupItem(
             "DIRECTORY_ICON",
-            Material.BLAST_FURNACE
-        )
+            MaterialCompat.safe(XMaterial.BLAST_FURNACE)
+        ).item()
     );
 }

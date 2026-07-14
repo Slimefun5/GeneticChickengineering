@@ -9,21 +9,21 @@ import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
-import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.data.persistent.PersistentDataAPI;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.inventory.InvUtils;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.items.ItemUtils;
+import io.github.thebusybiscuit.slimefun5.api.items.ItemGroup;
+import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun5.api.recipes.RecipeType;
+import io.github.thebusybiscuit.slimefun5.libraries.dough.inventory.InvUtils;
+import io.github.thebusybiscuit.slimefun5.libraries.dough.items.ItemUtils;
+import io.github.thebusybiscuit.slimefun5.libraries.xseries.XMaterial;
 
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.MachineRecipe;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 
 import net.guizhanss.gcereborn.GeneticChickengineering;
 import net.guizhanss.gcereborn.core.genetics.DNA;
-import net.guizhanss.gcereborn.items.chicken.PocketChicken;
+import net.guizhanss.gcereborn.core.services.ConfigurationService;
 import net.guizhanss.gcereborn.utils.ChickenUtils;
-import net.guizhanss.gcereborn.utils.Keys;
+import net.guizhanss.gcereborn.utils.MaterialCompat;
 
 public class GrowthChamber extends AbstractMachine {
 
@@ -34,13 +34,13 @@ public class GrowthChamber extends AbstractMachine {
     @Override
     @Nonnull
     public ItemStack getProgressBar() {
-        return new ItemStack(Material.WHEAT_SEEDS);
+        return new ItemStack(MaterialCompat.safe(XMaterial.WHEAT_SEEDS));
     }
 
     @Override
     @Nullable
     protected MachineRecipe findNextRecipe(@Nonnull BlockMenu menu) {
-        var config = GeneticChickengineering.getConfigService();
+        ConfigurationService config = GeneticChickengineering.getConfigService();
         ItemStack chicken = null;
         ItemStack seed = null;
         for (int slot : getInputSlots()) {
@@ -64,8 +64,8 @@ public class GrowthChamber extends AbstractMachine {
         ItemStack output = chicken.clone();
         output.setAmount(1);
         ItemMeta outputMeta = output.getItemMeta();
-        JsonObject adapter = PersistentDataAPI.get(outputMeta, Keys.POCKET_CHICKEN_ADAPTER, PocketChicken.ADAPTER);
-        var dnaState = PersistentDataAPI.getIntArray(outputMeta, Keys.POCKET_CHICKEN_DNA);
+        JsonObject adapter = ChickenUtils.getAdapterData(outputMeta);
+        int[] dnaState = ChickenUtils.getDnaState(outputMeta);
         adapter.addProperty("baby", false);
         adapter.addProperty("_age", 6000);
         adapter.addProperty("_breedable", false);

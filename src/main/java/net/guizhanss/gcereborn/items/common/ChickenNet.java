@@ -3,24 +3,24 @@ package net.guizhanss.gcereborn.items.common;
 import javax.annotation.Nonnull;
 
 import org.bukkit.Location;
-import org.bukkit.Sound;
 import org.bukkit.entity.Chicken;
 import org.bukkit.entity.EntityType;
 import org.bukkit.inventory.ItemStack;
 
-import io.github.thebusybiscuit.slimefun4.api.events.PlayerRightClickEvent;
-import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
-import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
-import io.github.thebusybiscuit.slimefun4.core.attributes.NotPlaceable;
-import io.github.thebusybiscuit.slimefun4.core.handlers.EntityInteractHandler;
-import io.github.thebusybiscuit.slimefun4.core.handlers.ItemUseHandler;
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
-import io.github.thebusybiscuit.slimefun4.implementation.items.SimpleSlimefunItem;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.protection.Interaction;
+import io.github.thebusybiscuit.slimefun5.api.events.PlayerRightClickEvent;
+import io.github.thebusybiscuit.slimefun5.api.items.ItemGroup;
+import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun5.api.recipes.RecipeType;
+import io.github.thebusybiscuit.slimefun5.core.attributes.NotPlaceable;
+import io.github.thebusybiscuit.slimefun5.core.handlers.EntityInteractHandler;
+import io.github.thebusybiscuit.slimefun5.core.handlers.ItemUseHandler;
+import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
+import io.github.thebusybiscuit.slimefun5.implementation.items.SimpleSlimefunItem;
+import io.github.thebusybiscuit.slimefun5.libraries.dough.protection.Interaction;
 
 import net.guizhanss.gcereborn.GeneticChickengineering;
 import net.guizhanss.gcereborn.utils.ChickenUtils;
+import net.guizhanss.gcereborn.utils.CompatUtils;
 
 public class ChickenNet extends SimpleSlimefunItem<EntityInteractHandler> implements NotPlaceable {
 
@@ -44,10 +44,10 @@ public class ChickenNet extends SimpleSlimefunItem<EntityInteractHandler> implem
                 return;
             }
 
-            Location l = chicken.getLocation().toCenterLocation();
+            Location l = CompatUtils.centerLocation(chicken.getLocation());
             ItemStack pocketChicken = ChickenUtils.capture(chicken);
             l.getWorld().dropItemNaturally(l, pocketChicken);
-            l.getWorld().playSound(l, Sound.ENTITY_CHICKEN_EGG, 1F, 1F);
+            CompatUtils.playSound(l, "ENTITY_CHICKEN_EGG", 1F, 1F);
         };
     }
 

@@ -10,68 +10,105 @@ import com.google.common.base.Preconditions;
 
 import org.bukkit.command.PluginCommand;
 import org.bukkit.plugin.Plugin;
+import org.bukkit.plugin.java.JavaPlugin;
 
-import io.github.thebusybiscuit.slimefun4.libraries.dough.updater.BlobBuildUpdater;
-import io.github.thebusybiscuit.slimefun4.libraries.paperlib.PaperLib;
+import io.github.thebusybiscuit.slimefun5.api.SlimefunAddon;
+import io.github.thebusybiscuit.slimefun5.libraries.dough.updater.BlobBuildUpdater;
+import io.github.thebusybiscuit.slimefun5.libraries.paperlib.PaperLib;
 
 import net.guizhanss.gcereborn.core.commands.GCECommand;
 import net.guizhanss.gcereborn.core.services.ConfigurationService;
 import net.guizhanss.gcereborn.core.services.IntegrationService;
 import net.guizhanss.gcereborn.core.services.LocalizationService;
+import net.guizhanss.gcereborn.libs.guizhanlib.Scheduler;
 import net.guizhanss.gcereborn.setup.Items;
 import net.guizhanss.gcereborn.setup.Researches;
-import net.guizhanss.guizhanlib.slimefun.addon.AbstractAddon;
-import net.guizhanss.guizhanlib.updater.GuizhanBuildsUpdater;
 
 import org.bstats.bukkit.Metrics;
 
-public class GeneticChickengineering extends AbstractAddon {
+/**
+ * Main plugin class.
+ * <p>
+ * Note: unlike the upstream Reborn build, this does <b>not</b> extend GuizhanLib's
+ * {@code AbstractAddon}. That class {@code implements io.github.thebusybiscuit.slimefun4.api.SlimefunAddon},
+ * a package this fork renamed to {@code slimefun5}; loading it would throw
+ * {@code NoClassDefFoundError} immediately. GuizhanLib-api's jar is also compiled for Java 16 (class
+ * file version 60), which a Java-8 {@code javac} cannot even read as a compile-time dependency - so
+ * this addon no longer depends on the GuizhanLib-api artifact at all. Instead this plugin implements
+ * the fork's {@link SlimefunAddon} directly (same approach as SMG/SimpleUtils) and vendors the small,
+ * Slimefun-independent pieces of GuizhanLib it used ({@link Scheduler}, the command framework,
+ * chat/version/localization utils) as plain Java-8 source under
+ * {@code net.guizhanss.gcereborn.libs.guizhanlib}.
+ */
+public class GeneticChickengineering extends JavaPlugin implements SlimefunAddon {
 
     private static final String DEFAULT_LANG = "en-US";
+    private static final String GITHUB_USER = "ybw0014";
+    private static final String GITHUB_REPO = "GeneticChickengineering-Reborn";
+    private static final String GITHUB_BRANCH = "master";
+
+    private static GeneticChickengineering instance;
 
     private ConfigurationService configService;
     private LocalizationService localization;
     private IntegrationService integrationService;
+    private Scheduler scheduler;
     private boolean debugEnabled = false;
 
-    public GeneticChickengineering() {
-        super("ybw0014", "GeneticChickengineering-Reborn", "master", "options.auto-update");
+    @Nonnull
+    public static GeneticChickengineering getInstance() {
+        return instance;
     }
 
     @Nonnull
     public static ConfigurationService getConfigService() {
-        return inst().configService;
+        return instance.configService;
     }
 
     @Nonnull
     public static LocalizationService getLocalization() {
-        return inst().localization;
+        return instance.localization;
     }
 
     @Nonnull
     public static IntegrationService getIntegrationService() {
-        return inst().integrationService;
+        return instance.integrationService;
+    }
+
+    @Nonnull
+    public static Scheduler getScheduler() {
+        return instance.scheduler;
     }
 
     public static void debug(@Nonnull String message, @Nonnull Object... args) {
         Preconditions.checkNotNull(message, "message cannot be null");
 
-        if (inst().debugEnabled) {
-            inst().getLogger().log(Level.INFO, "[DEBUG] " + message, args);
+        if (instance.debugEnabled) {
+            instance.getLogger().log(Level.INFO, "[DEBUG] " + message, args);
         }
     }
 
-    @Nonnull
-    private static GeneticChickengineering inst() {
-        return getInstance();
+    public static void log(@Nonnull Level level, @Nonnull String message, @Nonnull Object... args) {
+        instance.getLogger().log(level, message, args);
+    }
+
+    public static void log(@Nonnull Level level, @Nonnull Throwable throwable, @Nonnull String message, @Nonnull Object... args) {
+        instance.getLogger().log(level, message, throwable);
     }
 
     @Override
-    public void enable() {
+    public void onLoad() {
+        instance = this;
+    }
+
+    @Override
+    public void onEnable() {
         File datadir = this.getDataFolder();
         if (!datadir.exists()) {
             datadir.mkdirs();
         }
+
+        scheduler = new Scheduler(this);
 
         // config
         configService = new ConfigurationService(this);
@@ -105,8 +142,6 @@ public class GeneticChickengineering extends AbstractAddon {
         log(Level.INFO, localization.getString("console.load.researches"));
         Researches.setup();
 
-        // listeners
-
         // commands
         if (configService.isCommandsEnabled()) {
             PluginCommand command = getCommand("geneticchickengineering");
@@ -123,31 +158,53 @@ public class GeneticChickengineering extends AbstractAddon {
 
         // metrics
         setupMetrics();
+
+        // auto-update
+        if (configService.isAutoUpdate()) {
+            autoUpdate();
+        }
     }
 
     @Override
-    public void disable() {
-        // do nothing
+    public void onDisable() {
+        instance = null;
     }
 
     private void setupMetrics() {
         new Metrics(this, 20243);
     }
 
-    @Override
     protected void autoUpdate() {
-        if (getPluginVersion().startsWith("Dev")) {
-            new BlobBuildUpdater(this, getFile(), getGithubRepo()).start();
-        } else if (getPluginVersion().startsWith("Build")) {
+        String version = getDescription().getVersion();
+        if (version.startsWith("Dev")) {
+            new BlobBuildUpdater(this, getFile(), GITHUB_REPO).start();
+        } else if (version.startsWith("Build")) {
+            // Only the optional companion "GuizhanLibPlugin" updater is used here (via reflection, so
+            // it is never a compile/runtime dependency of this addon). The upstream fallback path -
+            // GuizhanLib-api's own GuizhanBuildsUpdater - is unavailable now that this addon no longer
+            // bundles that jar (see the class javadoc); "Build"-tagged versions without
+            // GuizhanLibPlugin installed simply won't self-update.
             try {
-                // use updater in lib plugin
                 Class<?> clazz = Class.forName("net.guizhanss.guizhanlibplugin.updater.GuizhanUpdater");
                 Method updaterStart = clazz.getDeclaredMethod("start", Plugin.class, File.class, String.class, String.class, String.class);
-                updaterStart.invoke(null, this, getFile(), getGithubUser(), getGithubRepo(), getGithubBranch());
+                updaterStart.invoke(null, this, getFile(), GITHUB_USER, GITHUB_REPO, GITHUB_BRANCH);
             } catch (Exception ignored) {
-                // use updater in lib
-                new GuizhanBuildsUpdater(this, getFile(), getGithubUser(), getGithubRepo(), getGithubBranch()).start();
+                log(Level.WARNING, "Auto-update for \"Build\" versions requires GuizhanLibPlugin to be installed.");
             }
         }
+    }
+
+    // --- SlimefunAddon ---
+
+    @Nonnull
+    @Override
+    public JavaPlugin getJavaPlugin() {
+        return this;
+    }
+
+    @Nonnull
+    @Override
+    public String getBugTrackerURL() {
+        return "https://github.com/" + GITHUB_USER + "/" + GITHUB_REPO + "/issues";
     }
 }

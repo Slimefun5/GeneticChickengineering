@@ -2,7 +2,7 @@ package net.guizhanss.gcereborn.utils;
 
 import org.bukkit.inventory.ItemStack;
 
-import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
+import io.github.thebusybiscuit.slimefun5.utils.SlimefunUtils;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

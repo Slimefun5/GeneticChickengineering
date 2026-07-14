@@ -6,18 +6,17 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import org.bukkit.Material;
-import org.bukkit.Sound;
 import org.bukkit.block.Block;
 import org.bukkit.inventory.ItemStack;
 
-import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
-import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
-import io.github.thebusybiscuit.slimefun4.core.machines.MachineProcessor;
-import io.github.thebusybiscuit.slimefun4.implementation.operations.CraftingOperation;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.inventory.InvUtils;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.items.ItemUtils;
-import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
+import io.github.thebusybiscuit.slimefun5.api.items.ItemGroup;
+import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun5.api.recipes.RecipeType;
+import io.github.thebusybiscuit.slimefun5.core.machines.MachineProcessor;
+import io.github.thebusybiscuit.slimefun5.implementation.operations.CraftingOperation;
+import io.github.thebusybiscuit.slimefun5.libraries.dough.inventory.InvUtils;
+import io.github.thebusybiscuit.slimefun5.libraries.dough.items.ItemUtils;
+import io.github.thebusybiscuit.slimefun5.utils.ChestMenuUtils;
 
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.MachineRecipe;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
@@ -25,9 +24,11 @@ import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
 
 import net.guizhanss.gcereborn.GeneticChickengineering;
+import net.guizhanss.gcereborn.core.services.ConfigurationService;
 import net.guizhanss.gcereborn.items.GCEItems;
-import net.guizhanss.gcereborn.utils.GuiItems;
 import net.guizhanss.gcereborn.utils.ChickenUtils;
+import net.guizhanss.gcereborn.utils.CompatUtils;
+import net.guizhanss.gcereborn.utils.GuiItems;
 
 public class ExcitationChamber extends AbstractMachine {
 
@@ -49,7 +50,7 @@ public class ExcitationChamber extends AbstractMachine {
     @Override
     @Nonnull
     public ItemStack getProgressBar() {
-        return GCEItems.POCKET_CHICKEN.clone();
+        return GCEItems.POCKET_CHICKEN.clone().item();
     }
 
     @Override
@@ -97,7 +98,7 @@ public class ExcitationChamber extends AbstractMachine {
     @Override
     @Nullable
     protected MachineRecipe findNextRecipe(@Nonnull BlockMenu menu) {
-        var config = GeneticChickengineering.getConfigService();
+        ConfigurationService config = GeneticChickengineering.getConfigService();
         for (int slot : getInputSlots()) {
             ItemStack chicken = menu.getItemInSlot(slot);
 
@@ -147,7 +148,7 @@ public class ExcitationChamber extends AbstractMachine {
                 if (ChickenUtils.getHealth(chicken) <= 0d) {
                     ItemUtils.consumeItem(chicken, false);
                     GeneticChickengineering.getScheduler().run(() ->
-                        menu.getLocation().getWorld().playSound(menu.getLocation(), Sound.ENTITY_CHICKEN_DEATH, 1f, 1f)
+                        CompatUtils.playSound(menu.getLocation(), "ENTITY_CHICKEN_DEATH", 1f, 1f)
                     );
                     continue;
                 }

@@ -1,5 +1,6 @@
 package net.guizhanss.gcereborn.core.commands.subcommands;
 
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -26,6 +27,6 @@ interface DnaCompletion {
                 return result;
             }
         }
-        return List.of();
+        return Collections.emptyList();
     }
 }

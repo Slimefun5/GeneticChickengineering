@@ -7,7 +7,7 @@ import org.bukkit.entity.EntityType;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 
-import io.github.thebusybiscuit.slimefun4.libraries.dough.data.persistent.PersistentDataAPI;
+import io.github.thebusybiscuit.slimefun5.utils.compatibility.PdcCompat;
 
 import net.guizhanss.gcereborn.GeneticChickengineering;
 import net.guizhanss.gcereborn.utils.Keys;
@@ -23,23 +23,26 @@ public class EntityStackListener implements Listener {
         if (e.getEntity().getType() != EntityType.CHICKEN || e.getTarget().getType() != EntityType.CHICKEN) {
             return;
         }
-        var source = (Chicken) e.getEntity().getLivingEntity();
-        var target = (Chicken) e.getTarget().getLivingEntity();
+        Chicken source = (Chicken) e.getEntity().getLivingEntity();
+        Chicken target = (Chicken) e.getTarget().getLivingEntity();
+
+        boolean sourceHasDna = PdcCompat.has(source, Keys.CHICKEN_DNA, "STRING");
+        boolean targetHasDna = PdcCompat.has(target, Keys.CHICKEN_DNA, "STRING");
 
         // both have no dna data, no need to handle.
-        if (!PersistentDataAPI.hasString(source, Keys.CHICKEN_DNA) && !PersistentDataAPI.hasString(target, Keys.CHICKEN_DNA)) {
+        if (!sourceHasDna && !targetHasDna) {
             return;
         }
 
         // one of them has dna data, cancel merging.
-        if (PersistentDataAPI.hasString(source, Keys.CHICKEN_DNA) != PersistentDataAPI.hasString(target, Keys.CHICKEN_DNA)) {
+        if (sourceHasDna != targetHasDna) {
             e.setCancelled(true);
             return;
         }
 
         // now both have dna data, check if they are different.
         // if so, cancel merging.
-        if (!PersistentDataAPI.getString(source, Keys.CHICKEN_DNA).equals(PersistentDataAPI.getString(target, Keys.CHICKEN_DNA))) {
+        if (!PdcCompat.getString(source, Keys.CHICKEN_DNA).equals(PdcCompat.getString(target, Keys.CHICKEN_DNA))) {
             e.setCancelled(true);
         }
     }

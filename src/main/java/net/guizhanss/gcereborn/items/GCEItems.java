@@ -1,13 +1,13 @@
 package net.guizhanss.gcereborn.items;
 
-import org.bukkit.Material;
-
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
-import io.github.thebusybiscuit.slimefun4.core.attributes.MachineTier;
-import io.github.thebusybiscuit.slimefun4.core.attributes.MachineType;
-import io.github.thebusybiscuit.slimefun4.utils.LoreBuilder;
+import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun5.core.attributes.MachineTier;
+import io.github.thebusybiscuit.slimefun5.core.attributes.MachineType;
+import io.github.thebusybiscuit.slimefun5.libraries.xseries.XMaterial;
+import io.github.thebusybiscuit.slimefun5.utils.LoreBuilder;
 
 import net.guizhanss.gcereborn.GeneticChickengineering;
+import net.guizhanss.gcereborn.utils.MaterialCompat;
 
 import lombok.experimental.UtilityClass;
 
@@ -38,67 +38,67 @@ public final class GCEItems {
         );
         CHICKEN_NET = GeneticChickengineering.getLocalization().getItem(
             "CHICKEN_NET",
-            Material.COBWEB,
+            MaterialCompat.safe(XMaterial.COBWEB),
             "",
             LORE_RIGHT_CLICK_TO_USE
         );
         WATER_EGG = GeneticChickengineering.getLocalization().getItem(
             "WATER_EGG",
-            Material.TURTLE_SPAWN_EGG,
+            MaterialCompat.safe(XMaterial.TURTLE_SPAWN_EGG),
             "",
             LORE_RIGHT_CLICK_TO_USE
         );
         LAVA_EGG = GeneticChickengineering.getLocalization().getItem(
             "LAVA_EGG",
-            Material.STRIDER_SPAWN_EGG,
+            MaterialCompat.safe(XMaterial.STRIDER_SPAWN_EGG),
             "",
             LORE_RIGHT_CLICK_TO_USE
         );
         GENETIC_SEQUENCER = GeneticChickengineering.getLocalization().getItem(
             "GENETIC_SEQUENCER",
-            Material.SMOKER,
+            MaterialCompat.safe(XMaterial.SMOKER),
             "",
             LoreBuilder.machine(MachineTier.MEDIUM, MachineType.MACHINE),
             LoreBuilder.powerPerSecond(6)
         );
         EXCITATION_CHAMBER = GeneticChickengineering.getLocalization().getItem(
             "EXCITATION_CHAMBER",
-            Material.BLAST_FURNACE,
+            MaterialCompat.safe(XMaterial.BLAST_FURNACE),
             "",
             LoreBuilder.machine(MachineTier.MEDIUM, MachineType.MACHINE),
             LoreBuilder.powerPerSecond(10)
         );
         EXCITATION_CHAMBER_2 = GeneticChickengineering.getLocalization().getItem(
             "EXCITATION_CHAMBER_2",
-            Material.BLAST_FURNACE,
+            MaterialCompat.safe(XMaterial.BLAST_FURNACE),
             "",
             LoreBuilder.machine(MachineTier.ADVANCED, MachineType.MACHINE),
             LoreBuilder.powerPerSecond(15)
         );
         EXCITATION_CHAMBER_3 = GeneticChickengineering.getLocalization().getItem(
             "EXCITATION_CHAMBER_3",
-            Material.BLAST_FURNACE,
+            MaterialCompat.safe(XMaterial.BLAST_FURNACE),
             "",
             LoreBuilder.machine(MachineTier.END_GAME, MachineType.MACHINE),
             LoreBuilder.powerPerSecond(100)
         );
         PRIVATE_COOP = GeneticChickengineering.getLocalization().getItem(
             "PRIVATE_COOP",
-            Material.BEEHIVE,
+            MaterialCompat.safe(XMaterial.BEEHIVE),
             "",
             LoreBuilder.machine(MachineTier.MEDIUM, MachineType.MACHINE),
             LoreBuilder.powerPerSecond(2)
         );
         RESTORATION_CHAMBER = GeneticChickengineering.getLocalization().getItem(
             "RESTORATION_CHAMBER",
-            Material.PINK_SHULKER_BOX,
+            MaterialCompat.safe(XMaterial.PINK_SHULKER_BOX),
             "",
             LoreBuilder.machine(MachineTier.MEDIUM, MachineType.MACHINE),
             LoreBuilder.powerPerSecond(4)
         );
         GROWTH_CHAMBER = GeneticChickengineering.getLocalization().getItem(
             "GROWTH_CHAMBER",
-            Material.GREEN_SHULKER_BOX,
+            MaterialCompat.safe(XMaterial.GREEN_SHULKER_BOX),
             "",
             LoreBuilder.machine(MachineTier.ADVANCED, MachineType.MACHINE),
             LoreBuilder.powerPerSecond(20)
