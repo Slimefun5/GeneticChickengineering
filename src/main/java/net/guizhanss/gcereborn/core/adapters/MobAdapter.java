@@ -2,21 +2,18 @@ package net.guizhanss.gcereborn.core.adapters;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 
 import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
 import org.bukkit.entity.LivingEntity;
-import org.bukkit.potion.PotionEffect;
-import org.bukkit.potion.PotionEffectType;
 
 import net.guizhanss.gcereborn.GeneticChickengineering;
 import net.guizhanss.gcereborn.core.services.LocalizationService;
 import net.guizhanss.gcereborn.utils.AttributeCompat;
 import net.guizhanss.gcereborn.utils.CompatUtils;
+import net.guizhanss.gcereborn.utils.EntityCompat;
 
 /**
  * This class is a wholesale copy of TheBusyBiscuit's MobCapturer.
@@ -71,7 +68,6 @@ public interface MobAdapter<T extends LivingEntity> {
         }
 
         entity.setHealth(json.get("_health").getAsDouble());
-        entity.setAbsorptionAmount(json.get("_absorption").getAsDouble());
         entity.setRemoveWhenFarAway(json.get("_removeWhenFarAway").getAsBoolean());
 
         if (!json.get("_customName").isJsonNull()) {
@@ -79,37 +75,12 @@ public interface MobAdapter<T extends LivingEntity> {
         }
 
         entity.setCustomNameVisible(json.get("_customNameVisible").getAsBoolean());
-        entity.setAI(json.get("_ai").getAsBoolean());
-        entity.setSilent(json.get("_silent").getAsBoolean());
-        entity.setGlowing(json.get("_glowing").getAsBoolean());
-        entity.setInvulnerable(json.get("_invulnerable").getAsBoolean());
-        entity.setCollidable(json.get("_collidable").getAsBoolean());
-        entity.setGravity(json.get("_gravity").getAsBoolean());
         entity.setFireTicks(json.get("_fireTicks").getAsInt());
 
-        JsonObject effects = json.getAsJsonObject("_effects");
-
-        for (Map.Entry<String, JsonElement> entry : effects.entrySet()) {
-            PotionEffectType type = PotionEffectType.getByName(entry.getKey());
-
-            if (type != null) {
-                JsonObject obj = entry.getValue().getAsJsonObject();
-
-                int duration = obj.get("duration").getAsInt();
-                int amplifier = obj.get("amplifier").getAsInt();
-                boolean ambient = obj.get("ambient").getAsBoolean();
-                boolean particles = obj.get("particles").getAsBoolean();
-                boolean icon = obj.get("icon").getAsBoolean();
-
-                entity.addPotionEffect(new PotionEffect(type, duration, amplifier, ambient, particles, icon));
-            }
-        }
-
-        JsonArray tags = json.getAsJsonArray("_scoreboardTags");
-
-        for (JsonElement tag : tags) {
-            entity.addScoreboardTag(tag.getAsString());
-        }
+        // Post-1.8 flags/effects/tags - skipped gracefully on legacy servers (see EntityCompat).
+        EntityCompat.applyModernState(entity, json);
+        EntityCompat.applyPotionEffects(entity, json.getAsJsonObject("_effects"));
+        EntityCompat.applyScoreboardTags(entity, json.getAsJsonArray("_scoreboardTags"));
     }
 
     default JsonObject saveData(T entity) {
@@ -117,43 +88,23 @@ public interface MobAdapter<T extends LivingEntity> {
 
         json.addProperty("_type", entity.getType().toString());
         json.addProperty("_health", entity.getHealth());
-        json.addProperty("_absorption", entity.getAbsorptionAmount());
         json.addProperty("_removeWhenFarAway", entity.getRemoveWhenFarAway());
         json.addProperty("_customName", entity.getCustomName());
         json.addProperty("_customNameVisible", entity.isCustomNameVisible());
-        json.addProperty("_ai", entity.hasAI());
-        json.addProperty("_silent", entity.isSilent());
-        json.addProperty("_glowing", entity.isGlowing());
-        json.addProperty("_invulnerable", entity.isInvulnerable());
-        json.addProperty("_collidable", entity.isCollidable());
-        json.addProperty("_gravity", entity.hasGravity());
         json.addProperty("_fireTicks", entity.getFireTicks());
+
+        // Post-1.8 flags default gracefully on legacy servers (see EntityCompat).
+        EntityCompat.saveModernState(entity, json);
 
         JsonObject attributes = CompatUtils.attributesSupported() ? AttributeCompat.collectAttributes(entity) : new JsonObject();
         json.add("_attributes", attributes);
 
         JsonObject effects = new JsonObject();
-
-        for (PotionEffect effect : entity.getActivePotionEffects()) {
-            JsonObject obj = new JsonObject();
-
-            obj.addProperty("duration", effect.getDuration());
-            obj.addProperty("amplifier", effect.getAmplifier());
-            obj.addProperty("ambient", effect.isAmbient());
-            obj.addProperty("particles", effect.hasParticles());
-            obj.addProperty("icon", effect.hasIcon());
-
-            effects.add(effect.getType().getName(), obj);
-        }
-
+        EntityCompat.savePotionEffects(entity, effects);
         json.add("_effects", effects);
 
         JsonArray tags = new JsonArray();
-
-        for (String tag : entity.getScoreboardTags()) {
-            tags.add(tag);
-        }
-
+        EntityCompat.saveScoreboardTags(entity, tags);
         json.add("_scoreboardTags", tags);
 
         return json;

@@ -7,6 +7,7 @@ import com.google.gson.JsonObject;
 import org.bukkit.entity.Animals;
 
 import net.guizhanss.gcereborn.GeneticChickengineering;
+import net.guizhanss.gcereborn.utils.EntityCompat;
 
 /**
  * This class is a wholesale copy of TheBusyBiscuit's MobCapturer.
@@ -38,9 +39,10 @@ public class AnimalsAdapter<T extends Animals> implements MobAdapter<T> {
 
         json.addProperty("baby", !entity.isAdult());
         json.addProperty("_age", entity.getAge());
-        json.addProperty("_ageLock", entity.getAgeLock());
-        json.addProperty("_breedable", entity.canBreed());
-        json.addProperty("_loveModeTicks", entity.getLoveModeTicks());
+        // getAgeLock/canBreed vary by version and getLoveModeTicks is 1.16+ - degrade gracefully.
+        json.addProperty("_ageLock", EntityCompat.get(entity::getAgeLock, false));
+        json.addProperty("_breedable", EntityCompat.get(entity::canBreed, false));
+        json.addProperty("_loveModeTicks", EntityCompat.get(entity::getLoveModeTicks, 0));
 
         return json;
     }
@@ -50,9 +52,9 @@ public class AnimalsAdapter<T extends Animals> implements MobAdapter<T> {
         MobAdapter.super.apply(entity, json);
 
         entity.setAge(json.get("_age").getAsInt());
-        entity.setLoveModeTicks(json.get("_loveModeTicks").getAsInt());
-        entity.setAgeLock(json.get("_ageLock").getAsBoolean());
-        entity.setBreed(json.get("_breedable").getAsBoolean());
+        EntityCompat.run(() -> entity.setLoveModeTicks(json.get("_loveModeTicks").getAsInt()));
+        EntityCompat.run(() -> entity.setAgeLock(json.get("_ageLock").getAsBoolean()));
+        EntityCompat.run(() -> entity.setBreed(json.get("_breedable").getAsBoolean()));
     }
 
     @Override

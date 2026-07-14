@@ -14,7 +14,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import io.github.thebusybiscuit.slimefun5.api.SlimefunAddon;
 import io.github.thebusybiscuit.slimefun5.libraries.dough.updater.BlobBuildUpdater;
-import io.github.thebusybiscuit.slimefun5.libraries.paperlib.PaperLib;
 
 import net.guizhanss.gcereborn.core.commands.GCECommand;
 import net.guizhanss.gcereborn.core.services.ConfigurationService;
@@ -126,13 +125,6 @@ public class GeneticChickengineering extends JavaPlugin implements SlimefunAddon
         }
         localization.setIdPrefix("GCE_");
         log(Level.INFO, localization.getString("console.load.language"), lang);
-
-        // paper check
-        if (!PaperLib.isPaper()) {
-            log(Level.SEVERE, localization.getString("console.paper-only"));
-            getServer().getPluginManager().disablePlugin(this);
-            return;
-        }
 
         // items
         log(Level.INFO, localization.getString("console.load.items"));

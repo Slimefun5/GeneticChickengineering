@@ -156,12 +156,22 @@ public final class ChickenUtils {
     public static void createProductDisplay(int typing) {
         ItemStack fake = GCEItems.POCKET_CHICKEN.clone().item();
         DNA dna = new DNA(typing);
-        String productRawName = ChickenTypes.getName(typing);
         setPocketChicken(fake, null, dna);
 
-        // Use the chicken's resource as the icon
-        String itemIDType = productRawName.replace(" ", "_").toUpperCase();
-        SlimefunItemStack displayItem = new SlimefunItemStack("GCE_" + itemIDType + "_CHICKEN_ICON", ChickenTypes.getProduct(typing));
+        // The bare (id, ItemStack) ctor left these dictionary icons nameless, so in-game they rendered
+        // as their raw id. Give each icon the localized product name suffixed with " Chicken" (matching
+        // the "&e{0} &eChicken" DNA-type lore), falling back to the raw product name if unlocalized.
+        String productName = ChickenTypes.getDisplayName(typing);
+        if (productName.isEmpty()) {
+            productName = ChickenTypes.getName(typing);
+        }
+        String displayName = "&f" + productName + " Chicken";
+
+        // The id is keyed on the typing (0-63), NOT the product material name: on legacy servers
+        // (1.8-1.15) many modern products fall back to the same substitute material via MaterialCompat
+        // (e.g. STONE), which made material-name ids collide ("GCE_STONE_CHICKEN_ICON" twice) and throw
+        // an IdConflictException. The typing is the canonical, version-stable identity of a chicken.
+        SlimefunItemStack displayItem = new SlimefunItemStack("GCE_CHICKEN_ICON_" + typing, ChickenTypes.getProduct(typing), displayName);
         // Since these will be "Pocket Chickens", they will spawn chickens when cheated into a player's inventory
         // We set the DNA on the icon so that it will spawn a chicken of the correct type
         ItemMeta meta = displayItem.getItemMeta();
