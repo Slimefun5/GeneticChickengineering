@@ -1,100 +1,65 @@
-# Genetic Chickengineering Reborn
+# GeneticChickengineering
 
-Rewritten by ybw0014.
+[![Build Status](https://Slimefun5.github.io/builds/Slimefun5/GeneticChickengineering/stable/badge.svg)](https://Slimefun5.github.io/builds/Slimefun5/GeneticChickengineering/stable)
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/Slimefun5/GeneticChickengineering/total)
+[![GitHub Followers](https://img.shields.io/github/followers/Slimefun5?style=social)](https://github.com/Slimefun5)
+[![GitHub Stars](https://img.shields.io/github/stars/Slimefun5/GeneticChickengineering?style=social)](https://github.com/Slimefun5/GeneticChickengineering)
 
-![License](https://img.shields.io/github/license/ybw0014/GeneticChickengineering-Reborn) 
+An addon for Slimefun that adds resource chickens, rewritten by ybw0014.
 
-## Download
+## Requirements
+- Java 25
+- Paper 1.16.* - 26.1.*
+- [Slimefun 5](https://github.com/Slimefun5/Slimefun5)
 
-Download from:
+GeneticChickengineering lets you breed chickens carrying genetic DNA, engineering them into renewable sources of resources in Slimefun. Requires Paper.
 
-- [Blob builds](https://blob.build/project/GeneticChickengineering-Reborn)
-- [Guizhan Builds![Build Status](https://builds.guizhanss.com/ybw0014/GeneticChickengineering-Reborn/master/badge.svg)](https://builds.guizhanss.com/ybw0014/GeneticChickengineering-Reborn/master)
+## :floppy_disk: Installation
 
-## Overview
+| GeneticChickengineering | Slimefun5 | Minecraft |
+|---|---|---|
+| UNOFFICIAL | 5.2.0+ | 1.8.x – 26.x |
 
-Genetic Chickengineering is an original implementation of resource chickens
-heavily inspired by SetyCz's popular Forge mod Chicken. 
-The main difference between the two is that while Chicken has a predetermined
-tree of chicken breeding, Genetic Chickengineering uses a very basic simulation
-of genetics to determine chicken progression (meaning you may want to brush up
-on [Punnett squares](https://en.wikipedia.org/wiki/Punnett_square)).
+Download the latest release and place it in your server's `plugins/` folder. Slimefun5 must be installed first.
 
-This is a mid- to late-game addon for
-[Slimefun](https://github.com/Slimefun/Slimefun4). Furthermore, it uses
-Paper-specific API calls, and as such will not work on Spigot servers.
+## :beetle: Bug Reports
 
-## Plugin Basics
-*See the*
-[*wiki*](https://docs.ybw0014.dev/genetic-chickengineering/)
-*for more detailed information*
+Please report bugs via the [GitHub Issues](https://github.com/Slimefun5/GeneticChickengineering/issues) page.
 
-Overworld chickens have almost completely become the dominant, "normal" chickens
-that we know and love today, however there are certain chickens that carry
-latent powers. With the right tools, time, and care, these latent powers may be
-able to be uncovered, and the true potential of chickens can be unlocked.
+## :open_book: Contributing
 
-The first step in genetically enhancing your chickens is to craft a Chicken Net
-and turn some chickens into Pocket Chickens. Next, build a Genetic Sequencer to
-analyze the Pocket Chicken and learn its genotypes. When you've collected two or
-more favorable chickens, craft a Private Coop and leave your chickens to their
-business. After some time, they'll roll the genetic dice and make a baby! From
-there, release the chicken and let them grow into an adult, and the cycle can
-continue.
+Contributions are welcome! Please read the [Slimefun5 Contributing Guidelines](https://github.com/Slimefun5/Slimefun5/blob/master/CONTRIBUTING.md) before submitting a pull request.
 
-Eventually, your efforts will be rewarded with a special chicken that can
-produce resources! However, they can't do it alone... This is where the
-Excitation Chamber comes into play. Insert a chicken with at least one
-homozygous recessive pair of alleles (one set of two lower-case letters) and
-it will begin producing a resource! Not all chickens of a resource type will
-produce resources at the same rate, though. Due to interference from
-heterozygous allele pairs (one dominant and one recessive), chickens which have
-only homozygous pairs will make resources faster than those with heterozygous
-genes. Add some cargo nodes to the Excitation Chamber to keep a steady,
-neverending supply of different resources!
+## Developer API
 
-See
-[the sequence table](https://docs.ybw0014.dev/genetic-chickengineering/misc/sequencing-guide)
-or your in-game Slimefun Guide to learn how to make specific resources, or just
-start breeding chickens like crazy until you have all 64 varieties!
+You can easily depend on this project using [github-gradle](https://github.com/intisy/github-gradle).
 
-## Images
+In your `build.gradle.kts`:
 
-![A basic machine overview](/images/gce_machines.png)
+```kotlin
+plugins {
+    id("io.github.intisy.github-gradle") version "1.8.2.1"
+}
 
-------
+dependencies {
+    "githubCompileOnly"("Slimefun5:GeneticChickengineering:v1.0.1")
+}
+```
 
-![A baby chicken fresh out of the Genetic Sequencer](/images/gce_genseq.png)
+## Wiki
 
-------
+[Read more on the Slimefun Wiki...](https://github.com/Slimefun5/Wiki/wiki/GeneticChickengineering)
 
-![An experience chicken working](/images/gce_excham.png)
+## Discord
 
-------
+You can find Slimefun's community on Discord! Click the badge below to join the server for suggestions/questions or other discussions about this plugin.
 
-By default, a chicken will display its resource in a custom name after it has
-been passed through a Genetic Sequencer. If the chicken already has a custom
-name, then the resource will be appended to the end of that name. This feature
-can be turned off globally in the plugin's `config.yml`.
+<p align="center">
+  <a href="https://discord.gg/CbBYZBEWdR">
+    <img src="https://discordapp.com/api/guilds/738626600539160576/widget.png?style=banner2" alt="Discord"/>
+  </a>
+</p>
 
-![A nether quartz chicken named Crystal](/images/gce_names.png)
+## License
 
-## Thanks
-
-None of this would be possible if it weren't for TheBusyBiscuit's hard work on
-Slimefun, as well as the tremendously helpful Developer's Guide. Furthermore, a 
-significant portion of this addon uses similar or identical code from
-MobCapturer, and this project would not have gotten off the ground without it.
-
-For this reborn version, I (ybw0014) would like to thank the following people:
-
-- @kii-chan-reloaded (for the original plugin)
-- @xMikux (Traditional Chinese translation)
-- @LobbyTech-MC (Simplified Chinese translation)
-- @zimzaza4 (Make it compatible with Slimefun RC-27+)
-- @CrispyXYZ (current maintainer for Simplified Chinese version, added Ultimate Exciation Chamber)
-
-## Issues/Requests
-
-If you have any issues or feature requests, feel free to open an issue about it.
-If you're experiencing bugs, please provide any relevent server logs in your issue.
+This project is open-source and licensed under the MIT License.
