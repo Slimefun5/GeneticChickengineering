@@ -43,7 +43,7 @@ plugins {
 }
 
 dependencies {
-    "githubCompileOnly"("Slimefun5:GeneticChickengineering:v1.0.2")
+    "githubCompileOnly"("Slimefun5:GeneticChickengineering:v1.0.3")
 }
 ```
 
