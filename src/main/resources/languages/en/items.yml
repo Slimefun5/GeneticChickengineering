@@ -1,0 +1,95 @@
+# English item lore for GeneticChickengineering. Keyed by Slimefun item id.
+# Composed by LoreComposer in order: Type -> Description -> Stats -> Usage.
+# Dynamic per-chicken-type dictionary icons (GCE_CHICKEN_ICON_<typing>) are named at
+# runtime in Java (ChickenUtils) and are intentionally NOT listed here.
+
+POCKET_CHICKEN:
+  name: "&bPocket Chicken"
+  description:
+    - "&7A chicken, made portable."
+  usage:
+    - "&7Right Click on a block to release the chicken."
+
+CHICKEN_NET:
+  name: "&aChicken Net"
+  description:
+    - "&7Makes a chicken portable."
+  usage:
+    - "&eRight Click&7 to use"
+
+WATER_EGG:
+  name: "&9Water Egg"
+  description:
+    - "&7Contains water."
+  usage:
+    - "&eRight Click&7 to use"
+
+LAVA_EGG:
+  name: "&cLava Egg"
+  description:
+    - "&7Contains lava."
+  usage:
+    - "&eRight Click&7 to use"
+
+GENETIC_SEQUENCER:
+  name: "&eGenetic Sequencer"
+  type:
+    - "&7&oMachine"
+  description:
+    - "&7Determines a chicken's genotype."
+  stats:
+    - "&8⇨ &e⚡ &76 J/s"
+
+EXCITATION_CHAMBER:
+  name: "&eExcitation Chamber"
+  type:
+    - "&7&oMachine"
+  description:
+    - "&7Enables chickens to produce resources."
+  stats:
+    - "&8⇨ &e⚡ &710 J/s"
+
+EXCITATION_CHAMBER_2:
+  name: "&eBoosted Excitation Chamber"
+  type:
+    - "&7&oMachine"
+  description:
+    - "&7Enables chickens to produce resources faster."
+  stats:
+    - "&8⇨ &e⚡ &715 J/s"
+
+EXCITATION_CHAMBER_3:
+  name: "&eUltimate Excitation Chamber"
+  type:
+    - "&7&oMachine"
+  description:
+    - "&7Enables chickens to produce resources much faster."
+  stats:
+    - "&8⇨ &e⚡ &7100 J/s"
+
+PRIVATE_COOP:
+  name: "&ePrivate Coop"
+  type:
+    - "&7&oMachine"
+  description:
+    - "&7Can store chickens."
+  stats:
+    - "&8⇨ &e⚡ &72 J/s"
+
+RESTORATION_CHAMBER:
+  name: "&eRestoration Chamber"
+  type:
+    - "&7&oMachine"
+  description:
+    - "&7Can heal chickens."
+  stats:
+    - "&8⇨ &e⚡ &74 J/s"
+
+GROWTH_CHAMBER:
+  name: "&eGrowth Chamber"
+  type:
+    - "&7&oMachine"
+  description:
+    - "&7Can raise baby chickens with wheat seeds."
+  stats:
+    - "&8⇨ &e⚡ &720 J/s"

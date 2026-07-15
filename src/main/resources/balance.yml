@@ -1,0 +1,21 @@
+# Per-item balance scores (0-100) for GeneticChickengineering, relative to vanilla Minecraft.
+# Read by Slimefun's BalanceService (overrides the auto heuristic). Bands:
+#   0-10 Trivial | 11-25 Standard | 26-40 Advanced | 41-69 Powerful | 70-100 Overpowered
+#   (vanilla anchors: iron gear ~15, netherite ~30, beacon ~35, end crystal ~70, mace ~85)
+# Scores below are derived from actual stats read from src/main/java (machine energy J/s and
+# tier, item role). The per-chicken-type dictionary icons are dynamic and not scored here.
+scores:
+  # --- Machines (energy consumers) ---
+  EXCITATION_CHAMBER_3: 44   # 100 J/s, END_GAME tier - ultimate resource producer from chickens
+  EXCITATION_CHAMBER_2: 34   # 15 J/s, ADVANCED tier - boosted resource production
+  GROWTH_CHAMBER: 30         # 20 J/s, ADVANCED tier - raises baby chickens with wheat seeds
+  EXCITATION_CHAMBER: 28     # 10 J/s, MEDIUM tier - base resource production from chickens
+  GENETIC_SEQUENCER: 26      # 6 J/s, MEDIUM tier - determines a chicken's genotype
+  RESTORATION_CHAMBER: 22    # 4 J/s, MEDIUM tier - heals stored chickens
+  PRIVATE_COOP: 22           # 2 J/s, MEDIUM tier - stores and breeds chickens
+
+  # --- Tools / items ---
+  POCKET_CHICKEN: 20         # portable genetics-bearing livestock, released on right click
+  LAVA_EGG: 18               # resource egg, places a lava source
+  WATER_EGG: 16              # resource egg, places a water source
+  CHICKEN_NET: 14            # captures a chicken into a Pocket Chicken

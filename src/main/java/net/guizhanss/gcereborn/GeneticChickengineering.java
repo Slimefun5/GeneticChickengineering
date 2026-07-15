@@ -13,6 +13,7 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import io.github.thebusybiscuit.slimefun5.api.SlimefunAddon;
+import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun5.libraries.dough.updater.BlobBuildUpdater;
 
 import net.guizhanss.gcereborn.core.commands.GCECommand;
@@ -129,6 +130,9 @@ public class GeneticChickengineering extends JavaPlugin implements SlimefunAddon
         // items
         log(Level.INFO, localization.getString("console.load.items"));
         Items.setup(this);
+
+        // Contribute this addon's per-language item translations (languages/<lang>/items.yml).
+        Slimefun.getItemTranslationService().registerTranslations(this);
 
         // researches
         log(Level.INFO, localization.getString("console.load.researches"));
