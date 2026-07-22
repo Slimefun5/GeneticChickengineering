@@ -5,6 +5,8 @@
 
 POCKET_CHICKEN:
   name: "&bPocket Chicken"
+  type:
+    - "&7&oResource"
   description:
     - "&7A chicken, made portable."
   usage:
@@ -12,6 +14,8 @@ POCKET_CHICKEN:
 
 CHICKEN_NET:
   name: "&aChicken Net"
+  type:
+    - "&7&oTool"
   description:
     - "&7Makes a chicken portable."
   usage:
@@ -19,6 +23,8 @@ CHICKEN_NET:
 
 WATER_EGG:
   name: "&9Water Egg"
+  type:
+    - "&7&oResource"
   description:
     - "&7Contains water."
   usage:
@@ -26,6 +32,8 @@ WATER_EGG:
 
 LAVA_EGG:
   name: "&cLava Egg"
+  type:
+    - "&7&oResource"
   description:
     - "&7Contains lava."
   usage:
