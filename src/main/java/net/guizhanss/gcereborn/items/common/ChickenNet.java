@@ -27,6 +27,7 @@ public class ChickenNet extends SimpleSlimefunItem<EntityInteractHandler> implem
     public ChickenNet(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(itemGroup, item, recipeType, recipe);
 
+        setGuideType("tools");
         addItemHandler(getItemUsehandler());
     }
 

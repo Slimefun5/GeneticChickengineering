@@ -36,6 +36,7 @@ public class ResourceEgg extends SimpleSlimefunItem<ItemUseHandler> implements N
         super(itemGroup, item, recipeType, makeRecipe(resource));
         this.resource = resource;
         this.allowInNether = allowInNether;
+        setGuideType("resources");
     }
 
     @Nonnull
