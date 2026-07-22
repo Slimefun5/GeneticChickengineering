@@ -38,6 +38,8 @@ public class PocketChicken extends SimpleSlimefunItem<ItemUseHandler> implements
 
     public PocketChicken(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(itemGroup, item, recipeType, recipe);
+        // Head-textured/creature items the guide heuristic can't type - classify as resources.
+        setGuideType("resources");
     }
 
     @Override
