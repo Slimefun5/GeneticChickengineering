@@ -4,7 +4,6 @@
 ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/Slimefun5/GeneticChickengineering/total)
 [![GitHub Followers](https://img.shields.io/github/followers/Slimefun5?style=social)](https://github.com/Slimefun5)
 [![GitHub Stars](https://img.shields.io/github/stars/Slimefun5/GeneticChickengineering?style=social)](https://github.com/Slimefun5/GeneticChickengineering)
-[![bStats](https://bStats.org/signatures/bukkit/GeneticChickengineering.svg)](https://bStats.org/plugin/bukkit/GeneticChickengineering/20243)
 
 An addon for Slimefun that adds resource chickens, rewritten by ybw0014.
 
@@ -43,7 +42,7 @@ plugins {
 }
 
 dependencies {
-    "githubCompileOnly"("Slimefun5:GeneticChickengineering:v1.0.4")
+    "githubCompileOnly"("Slimefun5:GeneticChickengineering:v1.0.2")
 }
 ```
 
