@@ -167,7 +167,10 @@ public class GeneticChickengineering extends JavaPlugin implements SlimefunAddon
     }
 
     private void setupMetrics() {
-        new Metrics(this, 20243);
+        // Consolidated metrics: only start our own bStats if the server opted out (metrics.disable-addon-metrics = false).
+        if (Slimefun.getCfg().contains("metrics.disable-addon-metrics") && !Slimefun.getCfg().getBoolean("metrics.disable-addon-metrics")) {
+            new Metrics(this, 20243);
+        }
     }
 
     protected void autoUpdate() {
