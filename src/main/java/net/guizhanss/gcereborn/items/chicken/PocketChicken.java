@@ -60,7 +60,11 @@ public class PocketChicken extends SimpleSlimefunItem<ItemUseHandler> implements
 
             ItemMeta meta = e.getItem().getItemMeta();
             JsonObject json = ChickenUtils.getAdapterData(meta);
-            ADAPTER.apply(entity, json);
+            // A pocket chicken with no stored adapter data (json == null) spawns a default chicken;
+            // applying null would NPE inside the adapter (MobAdapter reads json fields directly).
+            if (json != null) {
+                ADAPTER.apply(entity, json);
+            }
             DNA dna;
             if (ChickenUtils.hasDnaState(meta)) {
                 dna = new DNA(ChickenUtils.getDnaState(meta));
