@@ -5,6 +5,7 @@ import java.util.Optional;
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
 import org.bukkit.ChatColor;
@@ -76,8 +77,9 @@ public class PocketChicken extends SimpleSlimefunItem<ItemUseHandler> implements
 
             if (GeneticChickengineering.getConfigService().isDisplayResources() && dna.isKnown()) {
                 String name = ChatColor.WHITE + "(" + ChickenTypes.getDisplayName(dna.getTyping()) + ")";
-                if (json != null && !json.get("_customName").isJsonNull()) {
-                    name = json.get("_customName").getAsString() + " " + name;
+                JsonElement customName = json != null ? json.get("_customName") : null;
+                if (customName != null && !customName.isJsonNull()) {
+                    name = customName.getAsString() + " " + name;
                 }
                 entity.setCustomName(name);
                 entity.setCustomNameVisible(true);
