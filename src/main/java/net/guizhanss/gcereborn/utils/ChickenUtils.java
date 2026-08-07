@@ -178,7 +178,6 @@ public final class ChickenUtils {
         setDnaState(meta, dna.getState());
         displayItem.setItemMeta(meta);
 
-        // Register the display
         // @formatter:off
         new PocketChicken(
             Groups.DICTIONARY,

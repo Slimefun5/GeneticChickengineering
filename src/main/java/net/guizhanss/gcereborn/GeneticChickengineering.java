@@ -110,13 +110,9 @@ public class GeneticChickengineering extends JavaPlugin implements SlimefunAddon
 
         scheduler = new Scheduler(this);
 
-        // config
         configService = new ConfigurationService(this);
-
-        // debug
         debugEnabled = configService.isDebug();
 
-        // localization
         log(Level.INFO, "Loading language...");
         String lang = configService.getLang();
         localization = new LocalizationService(this);
@@ -127,7 +123,6 @@ public class GeneticChickengineering extends JavaPlugin implements SlimefunAddon
         localization.setIdPrefix("GCE_");
         log(Level.INFO, localization.getString("console.load.language"), lang);
 
-        // items
         log(Level.INFO, localization.getString("console.load.items"));
         Items.setup(this);
 
@@ -138,11 +133,9 @@ public class GeneticChickengineering extends JavaPlugin implements SlimefunAddon
         // a numeric typing, so they can't live in items.yml - a resolver reproduces their display.
         Slimefun.getItemTranslationService().registerResolver(new net.guizhanss.gcereborn.utils.ChickenIconResolver());
 
-        // researches
         log(Level.INFO, localization.getString("console.load.researches"));
         Researches.setup();
 
-        // commands
         if (configService.isCommandsEnabled()) {
             PluginCommand command = getCommand("geneticchickengineering");
             if (command == null) {
@@ -152,14 +145,11 @@ public class GeneticChickengineering extends JavaPlugin implements SlimefunAddon
             }
         }
 
-        // integrations
         log(Level.INFO, localization.getString("console.load.integrations"));
         integrationService = new IntegrationService(this);
 
-        // metrics
         setupMetrics();
 
-        // auto-update
         if (configService.isAutoUpdate()) {
             autoUpdate();
         }
@@ -196,8 +186,6 @@ public class GeneticChickengineering extends JavaPlugin implements SlimefunAddon
             }
         }
     }
-
-    // --- SlimefunAddon ---
 
     @Nonnull
     @Override

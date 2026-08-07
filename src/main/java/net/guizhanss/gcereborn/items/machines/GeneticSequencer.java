@@ -48,7 +48,6 @@ public class GeneticSequencer extends AbstractMachine {
             ItemStack learnedChicken = ChickenUtils.learnDNA(chicken);
             if (config.isPainEnabled()) {
                 if (!ChickenUtils.survivesPain(learnedChicken) && !config.isPainDeathEnabled()) {
-                    // stop processing when pain kill is disabled
                     continue;
                 }
                 ChickenUtils.possiblyHarm(learnedChicken);

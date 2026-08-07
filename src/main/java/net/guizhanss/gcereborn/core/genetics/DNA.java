@@ -26,7 +26,6 @@ public class DNA {
      * @param state int[] of length 7, first 6 are alleles, last is learned
      */
     public DNA(int[] state) {
-        // Load DNA from state
         this.sequence = new Gene[6];
         for (int i = 0; i < 6; i++) {
             this.sequence[i] = new Gene(ALLELES[i], state[i]);
@@ -40,7 +39,6 @@ public class DNA {
      * @param state String of length 7, first 6 are alleles, last is learned
      */
     public DNA(@Nonnull String state) {
-        // Load DNA from a String state
         char[] stateChars = state.toCharArray();
         this.sequence = new Gene[6];
         for (int i = 0; i < 6; i++) {
@@ -72,7 +70,6 @@ public class DNA {
      * @param half2 The second parent's alleles.
      */
     public DNA(char[] half1, char[] half2) {
-        // New DNA from two parent halves
         this.sequence = new Gene[6];
         for (int i = 0; i < 6; i++) {
             this.sequence[i] = new Gene(new char[] {half1[i], half2[i]});

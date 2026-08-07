@@ -49,8 +49,6 @@ public final class EntityCompat {
         }
     }
 
-    // --- apply (JSON -> live entity) ---
-
     public static void applyModernState(@Nonnull LivingEntity entity, @Nonnull JsonObject json) {
         run(() -> entity.setAbsorptionAmount(json.get("_absorption").getAsDouble()));
         run(() -> entity.setAI(json.get("_ai").getAsBoolean()));
@@ -88,8 +86,6 @@ public final class EntityCompat {
             run(() -> entity.addScoreboardTag(tag.getAsString()));
         }
     }
-
-    // --- save (live entity -> JSON) ---
 
     public static void saveModernState(@Nonnull LivingEntity entity, @Nonnull JsonObject json) {
         json.addProperty("_absorption", get(entity::getAbsorptionAmount, 0.0));
