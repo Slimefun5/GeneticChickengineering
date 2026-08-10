@@ -91,13 +91,17 @@ public class PocketChicken extends SimpleSlimefunItem<ItemUseHandler> implements
         };
     }
 
+    /**
+     * {@inheritDoc}
+     *
+     * @implNote {@code getPersistentDataContainer()} is 1.14+, and {@code PdcCompat.containersEqual()}
+     *           would resolve both sides to "no container" (always equal) on legacy servers, letting two
+     *           chickens with different DNA/health silently merge. This compares the two keys we care
+     *           about through {@link PdcCompat} so it behaves identically on every version.
+     */
     @Override
     @ParametersAreNonnullByDefault
     public boolean canStack(ItemMeta meta1, ItemMeta meta2) {
-        // getPersistentDataContainer() is 1.14+, and PdcCompat.containersEqual() would resolve both
-        // sides to "no container" (i.e. always equal) on legacy servers - which would let two chickens
-        // with different DNA/health silently merge. Compare the two keys we actually care about instead,
-        // through PdcCompat so this works identically on every version.
         String dna1 = PdcCompat.getString(meta1, Keys.POCKET_CHICKEN_DNA);
         String dna2 = PdcCompat.getString(meta2, Keys.POCKET_CHICKEN_DNA);
         String adapter1 = PdcCompat.getString(meta1, Keys.POCKET_CHICKEN_ADAPTER);

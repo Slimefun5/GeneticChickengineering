@@ -167,16 +167,18 @@ public class GeneticChickengineering extends JavaPlugin implements SlimefunAddon
         }
     }
 
+    /**
+     * @implNote "Build"-tagged versions self-update only through the optional companion
+     *           "GuizhanLibPlugin" updater, invoked via reflection so it is never a compile/runtime
+     *           dependency. GuizhanLib-api's own {@code GuizhanBuildsUpdater} fallback is gone now that
+     *           this addon no longer bundles that jar (see the class javadoc), so "Build" versions
+     *           without GuizhanLibPlugin installed simply won't self-update.
+     */
     protected void autoUpdate() {
         String version = getDescription().getVersion();
         if (version.startsWith("Dev")) {
             new BlobBuildUpdater(this, getFile(), GITHUB_REPO).start();
         } else if (version.startsWith("Build")) {
-            // Only the optional companion "GuizhanLibPlugin" updater is used here (via reflection, so
-            // it is never a compile/runtime dependency of this addon). The upstream fallback path -
-            // GuizhanLib-api's own GuizhanBuildsUpdater - is unavailable now that this addon no longer
-            // bundles that jar (see the class javadoc); "Build"-tagged versions without
-            // GuizhanLibPlugin installed simply won't self-update.
             try {
                 Class<?> clazz = Class.forName("net.guizhanss.guizhanlibplugin.updater.GuizhanUpdater");
                 Method updaterStart = clazz.getDeclaredMethod("start", Plugin.class, File.class, String.class, String.class, String.class);
