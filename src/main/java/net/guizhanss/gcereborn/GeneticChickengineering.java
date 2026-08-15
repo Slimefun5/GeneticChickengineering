@@ -30,8 +30,8 @@ import org.bstats.bukkit.Metrics;
  * Main plugin class.
  * <p>
  * Note: unlike the upstream Reborn build, this does <b>not</b> extend GuizhanLib's
- * {@code AbstractAddon}. That class {@code implements io.github.thebusybiscuit.slimefun4.api.SlimefunAddon},
- * a package this fork renamed to {@code slimefun5}; loading it would throw
+ * {@code AbstractAddon}. That class implements the pre-fork {@code SlimefunAddon} interface from
+ * the package this fork renamed away from; loading it would throw
  * {@code NoClassDefFoundError} immediately. GuizhanLib-api's jar is also compiled for Java 16 (class
  * file version 60), which a Java-8 {@code javac} cannot even read as a compile-time dependency - so
  * this addon no longer depends on the GuizhanLib-api artifact at all. Instead this plugin implements

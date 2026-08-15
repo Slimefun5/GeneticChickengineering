@@ -33,9 +33,9 @@ import net.md_5.bungee.api.chat.TextComponent;
  * <p>
  * This extends GuizhanLib's {@code MinecraftLocalization} directly (a plain YAML-file localization
  * helper, no Slimefun coupling) rather than its {@code SlimefunLocalization} subclass: that subclass's
- * {@code getItem}/{@code getItemGroupItem}/{@code getRecipeType} methods return
- * {@code io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack} - the pre-fork type this
- * package no longer has - so invoking them would throw {@code NoClassDefFoundError}. The same lookup
+ * {@code getItem}/{@code getItemGroupItem}/{@code getRecipeType} methods return the pre-fork
+ * package's {@code SlimefunItemStack} - a type this fork's renamed API no longer has - so invoking
+ * them would throw {@code NoClassDefFoundError}. The same lookup
  * behaviour (key/id -> name + lore -> item) is reimplemented here against the fork's own
  * {@link SlimefunItemStack} / {@link RecipeType}.
  */
