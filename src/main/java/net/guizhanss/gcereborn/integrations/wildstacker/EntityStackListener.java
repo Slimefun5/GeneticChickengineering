@@ -29,19 +29,17 @@ public class EntityStackListener implements Listener {
         boolean sourceHasDna = PdcCompat.has(source, Keys.CHICKEN_DNA, "STRING");
         boolean targetHasDna = PdcCompat.has(target, Keys.CHICKEN_DNA, "STRING");
 
-        // both have no dna data, no need to handle.
         if (!sourceHasDna && !targetHasDna) {
             return;
         }
 
-        // one of them has dna data, cancel merging.
+        // Only one side carries DNA - block the merge so the tagged chicken keeps its identity.
         if (sourceHasDna != targetHasDna) {
             e.setCancelled(true);
             return;
         }
 
-        // now both have dna data, check if they are different.
-        // if so, cancel merging.
+        // Both are tagged: block the merge only when their DNA differs.
         if (!PdcCompat.getString(source, Keys.CHICKEN_DNA).equals(PdcCompat.getString(target, Keys.CHICKEN_DNA))) {
             e.setCancelled(true);
         }

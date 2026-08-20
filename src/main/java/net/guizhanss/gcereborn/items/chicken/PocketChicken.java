@@ -5,6 +5,7 @@ import java.util.Optional;
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
 import org.bukkit.ChatColor;
@@ -59,7 +60,11 @@ public class PocketChicken extends SimpleSlimefunItem<ItemUseHandler> implements
 
             ItemMeta meta = e.getItem().getItemMeta();
             JsonObject json = ChickenUtils.getAdapterData(meta);
-            ADAPTER.apply(entity, json);
+            // A pocket chicken with no stored adapter data (json == null) spawns a default chicken;
+            // applying null would NPE inside the adapter (MobAdapter reads json fields directly).
+            if (json != null) {
+                ADAPTER.apply(entity, json);
+            }
             DNA dna;
             if (ChickenUtils.hasDnaState(meta)) {
                 dna = new DNA(ChickenUtils.getDnaState(meta));
@@ -76,8 +81,9 @@ public class PocketChicken extends SimpleSlimefunItem<ItemUseHandler> implements
 
             if (GeneticChickengineering.getConfigService().isDisplayResources() && dna.isKnown()) {
                 String name = ChatColor.WHITE + "(" + ChickenTypes.getDisplayName(dna.getTyping()) + ")";
-                if (json != null && !json.get("_customName").isJsonNull()) {
-                    name = json.get("_customName").getAsString() + " " + name;
+                JsonElement customName = json != null ? json.get("_customName") : null;
+                if (customName != null && !customName.isJsonNull()) {
+                    name = customName.getAsString() + " " + name;
                 }
                 entity.setCustomName(name);
                 entity.setCustomNameVisible(true);
@@ -85,13 +91,17 @@ public class PocketChicken extends SimpleSlimefunItem<ItemUseHandler> implements
         };
     }
 
+    /**
+     * {@inheritDoc}
+     *
+     * @implNote {@code getPersistentDataContainer()} is 1.14+, and {@code PdcCompat.containersEqual()}
+     *           would resolve both sides to "no container" (always equal) on legacy servers, letting two
+     *           chickens with different DNA/health silently merge. This compares the two keys we care
+     *           about through {@link PdcCompat} so it behaves identically on every version.
+     */
     @Override
     @ParametersAreNonnullByDefault
     public boolean canStack(ItemMeta meta1, ItemMeta meta2) {
-        // getPersistentDataContainer() is 1.14+, and PdcCompat.containersEqual() would resolve both
-        // sides to "no container" (i.e. always equal) on legacy servers - which would let two chickens
-        // with different DNA/health silently merge. Compare the two keys we actually care about instead,
-        // through PdcCompat so this works identically on every version.
         String dna1 = PdcCompat.getString(meta1, Keys.POCKET_CHICKEN_DNA);
         String dna2 = PdcCompat.getString(meta2, Keys.POCKET_CHICKEN_DNA);
         String adapter1 = PdcCompat.getString(meta1, Keys.POCKET_CHICKEN_ADAPTER);

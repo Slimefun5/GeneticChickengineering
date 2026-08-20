@@ -158,27 +158,14 @@ public final class ChickenUtils {
         DNA dna = new DNA(typing);
         setPocketChicken(fake, null, dna);
 
-        // The bare (id, ItemStack) ctor left these dictionary icons nameless, so in-game they rendered
-        // as their raw id. Give each icon the localized product name suffixed with " Chicken" (matching
-        // the "&e{0} &eChicken" DNA-type lore), falling back to the raw product name if unlocalized.
-        String productName = ChickenTypes.getDisplayName(typing);
-        if (productName.isEmpty()) {
-            productName = ChickenTypes.getName(typing);
-        }
-        String displayName = "&f" + productName + " Chicken";
+        String displayName = localizedChickenName(typing);
 
-        // The id is keyed on the typing (0-63), NOT the product material name: on legacy servers
-        // (1.8-1.15) many modern products fall back to the same substitute material via MaterialCompat
-        // (e.g. STONE), which made material-name ids collide ("GCE_STONE_CHICKEN_ICON" twice) and throw
-        // an IdConflictException. The typing is the canonical, version-stable identity of a chicken.
-        SlimefunItemStack displayItem = new SlimefunItemStack("GCE_CHICKEN_ICON_" + typing, ChickenTypes.getProduct(typing), displayName);
-        // Since these will be "Pocket Chickens", they will spawn chickens when cheated into a player's inventory
-        // We set the DNA on the icon so that it will spawn a chicken of the correct type
+        SlimefunItemStack displayItem = new SlimefunItemStack(iconId(typing), ChickenTypes.getProduct(typing), displayName);
+        // Icons are Pocket Chickens; carrying the DNA lets them spawn the right chicken when cheated in.
         ItemMeta meta = displayItem.getItemMeta();
         setDnaState(meta, dna.getState());
         displayItem.setItemMeta(meta);
 
-        // Register the display
         // @formatter:off
         new PocketChicken(
             Groups.DICTIONARY,
@@ -191,6 +178,30 @@ public final class ChickenUtils {
             }
         ).register(GeneticChickengineering.getInstance());
         // @formatter:on
+    }
+
+    /**
+     * @implNote The bare {@code (id, ItemStack)} {@link SlimefunItemStack} ctor leaves dictionary icons
+     *           nameless, so in-game they render as their raw id. The localized product name is suffixed
+     *           with " Chicken" (matching the "&e{0} &eChicken" DNA-type lore), falling back to the raw
+     *           product name when unlocalized.
+     */
+    private static String localizedChickenName(int typing) {
+        String productName = ChickenTypes.getDisplayName(typing);
+        if (productName.isEmpty()) {
+            productName = ChickenTypes.getName(typing);
+        }
+        return "&f" + productName + " Chicken";
+    }
+
+    /**
+     * @implNote Keyed on the typing (0-63), NOT the product material name. On legacy servers (1.8-1.15)
+     *           many modern products fall back to the same substitute material via {@link MaterialCompat}
+     *           (e.g. STONE), so material-name ids collided ("GCE_STONE_CHICKEN_ICON" twice) and threw an
+     *           IdConflictException. The typing is the canonical, version-stable identity of a chicken.
+     */
+    private static String iconId(int typing) {
+        return "GCE_CHICKEN_ICON_" + typing;
     }
 
     /**
@@ -348,9 +359,7 @@ public final class ChickenUtils {
             return true;
         }
 
-        // Fine-grained (1.19.4) version checks aren't available on the fork's MinecraftVersion enum
-        // (only whole-minor-version constants); MaterialCompat.safe() degrades gracefully regardless
-        // (see its legacy-substitute map), so a slightly conservative gate here is harmless.
+        // Whole-minor gate (no 1.19.4 constant on the fork enum); MaterialCompat.safe() degrades regardless.
         if (Slimefun.getMinecraftVersion().isAtLeast(MinecraftVersion.MINECRAFT_1_19) && type == MaterialCompat.safe(XMaterial.TORCHFLOWER_SEEDS)) {
             return true;
         }
@@ -408,15 +417,14 @@ public final class ChickenUtils {
         return item;
     }
 
-    // --- PDC helpers ---
-    //
-    // The upstream Reborn build persisted the chicken DNA (int[]) and the full mob snapshot
-    // (a JsonObject, via a custom PersistentDataType adapter) directly through dough's
-    // PersistentDataAPI. Neither is 1.8-safe: PersistentDataType/PersistentDataContainer are 1.14+
-    // APIs. Both are now string-encoded and stored through PdcCompat, whose fallback path (real item
-    // NBT for ItemMeta, a YAML store keyed by entity UUID for live entities) keeps this working on
-    // legacy servers, see io.github.thebusybiscuit.slimefun5.utils.compatibility.PdcCompat.
-
+    /**
+     * @implNote The upstream Reborn build persisted the chicken DNA (int[]) and the full mob snapshot
+     *           (a JsonObject, via a custom PersistentDataType adapter) directly through dough's
+     *           PersistentDataAPI, which is not 1.8-safe (PersistentDataType/PersistentDataContainer are
+     *           1.14+). Both are now string-encoded and stored through {@link PdcCompat}, whose fallback
+     *           path (real item NBT for ItemMeta, a YAML store keyed by entity UUID for live entities)
+     *           keeps this working on legacy servers.
+     */
     public static boolean hasDnaState(@Nonnull Object holder) {
         return PdcCompat.has(holder, Keys.POCKET_CHICKEN_DNA, "STRING");
     }

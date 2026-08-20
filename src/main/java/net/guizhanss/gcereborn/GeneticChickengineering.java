@@ -30,8 +30,8 @@ import org.bstats.bukkit.Metrics;
  * Main plugin class.
  * <p>
  * Note: unlike the upstream Reborn build, this does <b>not</b> extend GuizhanLib's
- * {@code AbstractAddon}. That class {@code implements io.github.thebusybiscuit.slimefun4.api.SlimefunAddon},
- * a package this fork renamed to {@code slimefun5}; loading it would throw
+ * {@code AbstractAddon}. That class implements the pre-fork {@code SlimefunAddon} interface from
+ * the package this fork renamed away from; loading it would throw
  * {@code NoClassDefFoundError} immediately. GuizhanLib-api's jar is also compiled for Java 16 (class
  * file version 60), which a Java-8 {@code javac} cannot even read as a compile-time dependency - so
  * this addon no longer depends on the GuizhanLib-api artifact at all. Instead this plugin implements
@@ -110,13 +110,9 @@ public class GeneticChickengineering extends JavaPlugin implements SlimefunAddon
 
         scheduler = new Scheduler(this);
 
-        // config
         configService = new ConfigurationService(this);
-
-        // debug
         debugEnabled = configService.isDebug();
 
-        // localization
         log(Level.INFO, "Loading language...");
         String lang = configService.getLang();
         localization = new LocalizationService(this);
@@ -127,18 +123,19 @@ public class GeneticChickengineering extends JavaPlugin implements SlimefunAddon
         localization.setIdPrefix("GCE_");
         log(Level.INFO, localization.getString("console.load.language"), lang);
 
-        // items
         log(Level.INFO, localization.getString("console.load.items"));
         Items.setup(this);
 
         // Contribute this addon's per-language item translations (languages/<lang>/items.yml).
         Slimefun.getItemTranslationService().registerTranslations(this);
 
-        // researches
+        // The chicken-icon dictionary items are named at runtime from the chicken product, keyed only on
+        // a numeric typing, so they can't live in items.yml - a resolver reproduces their display.
+        Slimefun.getItemTranslationService().registerResolver(new net.guizhanss.gcereborn.utils.ChickenIconResolver());
+
         log(Level.INFO, localization.getString("console.load.researches"));
         Researches.setup();
 
-        // commands
         if (configService.isCommandsEnabled()) {
             PluginCommand command = getCommand("geneticchickengineering");
             if (command == null) {
@@ -148,14 +145,11 @@ public class GeneticChickengineering extends JavaPlugin implements SlimefunAddon
             }
         }
 
-        // integrations
         log(Level.INFO, localization.getString("console.load.integrations"));
         integrationService = new IntegrationService(this);
 
-        // metrics
         setupMetrics();
 
-        // auto-update
         if (configService.isAutoUpdate()) {
             autoUpdate();
         }
@@ -167,19 +161,24 @@ public class GeneticChickengineering extends JavaPlugin implements SlimefunAddon
     }
 
     private void setupMetrics() {
-        new Metrics(this, 20243);
+        // Consolidated metrics: only start our own bStats if the server opted out (metrics.disable-addon-metrics = false).
+        if (Slimefun.getCfg().contains("metrics.disable-addon-metrics") && !Slimefun.getCfg().getBoolean("metrics.disable-addon-metrics")) {
+            new Metrics(this, 20243);
+        }
     }
 
+    /**
+     * @implNote "Build"-tagged versions self-update only through the optional companion
+     *           "GuizhanLibPlugin" updater, invoked via reflection so it is never a compile/runtime
+     *           dependency. GuizhanLib-api's own {@code GuizhanBuildsUpdater} fallback is gone now that
+     *           this addon no longer bundles that jar (see the class javadoc), so "Build" versions
+     *           without GuizhanLibPlugin installed simply won't self-update.
+     */
     protected void autoUpdate() {
         String version = getDescription().getVersion();
         if (version.startsWith("Dev")) {
             new BlobBuildUpdater(this, getFile(), GITHUB_REPO).start();
         } else if (version.startsWith("Build")) {
-            // Only the optional companion "GuizhanLibPlugin" updater is used here (via reflection, so
-            // it is never a compile/runtime dependency of this addon). The upstream fallback path -
-            // GuizhanLib-api's own GuizhanBuildsUpdater - is unavailable now that this addon no longer
-            // bundles that jar (see the class javadoc); "Build"-tagged versions without
-            // GuizhanLibPlugin installed simply won't self-update.
             try {
                 Class<?> clazz = Class.forName("net.guizhanss.guizhanlibplugin.updater.GuizhanUpdater");
                 Method updaterStart = clazz.getDeclaredMethod("start", Plugin.class, File.class, String.class, String.class, String.class);
@@ -189,8 +188,6 @@ public class GeneticChickengineering extends JavaPlugin implements SlimefunAddon
             }
         }
     }
-
-    // --- SlimefunAddon ---
 
     @Nonnull
     @Override

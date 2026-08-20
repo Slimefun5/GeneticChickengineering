@@ -22,7 +22,7 @@ dependencies {
     // NOTE: GuizhanLib-api is intentionally NOT a dependency here (see GeneticChickengineering's
     // class javadoc) - its jar is class-file version 60 (Java 16), which a Java-8 javac cannot read
     // as a compile dependency at all, and (separately) its AbstractAddon/AddonConfig/SlimefunLocalization
-    // classes hard-bind to the pre-fork io.github.thebusybiscuit.slimefun4 API. The handful of
+    // classes hard-bind to Slimefun's pre-fork API package. The handful of
     // Slimefun-independent pieces this addon used (Scheduler, the command framework, chat/version/
     // localization utils) are vendored as plain Java-8 source under
     // net.guizhanss.gcereborn.libs.guizhanlib instead.

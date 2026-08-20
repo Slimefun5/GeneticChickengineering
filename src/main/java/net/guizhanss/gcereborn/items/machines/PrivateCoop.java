@@ -68,10 +68,7 @@ public class PrivateCoop extends AbstractMachine {
         for (int slot : getInputSlots()) {
             ItemStack parent = inv.getItemInSlot(slot);
             if (parent == null) {
-                // since this machine only works with two parents
-                // and this method is used to check for two chickens,
-                // we just return the list here since it won't have
-                // a length of two anyway, saving some time
+                // A missing slot can never yield two parents - bail early.
                 return parents;
             }
             if (ChickenUtils.isPocketChicken(parent) && ChickenUtils.isAdult(parent)) {

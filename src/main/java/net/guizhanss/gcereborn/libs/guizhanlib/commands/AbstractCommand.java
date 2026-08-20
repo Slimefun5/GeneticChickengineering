@@ -27,8 +27,7 @@ import java.util.stream.Collectors;
  * dependency at all ("class file has wrong version 60.0, should be 52.0") - so the addon's own
  * command framework (this + {@link BaseCommand}/{@link SubCommand}/{@link Usage}) is vendored as
  * plain Java-8 source instead of depending on the upstream jar. This also sidesteps any risk of the
- * jar's other classes (e.g. {@code AbstractAddon}) referencing the pre-fork
- * {@code io.github.thebusybiscuit.slimefun4} API.
+ * jar's other classes (e.g. {@code AbstractAddon}) referencing Slimefun's pre-fork API package.
  *
  * @author ybw0014 (original), downleveled for Java 8
  */
