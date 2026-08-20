@@ -19,7 +19,7 @@ GeneticChickengineering lets you breed chickens carrying genetic DNA, engineerin
 
 | GeneticChickengineering | Slimefun5 | Minecraft |
 |---|---|---|
-| UNOFFICIAL | 5.2.0+ | 1.8.x – 26.x |
+| UNOFFICIAL | 5.2.0+ | 1.8.x to 26.x |
 
 Download the latest release and place it in your server's `plugins/` folder. Slimefun5 must be installed first.
 
@@ -63,4 +63,4 @@ You can find Slimefun's community on Discord! Click the badge below to join the 
 
 ## License
 
-This project is open-source and licensed under the MIT License.
+This project is open-source and licensed under the GNU General Public License v3.0.
