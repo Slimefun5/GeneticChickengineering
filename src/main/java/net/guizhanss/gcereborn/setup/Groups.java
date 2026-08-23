@@ -28,4 +28,14 @@ public final class Groups {
             MaterialCompat.safe(XMaterial.BLAST_FURNACE)
         ).item()
     );
+
+    /**
+     * Places this addon's items in the shared guide categories. One call per group is enough:
+     * the guide reads a group's category for every item in it (see ItemTypeClassifier), so items
+     * no longer fall back to Misc.
+     */
+    static {
+        MAIN.setCategory("food");
+        DICTIONARY.setCategory("misc");
+    }
 }
