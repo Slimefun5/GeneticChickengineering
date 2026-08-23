@@ -16,6 +16,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun5.libraries.dough.items.CustomItemStack;
 import io.github.thebusybiscuit.slimefun5.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun5.libraries.keys.NamespacedKey;
 import io.github.thebusybiscuit.slimefun5.utils.SlimefunUtils;
@@ -132,22 +133,35 @@ public final class LocalizationService extends MinecraftLocalization {
         );
     }
 
+    /**
+     * An item-group icon: pure decoration, never a registered item.
+     *
+     * @implNote Deliberately NOT a {@code SlimefunItemStack}: that type always overwrites the display
+     *           name with the raw id, so the category rendered as "GCE_ICON" in the guide.
+     */
     @Nonnull
     @ParametersAreNonnullByDefault
-    public SlimefunItemStack getItemGroupItem(String id, Material material) {
-        return getItemBy(itemGroupKey, id, material);
+    public ItemStack getItemGroupItem(String id, Material material) {
+        return itemGroupIcon(id, new ItemStack(material));
     }
 
     @Nonnull
     @ParametersAreNonnullByDefault
-    public SlimefunItemStack getItemGroupItem(String id, String texture) {
-        return getItemBy(itemGroupKey, id, texture);
+    public ItemStack getItemGroupItem(String id, String texture) {
+        return itemGroupIcon(id, SlimefunUtils.getCustomHead(texture));
     }
 
     @Nonnull
     @ParametersAreNonnullByDefault
-    public SlimefunItemStack getItemGroupItem(String id, ItemStack itemStack) {
-        return getItemBy(itemGroupKey, id, itemStack);
+    public ItemStack getItemGroupItem(String id, ItemStack itemStack) {
+        return itemGroupIcon(id, itemStack);
+    }
+
+    @Nonnull
+    @ParametersAreNonnullByDefault
+    private ItemStack itemGroupIcon(String id, ItemStack base) {
+        List<String> lore = getStringList(itemGroupKey + "." + id + KEY_LORE);
+        return CustomItemStack.create(base, getString(itemGroupKey + "." + id + KEY_NAME), lore.toArray(new String[0]));
     }
 
     @Nonnull
