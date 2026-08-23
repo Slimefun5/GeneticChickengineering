@@ -1,16 +1,14 @@
 package net.guizhanss.gcereborn.utils;
 
-import java.util.Collections;
 
 import javax.annotation.Nullable;
 
-import org.bukkit.ChatColor;
 import org.bukkit.inventory.ItemStack;
 
 import net.guizhanss.gcereborn.items.chicken.ChickenTypes;
 
 import io.github.thebusybiscuit.slimefun5.core.services.localization.ItemTextResolver;
-import io.github.thebusybiscuit.slimefun5.core.services.localization.ItemTranslationService.RenderedDisplay;
+import io.github.thebusybiscuit.slimefun5.core.services.localization.ItemTextBlocks;
 
 /**
  * Resolves the dictionary chicken-icon items ({@code GCE_CHICKEN_ICON_<typing>}) for Slimefun's
@@ -25,7 +23,7 @@ public final class ChickenIconResolver implements ItemTextResolver {
 
     @Override
     @Nullable
-    public RenderedDisplay resolve(@Nullable ItemStack item, String itemId, @Nullable String languageId) {
+    public ItemTextBlocks resolve(@Nullable ItemStack item, String itemId, @Nullable String languageId) {
         if (!itemId.startsWith(PREFIX)) {
             return null;
         }
@@ -54,7 +52,6 @@ public final class ChickenIconResolver implements ItemTextResolver {
             return null;
         }
 
-        String name = ChatColor.translateAlternateColorCodes('&', "&f" + productName + " Chicken");
-        return RenderedDisplay.of(name, Collections.<String>emptyList());
+        return ItemTextBlocks.name("&f" + productName + " Chicken");
     }
 }
