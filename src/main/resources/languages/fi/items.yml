@@ -1,33 +1,53 @@
 CHICKEN_NET:
   type:
   - '&7&oTyökalu'
+  usage:
+  - '&eOikea klikkaus&7 käyttääksesi'
 EXCITATION_CHAMBER:
+  stats:
+  - '&8⇨ &e⚡ &710 J/s'
   type:
   - '&7&oKone'
 EXCITATION_CHAMBER_2:
+  stats:
+  - '&8⇨ &e⚡ &715 J/s'
   type:
   - '&7&oKone'
 EXCITATION_CHAMBER_3:
+  stats:
+  - '&8⇨ &e⚡ &7100 J/s'
   type:
   - '&7&oKone'
 GENETIC_SEQUENCER:
+  stats:
+  - '&8⇨ &e⚡ &76 J/s'
   type:
   - '&7&oKone'
 GROWTH_CHAMBER:
+  stats:
+  - '&8⇨ &e⚡ &720 J/s'
   type:
   - '&7&oKone'
 LAVA_EGG:
   type:
   - '&7&oResurssi'
+  usage:
+  - '&eOikea klikkaus&7 käyttääksesi'
 POCKET_CHICKEN:
   type:
   - '&7&oResurssi'
 PRIVATE_COOP:
+  stats:
+  - '&8⇨ &e⚡ &72 J/s'
   type:
   - '&7&oKone'
 RESTORATION_CHAMBER:
+  stats:
+  - '&8⇨ &e⚡ &74 J/s'
   type:
   - '&7&oKone'
 WATER_EGG:
   type:
   - '&7&oResurssi'
+  usage:
+  - '&eOikea klikkaus&7 käyttääksesi'

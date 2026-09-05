@@ -1,33 +1,53 @@
 CHICKEN_NET:
   type:
   - '&7&oАлатка'
+  usage:
+  - '&eДесен клик&7 за користење'
 EXCITATION_CHAMBER:
+  stats:
+  - '&8⇨ &e⚡ &710 J/s'
   type:
   - '&7&oМашина'
 EXCITATION_CHAMBER_2:
+  stats:
+  - '&8⇨ &e⚡ &715 J/s'
   type:
   - '&7&oМашина'
 EXCITATION_CHAMBER_3:
+  stats:
+  - '&8⇨ &e⚡ &7100 J/s'
   type:
   - '&7&oМашина'
 GENETIC_SEQUENCER:
+  stats:
+  - '&8⇨ &e⚡ &76 J/s'
   type:
   - '&7&oМашина'
 GROWTH_CHAMBER:
+  stats:
+  - '&8⇨ &e⚡ &720 J/s'
   type:
   - '&7&oМашина'
 LAVA_EGG:
   type:
   - '&7&oРесурс'
+  usage:
+  - '&eДесен клик&7 за користење'
 POCKET_CHICKEN:
   type:
   - '&7&oРесурс'
 PRIVATE_COOP:
+  stats:
+  - '&8⇨ &e⚡ &72 J/s'
   type:
   - '&7&oМашина'
 RESTORATION_CHAMBER:
+  stats:
+  - '&8⇨ &e⚡ &74 J/s'
   type:
   - '&7&oМашина'
 WATER_EGG:
   type:
   - '&7&oРесурс'
+  usage:
+  - '&eДесен клик&7 за користење'

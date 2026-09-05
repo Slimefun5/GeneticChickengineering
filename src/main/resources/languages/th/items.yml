@@ -1,33 +1,53 @@
 CHICKEN_NET:
   type:
   - '&7&oเครื่องมือ'
+  usage:
+  - '&eคลิกขวา&7 เพื่อใช้งาน'
 EXCITATION_CHAMBER:
+  stats:
+  - '&8⇨ &e⚡ &710 J/s'
   type:
   - '&7&oเครื่องจักร'
 EXCITATION_CHAMBER_2:
+  stats:
+  - '&8⇨ &e⚡ &715 J/s'
   type:
   - '&7&oเครื่องจักร'
 EXCITATION_CHAMBER_3:
+  stats:
+  - '&8⇨ &e⚡ &7100 J/s'
   type:
   - '&7&oเครื่องจักร'
 GENETIC_SEQUENCER:
+  stats:
+  - '&8⇨ &e⚡ &76 J/s'
   type:
   - '&7&oเครื่องจักร'
 GROWTH_CHAMBER:
+  stats:
+  - '&8⇨ &e⚡ &720 J/s'
   type:
   - '&7&oเครื่องจักร'
 LAVA_EGG:
   type:
   - '&7&oทรัพยากร'
+  usage:
+  - '&eคลิกขวา&7 เพื่อใช้งาน'
 POCKET_CHICKEN:
   type:
   - '&7&oทรัพยากร'
 PRIVATE_COOP:
+  stats:
+  - '&8⇨ &e⚡ &72 J/s'
   type:
   - '&7&oเครื่องจักร'
 RESTORATION_CHAMBER:
+  stats:
+  - '&8⇨ &e⚡ &74 J/s'
   type:
   - '&7&oเครื่องจักร'
 WATER_EGG:
   type:
   - '&7&oทรัพยากร'
+  usage:
+  - '&eคลิกขวา&7 เพื่อใช้งาน'

@@ -1,33 +1,53 @@
 CHICKEN_NET:
   type:
   - '&7&oĮrankis'
+  usage:
+  - '&eSpausk dešinį&7, kad naudotum'
 EXCITATION_CHAMBER:
+  stats:
+  - '&8⇨ &e⚡ &710 J/s'
   type:
   - '&7&oMašina'
 EXCITATION_CHAMBER_2:
+  stats:
+  - '&8⇨ &e⚡ &715 J/s'
   type:
   - '&7&oMašina'
 EXCITATION_CHAMBER_3:
+  stats:
+  - '&8⇨ &e⚡ &7100 J/s'
   type:
   - '&7&oMašina'
 GENETIC_SEQUENCER:
+  stats:
+  - '&8⇨ &e⚡ &76 J/s'
   type:
   - '&7&oMašina'
 GROWTH_CHAMBER:
+  stats:
+  - '&8⇨ &e⚡ &720 J/s'
   type:
   - '&7&oMašina'
 LAVA_EGG:
   type:
   - '&7&oIšteklius'
+  usage:
+  - '&eSpausk dešinį&7, kad naudotum'
 POCKET_CHICKEN:
   type:
   - '&7&oIšteklius'
 PRIVATE_COOP:
+  stats:
+  - '&8⇨ &e⚡ &72 J/s'
   type:
   - '&7&oMašina'
 RESTORATION_CHAMBER:
+  stats:
+  - '&8⇨ &e⚡ &74 J/s'
   type:
   - '&7&oMašina'
 WATER_EGG:
   type:
   - '&7&oIšteklius'
+  usage:
+  - '&eSpausk dešinį&7, kad naudotum'

@@ -1,33 +1,53 @@
 CHICKEN_NET:
   type:
   - '&7&oGereedschap'
+  usage:
+  - '&eRechtermuisklik&7 om te gebruiken'
 EXCITATION_CHAMBER:
+  stats:
+  - '&8⇨ &e⚡ &710 J/s'
   type:
   - '&7&oMachine'
 EXCITATION_CHAMBER_2:
+  stats:
+  - '&8⇨ &e⚡ &715 J/s'
   type:
   - '&7&oMachine'
 EXCITATION_CHAMBER_3:
+  stats:
+  - '&8⇨ &e⚡ &7100 J/s'
   type:
   - '&7&oMachine'
 GENETIC_SEQUENCER:
+  stats:
+  - '&8⇨ &e⚡ &76 J/s'
   type:
   - '&7&oMachine'
 GROWTH_CHAMBER:
+  stats:
+  - '&8⇨ &e⚡ &720 J/s'
   type:
   - '&7&oMachine'
 LAVA_EGG:
   type:
   - '&7&oGrondstof'
+  usage:
+  - '&eRechtermuisklik&7 om te gebruiken'
 POCKET_CHICKEN:
   type:
   - '&7&oGrondstof'
 PRIVATE_COOP:
+  stats:
+  - '&8⇨ &e⚡ &72 J/s'
   type:
   - '&7&oMachine'
 RESTORATION_CHAMBER:
+  stats:
+  - '&8⇨ &e⚡ &74 J/s'
   type:
   - '&7&oMachine'
 WATER_EGG:
   type:
   - '&7&oGrondstof'
+  usage:
+  - '&eRechtermuisklik&7 om te gebruiken'

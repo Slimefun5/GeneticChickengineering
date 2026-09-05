@@ -1,33 +1,53 @@
 CHICKEN_NET:
   type:
   - '&7&oUnealtă'
+  usage:
+  - '&eClick dreapta&7 pentru a folosi'
 EXCITATION_CHAMBER:
+  stats:
+  - '&8⇨ &e⚡ &710 J/s'
   type:
   - '&7&oMașină'
 EXCITATION_CHAMBER_2:
+  stats:
+  - '&8⇨ &e⚡ &715 J/s'
   type:
   - '&7&oMașină'
 EXCITATION_CHAMBER_3:
+  stats:
+  - '&8⇨ &e⚡ &7100 J/s'
   type:
   - '&7&oMașină'
 GENETIC_SEQUENCER:
+  stats:
+  - '&8⇨ &e⚡ &76 J/s'
   type:
   - '&7&oMașină'
 GROWTH_CHAMBER:
+  stats:
+  - '&8⇨ &e⚡ &720 J/s'
   type:
   - '&7&oMașină'
 LAVA_EGG:
   type:
   - '&7&oResursă'
+  usage:
+  - '&eClick dreapta&7 pentru a folosi'
 POCKET_CHICKEN:
   type:
   - '&7&oResursă'
 PRIVATE_COOP:
+  stats:
+  - '&8⇨ &e⚡ &72 J/s'
   type:
   - '&7&oMașină'
 RESTORATION_CHAMBER:
+  stats:
+  - '&8⇨ &e⚡ &74 J/s'
   type:
   - '&7&oMașină'
 WATER_EGG:
   type:
   - '&7&oResursă'
+  usage:
+  - '&eClick dreapta&7 pentru a folosi'

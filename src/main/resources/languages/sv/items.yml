@@ -1,33 +1,53 @@
 CHICKEN_NET:
   type:
   - '&7&oVerktyg'
+  usage:
+  - '&eHögerklicka&7 för att använda'
 EXCITATION_CHAMBER:
+  stats:
+  - '&8⇨ &e⚡ &710 J/s'
   type:
   - '&7&oMaskin'
 EXCITATION_CHAMBER_2:
+  stats:
+  - '&8⇨ &e⚡ &715 J/s'
   type:
   - '&7&oMaskin'
 EXCITATION_CHAMBER_3:
+  stats:
+  - '&8⇨ &e⚡ &7100 J/s'
   type:
   - '&7&oMaskin'
 GENETIC_SEQUENCER:
+  stats:
+  - '&8⇨ &e⚡ &76 J/s'
   type:
   - '&7&oMaskin'
 GROWTH_CHAMBER:
+  stats:
+  - '&8⇨ &e⚡ &720 J/s'
   type:
   - '&7&oMaskin'
 LAVA_EGG:
   type:
   - '&7&oRåmaterial'
+  usage:
+  - '&eHögerklicka&7 för att använda'
 POCKET_CHICKEN:
   type:
   - '&7&oRåmaterial'
 PRIVATE_COOP:
+  stats:
+  - '&8⇨ &e⚡ &72 J/s'
   type:
   - '&7&oMaskin'
 RESTORATION_CHAMBER:
+  stats:
+  - '&8⇨ &e⚡ &74 J/s'
   type:
   - '&7&oMaskin'
 WATER_EGG:
   type:
   - '&7&oRåmaterial'
+  usage:
+  - '&eHögerklicka&7 för att använda'

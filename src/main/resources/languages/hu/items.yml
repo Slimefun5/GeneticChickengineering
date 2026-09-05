@@ -1,33 +1,53 @@
 CHICKEN_NET:
   type:
   - '&7&oEszköz'
+  usage:
+  - '&eJobb kattintás&7 a használathoz'
 EXCITATION_CHAMBER:
+  stats:
+  - '&8⇨ &e⚡ &710 J/s'
   type:
   - '&7&oGép'
 EXCITATION_CHAMBER_2:
+  stats:
+  - '&8⇨ &e⚡ &715 J/s'
   type:
   - '&7&oGép'
 EXCITATION_CHAMBER_3:
+  stats:
+  - '&8⇨ &e⚡ &7100 J/s'
   type:
   - '&7&oGép'
 GENETIC_SEQUENCER:
+  stats:
+  - '&8⇨ &e⚡ &76 J/s'
   type:
   - '&7&oGép'
 GROWTH_CHAMBER:
+  stats:
+  - '&8⇨ &e⚡ &720 J/s'
   type:
   - '&7&oGép'
 LAVA_EGG:
   type:
   - '&7&oNyersanyag'
+  usage:
+  - '&eJobb kattintás&7 a használathoz'
 POCKET_CHICKEN:
   type:
   - '&7&oNyersanyag'
 PRIVATE_COOP:
+  stats:
+  - '&8⇨ &e⚡ &72 J/s'
   type:
   - '&7&oGép'
 RESTORATION_CHAMBER:
+  stats:
+  - '&8⇨ &e⚡ &74 J/s'
   type:
   - '&7&oGép'
 WATER_EGG:
   type:
   - '&7&oNyersanyag'
+  usage:
+  - '&eJobb kattintás&7 a használathoz'

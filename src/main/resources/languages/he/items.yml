@@ -1,33 +1,53 @@
 CHICKEN_NET:
   type:
   - '&7&oכלי'
+  usage:
+  - '&eקליק ימני&7 כדי להשתמש'
 EXCITATION_CHAMBER:
+  stats:
+  - '&8⇨ &e⚡ &710 J/שנייה'
   type:
   - '&7&oמכונה'
 EXCITATION_CHAMBER_2:
+  stats:
+  - '&8⇨ &e⚡ &715 J/שנייה'
   type:
   - '&7&oמכונה'
 EXCITATION_CHAMBER_3:
+  stats:
+  - '&8⇨ &e⚡ &7100 J/שנייה'
   type:
   - '&7&oמכונה'
 GENETIC_SEQUENCER:
+  stats:
+  - '&8⇨ &e⚡ &76 J/שנייה'
   type:
   - '&7&oמכונה'
 GROWTH_CHAMBER:
+  stats:
+  - '&8⇨ &e⚡ &720 J/שנייה'
   type:
   - '&7&oמכונה'
 LAVA_EGG:
   type:
   - '&7&oמשאב'
+  usage:
+  - '&eקליק ימני&7 כדי להשתמש'
 POCKET_CHICKEN:
   type:
   - '&7&oמשאב'
 PRIVATE_COOP:
+  stats:
+  - '&8⇨ &e⚡ &72 J/שנייה'
   type:
   - '&7&oמכונה'
 RESTORATION_CHAMBER:
+  stats:
+  - '&8⇨ &e⚡ &74 J/שנייה'
   type:
   - '&7&oמכונה'
 WATER_EGG:
   type:
   - '&7&oמשאב'
+  usage:
+  - '&eקליק ימני&7 כדי להשתמש'

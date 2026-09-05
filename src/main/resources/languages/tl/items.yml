@@ -1,33 +1,53 @@
 CHICKEN_NET:
   type:
   - '&7&oKasangkapan'
+  usage:
+  - '&eKanang Klik&7 para gamitin'
 EXCITATION_CHAMBER:
+  stats:
+  - '&8⇨ &e⚡ &710 J/s'
   type:
   - '&7&oMakina'
 EXCITATION_CHAMBER_2:
+  stats:
+  - '&8⇨ &e⚡ &715 J/s'
   type:
   - '&7&oMakina'
 EXCITATION_CHAMBER_3:
+  stats:
+  - '&8⇨ &e⚡ &7100 J/s'
   type:
   - '&7&oMakina'
 GENETIC_SEQUENCER:
+  stats:
+  - '&8⇨ &e⚡ &76 J/s'
   type:
   - '&7&oMakina'
 GROWTH_CHAMBER:
+  stats:
+  - '&8⇨ &e⚡ &720 J/s'
   type:
   - '&7&oMakina'
 LAVA_EGG:
   type:
   - '&7&oRekurso'
+  usage:
+  - '&eKanang Klik&7 para gamitin'
 POCKET_CHICKEN:
   type:
   - '&7&oRekurso'
 PRIVATE_COOP:
+  stats:
+  - '&8⇨ &e⚡ &72 J/s'
   type:
   - '&7&oMakina'
 RESTORATION_CHAMBER:
+  stats:
+  - '&8⇨ &e⚡ &74 J/s'
   type:
   - '&7&oMakina'
 WATER_EGG:
   type:
   - '&7&oRekurso'
+  usage:
+  - '&eKanang Klik&7 para gamitin'

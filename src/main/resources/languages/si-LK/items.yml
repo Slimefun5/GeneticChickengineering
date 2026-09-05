@@ -1,33 +1,53 @@
 CHICKEN_NET:
   type:
   - '&7&oමෙවලම'
+  usage:
+  - '&eදකුණු ක්ලික්&7 කර භාවිත කරන්න'
 EXCITATION_CHAMBER:
+  stats:
+  - '&8⇨ &e⚡ &710 J/s'
   type:
   - '&7&oයන්ත්‍රය'
 EXCITATION_CHAMBER_2:
+  stats:
+  - '&8⇨ &e⚡ &715 J/s'
   type:
   - '&7&oයන්ත්‍රය'
 EXCITATION_CHAMBER_3:
+  stats:
+  - '&8⇨ &e⚡ &7100 J/s'
   type:
   - '&7&oයන්ත්‍රය'
 GENETIC_SEQUENCER:
+  stats:
+  - '&8⇨ &e⚡ &76 J/s'
   type:
   - '&7&oයන්ත්‍රය'
 GROWTH_CHAMBER:
+  stats:
+  - '&8⇨ &e⚡ &720 J/s'
   type:
   - '&7&oයන්ත්‍රය'
 LAVA_EGG:
   type:
   - '&7&oසම්පත'
+  usage:
+  - '&eදකුණු ක්ලික්&7 කර භාවිත කරන්න'
 POCKET_CHICKEN:
   type:
   - '&7&oසම්පත'
 PRIVATE_COOP:
+  stats:
+  - '&8⇨ &e⚡ &72 J/s'
   type:
   - '&7&oයන්ත්‍රය'
 RESTORATION_CHAMBER:
+  stats:
+  - '&8⇨ &e⚡ &74 J/s'
   type:
   - '&7&oයන්ත්‍රය'
 WATER_EGG:
   type:
   - '&7&oසම්පත'
+  usage:
+  - '&eදකුණු ක්ලික්&7 කර භාවිත කරන්න'
