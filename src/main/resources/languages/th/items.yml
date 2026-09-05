@@ -1,0 +1,33 @@
+CHICKEN_NET:
+  type:
+  - '&7&oเครื่องมือ'
+EXCITATION_CHAMBER:
+  type:
+  - '&7&oเครื่องจักร'
+EXCITATION_CHAMBER_2:
+  type:
+  - '&7&oเครื่องจักร'
+EXCITATION_CHAMBER_3:
+  type:
+  - '&7&oเครื่องจักร'
+GENETIC_SEQUENCER:
+  type:
+  - '&7&oเครื่องจักร'
+GROWTH_CHAMBER:
+  type:
+  - '&7&oเครื่องจักร'
+LAVA_EGG:
+  type:
+  - '&7&oทรัพยากร'
+POCKET_CHICKEN:
+  type:
+  - '&7&oทรัพยากร'
+PRIVATE_COOP:
+  type:
+  - '&7&oเครื่องจักร'
+RESTORATION_CHAMBER:
+  type:
+  - '&7&oเครื่องจักร'
+WATER_EGG:
+  type:
+  - '&7&oทรัพยากร'
