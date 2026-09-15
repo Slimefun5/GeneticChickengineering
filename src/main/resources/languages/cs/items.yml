@@ -1,52 +1,87 @@
 CHICKEN_NET:
+  description:
+  - '&7Udělá z kuřete přenosný předmět.'
+  name: '&aSíť na kuřata'
   type:
   - '&7&oNástroj'
   usage:
   - '&ePravé tlačítko&7 pro použití'
 EXCITATION_CHAMBER:
+  description:
+  - '&7Umožní kuřatům produkovat suroviny.'
+  name: '&eExcitační komora'
   stats:
   - '&8⇨ &e⚡ &710 J/s'
   type:
   - '&7&oStroj'
 EXCITATION_CHAMBER_2:
+  description:
+  - '&7Umožní kuřatům produkovat suroviny rychleji.'
+  name: '&eZesílená excitační komora'
   stats:
   - '&8⇨ &e⚡ &715 J/s'
   type:
   - '&7&oStroj'
 EXCITATION_CHAMBER_3:
+  description:
+  - '&7Umožní kuřatům produkovat suroviny mnohem rychleji.'
+  name: '&eDokonalá excitační komora'
   stats:
   - '&8⇨ &e⚡ &7100 J/s'
   type:
   - '&7&oStroj'
 GENETIC_SEQUENCER:
+  description:
+  - '&7Určí genotyp kuřete.'
+  name: '&eGenetický sekvenátor'
   stats:
   - '&8⇨ &e⚡ &76 J/s'
   type:
   - '&7&oStroj'
 GROWTH_CHAMBER:
+  description:
+  - '&7Odchová kuřata pomocí pšeničných semen.'
+  name: '&eRůstová komora'
   stats:
   - '&8⇨ &e⚡ &720 J/s'
   type:
   - '&7&oStroj'
 LAVA_EGG:
+  description:
+  - '&7Obsahuje lávu.'
+  name: '&cLávové vejce'
   type:
   - '&7&oSurovina'
   usage:
   - '&ePravé tlačítko&7 pro použití'
 POCKET_CHICKEN:
+  description:
+  - '&7Kuře upravené k přenášení.'
+  name: '&bKapesní kuře'
   type:
   - '&7&oSurovina'
+  usage:
+  - '&7Pravým klikem na blok kuře vypustíš.'
 PRIVATE_COOP:
+  description:
+  - '&7Dokáže ukládat kuřata.'
+  name: '&eSoukromý kurník'
   stats:
   - '&8⇨ &e⚡ &72 J/s'
   type:
   - '&7&oStroj'
 RESTORATION_CHAMBER:
+  description:
+  - '&7Dokáže léčit kuřata.'
+  name: '&eObnovovací komora'
   stats:
   - '&8⇨ &e⚡ &74 J/s'
   type:
   - '&7&oStroj'
 WATER_EGG:
+  description:
+  - '&7Obsahuje vodu.'
+  name: '&9Vodní vejce'
   type:
   - '&7&oSurovina'
   usage:
