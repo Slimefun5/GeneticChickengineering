@@ -1,52 +1,87 @@
 CHICKEN_NET:
+  description:
+  - '&7Робить курку портативною.'
+  name: '&aСітка для курей'
   type:
   - '&7&oІнструмент'
   usage:
   - '&eПКМ&7, щоб використати'
 EXCITATION_CHAMBER:
+  description:
+  - '&7Дозволяє курям виробляти ресурси.'
+  name: '&eКамера збудження'
   stats:
   - '&8⇨ &e⚡ &710 Дж/с'
   type:
   - '&7&oМашина'
 EXCITATION_CHAMBER_2:
+  description:
+  - '&7Дозволяє курям виробляти ресурси швидше.'
+  name: '&eПосилена камера збудження'
   stats:
   - '&8⇨ &e⚡ &715 Дж/с'
   type:
   - '&7&oМашина'
 EXCITATION_CHAMBER_3:
+  description:
+  - '&7Дозволяє курям виробляти ресурси набагато швидше.'
+  name: '&eНайвища камера збудження'
   stats:
   - '&8⇨ &e⚡ &7100 Дж/с'
   type:
   - '&7&oМашина'
 GENETIC_SEQUENCER:
+  description:
+  - '&7Визначає генотип курки.'
+  name: '&eГенетичний секвенатор'
   stats:
   - '&8⇨ &e⚡ &76 Дж/с'
   type:
   - '&7&oМашина'
 GROWTH_CHAMBER:
+  description:
+  - '&7Може вирощувати курчат за допомогою пшеничного насіння.'
+  name: '&eКамера росту'
   stats:
   - '&8⇨ &e⚡ &720 Дж/с'
   type:
   - '&7&oМашина'
 LAVA_EGG:
+  description:
+  - '&7Містить лаву.'
+  name: '&cЯйце з лавою'
   type:
   - '&7&oРесурс'
   usage:
   - '&eПКМ&7, щоб використати'
 POCKET_CHICKEN:
+  description:
+  - '&7Курка, зроблена портативною.'
+  name: '&bКишенькова курка'
   type:
   - '&7&oРесурс'
+  usage:
+  - '&7Правий клік по блоку, щоб випустити курку.'
 PRIVATE_COOP:
+  description:
+  - '&7Може зберігати курей.'
+  name: '&eПриватний курник'
   stats:
   - '&8⇨ &e⚡ &72 Дж/с'
   type:
   - '&7&oМашина'
 RESTORATION_CHAMBER:
+  description:
+  - '&7Може лікувати курей.'
+  name: '&eКамера відновлення'
   stats:
   - '&8⇨ &e⚡ &74 Дж/с'
   type:
   - '&7&oМашина'
 WATER_EGG:
+  description:
+  - '&7Містить воду.'
+  name: '&9Яйце з водою'
   type:
   - '&7&oРесурс'
   usage:
