@@ -1,52 +1,87 @@
 CHICKEN_NET:
+  description:
+  - '&7Paverčia vištą nešiojama.'
+  name: '&aVištų tinklas'
   type:
   - '&7&oĮrankis'
   usage:
   - '&eSpausk dešinį&7, kad naudotum'
 EXCITATION_CHAMBER:
+  description:
+  - '&7Leidžia vištoms gaminti išteklius.'
+  name: '&eSužadinimo kamera'
   stats:
   - '&8⇨ &e⚡ &710 J/s'
   type:
   - '&7&oMašina'
 EXCITATION_CHAMBER_2:
+  description:
+  - '&7Leidžia vištoms gaminti išteklius greičiau.'
+  name: '&ePagreitinta sužadinimo kamera'
   stats:
   - '&8⇨ &e⚡ &715 J/s'
   type:
   - '&7&oMašina'
 EXCITATION_CHAMBER_3:
+  description:
+  - '&7Leidžia vištoms gaminti išteklius daug greičiau.'
+  name: '&eGalutinė sužadinimo kamera'
   stats:
   - '&8⇨ &e⚡ &7100 J/s'
   type:
   - '&7&oMašina'
 GENETIC_SEQUENCER:
+  description:
+  - '&7Nustato vištos genotipą.'
+  name: '&eGenetinis sekvenatorius'
   stats:
   - '&8⇨ &e⚡ &76 J/s'
   type:
   - '&7&oMašina'
 GROWTH_CHAMBER:
+  description:
+  - '&7Gali auginti viščiukus kviečių sėklomis.'
+  name: '&eAugimo kamera'
   stats:
   - '&8⇨ &e⚡ &720 J/s'
   type:
   - '&7&oMašina'
 LAVA_EGG:
+  description:
+  - '&7Turi lavos.'
+  name: '&cLavos kiaušinis'
   type:
   - '&7&oIšteklius'
   usage:
   - '&eSpausk dešinį&7, kad naudotum'
 POCKET_CHICKEN:
+  description:
+  - '&7Višta, paversta nešiojama.'
+  name: '&bKišeninė višta'
   type:
   - '&7&oIšteklius'
+  usage:
+  - '&7Spustelėkite dešiniu bloką, kad paleistumėte vištą.'
 PRIVATE_COOP:
+  description:
+  - '&7Gali saugoti vištas.'
+  name: '&ePrivati vištidė'
   stats:
   - '&8⇨ &e⚡ &72 J/s'
   type:
   - '&7&oMašina'
 RESTORATION_CHAMBER:
+  description:
+  - '&7Gali gydyti vištas.'
+  name: '&eAtstatymo kamera'
   stats:
   - '&8⇨ &e⚡ &74 J/s'
   type:
   - '&7&oMašina'
 WATER_EGG:
+  description:
+  - '&7Turi vandens.'
+  name: '&9Vandens kiaušinis'
   type:
   - '&7&oIšteklius'
   usage:
