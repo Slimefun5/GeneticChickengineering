@@ -1,52 +1,87 @@
 CHICKEN_NET:
+  description:
+  - '&7Čini kokoš prijenosnom.'
+  name: '&aMreža za kokoši'
   type:
   - '&7&oAlat'
   usage:
   - '&eDesni klik&7 za korištenje'
 EXCITATION_CHAMBER:
+  description:
+  - '&7Omogućuje kokošima da proizvode resurse.'
+  name: '&eKomora za pobuđivanje'
   stats:
   - '&8⇨ &e⚡ &710 J/s'
   type:
   - '&7&oStroj'
 EXCITATION_CHAMBER_2:
+  description:
+  - '&7Omogućuje kokošima da brže proizvode resurse.'
+  name: '&ePojačana komora za pobuđivanje'
   stats:
   - '&8⇨ &e⚡ &715 J/s'
   type:
   - '&7&oStroj'
 EXCITATION_CHAMBER_3:
+  description:
+  - '&7Omogućuje kokošima da mnogo brže proizvode resurse.'
+  name: '&eKonačna komora za pobuđivanje'
   stats:
   - '&8⇨ &e⚡ &7100 J/s'
   type:
   - '&7&oStroj'
 GENETIC_SEQUENCER:
+  description:
+  - '&7Utvrđuje genotip kokoši.'
+  name: '&eGenetski sekvencer'
   stats:
   - '&8⇨ &e⚡ &76 J/s'
   type:
   - '&7&oStroj'
 GROWTH_CHAMBER:
+  description:
+  - '&7Može odgajati piliće sjemenjem pšenice.'
+  name: '&eKomora za rast'
   stats:
   - '&8⇨ &e⚡ &720 J/s'
   type:
   - '&7&oStroj'
 LAVA_EGG:
+  description:
+  - '&7Sadrži lavu.'
+  name: '&cJaje lave'
   type:
   - '&7&oResurs'
   usage:
   - '&eDesni klik&7 za korištenje'
 POCKET_CHICKEN:
+  description:
+  - '&7Kokoš pretvorena u prijenosnu.'
+  name: '&bDžepna kokoš'
   type:
   - '&7&oResurs'
+  usage:
+  - '&7Desni klik na blok za oslobađanje kokoši.'
 PRIVATE_COOP:
+  description:
+  - '&7Može pohraniti kokoši.'
+  name: '&ePrivatni kokošinjac'
   stats:
   - '&8⇨ &e⚡ &72 J/s'
   type:
   - '&7&oStroj'
 RESTORATION_CHAMBER:
+  description:
+  - '&7Može liječiti kokoši.'
+  name: '&eKomora za oporavak'
   stats:
   - '&8⇨ &e⚡ &74 J/s'
   type:
   - '&7&oStroj'
 WATER_EGG:
+  description:
+  - '&7Sadrži vodu.'
+  name: '&9Vodeno jaje'
   type:
   - '&7&oResurs'
   usage:
