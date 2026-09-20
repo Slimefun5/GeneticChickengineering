@@ -1,52 +1,87 @@
 CHICKEN_NET:
+  description:
+  - '&7Padara vistu pārnēsājamu.'
+  name: '&aVistu tīkliņš'
   type:
   - '&7&oRīks'
   usage:
   - '&eLabais klikšķis&7, lai izmantotu'
 EXCITATION_CHAMBER:
+  description:
+  - '&7Ļauj vistām ražot resursus.'
+  name: '&eIerosmes kamera'
   stats:
   - '&8⇨ &e⚡ &710 J/s'
   type:
   - '&7&oMašīna'
 EXCITATION_CHAMBER_2:
+  description:
+  - '&7Ļauj vistām ražot resursus ātrāk.'
+  name: '&ePastiprinātā ierosmes kamera'
   stats:
   - '&8⇨ &e⚡ &715 J/s'
   type:
   - '&7&oMašīna'
 EXCITATION_CHAMBER_3:
+  description:
+  - '&7Ļauj vistām ražot resursus daudz ātrāk.'
+  name: '&eGalējā ierosmes kamera'
   stats:
   - '&8⇨ &e⚡ &7100 J/s'
   type:
   - '&7&oMašīna'
 GENETIC_SEQUENCER:
+  description:
+  - '&7Nosaka vistas genotipu.'
+  name: '&eĢenētiskais sekvenators'
   stats:
   - '&8⇨ &e⚡ &76 J/s'
   type:
   - '&7&oMašīna'
 GROWTH_CHAMBER:
+  description:
+  - '&7Var izaudzēt cālēnus ar kviešu sēklām.'
+  name: '&eAugšanas kamera'
   stats:
   - '&8⇨ &e⚡ &720 J/s'
   type:
   - '&7&oMašīna'
 LAVA_EGG:
+  description:
+  - '&7Satur lavu.'
+  name: '&cLavas ola'
   type:
   - '&7&oResurss'
   usage:
   - '&eLabais klikšķis&7, lai izmantotu'
 POCKET_CHICKEN:
+  description:
+  - '&7Vista, padarīta pārnēsājama.'
+  name: '&bKabatas vista'
   type:
   - '&7&oResurss'
+  usage:
+  - '&7Labais klikšķis uz bloka, lai atbrīvotu vistu.'
 PRIVATE_COOP:
+  description:
+  - '&7Var uzglabāt vistas.'
+  name: '&ePrivātā vistu kūts'
   stats:
   - '&8⇨ &e⚡ &72 J/s'
   type:
   - '&7&oMašīna'
 RESTORATION_CHAMBER:
+  description:
+  - '&7Var dziedēt vistas.'
+  name: '&eAtjaunošanas kamera'
   stats:
   - '&8⇨ &e⚡ &74 J/s'
   type:
   - '&7&oMašīna'
 WATER_EGG:
+  description:
+  - '&7Satur ūdeni.'
+  name: '&9Ūdens ola'
   type:
   - '&7&oResurss'
   usage:
