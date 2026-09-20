@@ -1,52 +1,87 @@
 CHICKEN_NET:
+  description:
+  - '&7Чини кокошку преносивом.'
+  name: '&aМрежа за кокошке'
   type:
   - '&7&oАлат'
   usage:
   - '&eДесни клик&7 за коришћење'
 EXCITATION_CHAMBER:
+  description:
+  - '&7Омогућава кокошкама да производе ресурсе.'
+  name: '&eКомора за побуђивање'
   stats:
   - '&8⇨ &e⚡ &710 J/s'
   type:
   - '&7&oМашина'
 EXCITATION_CHAMBER_2:
+  description:
+  - '&7Омогућава кокошкама да брже производе ресурсе.'
+  name: '&eПојачана комора за побуђивање'
   stats:
   - '&8⇨ &e⚡ &715 J/s'
   type:
   - '&7&oМашина'
 EXCITATION_CHAMBER_3:
+  description:
+  - '&7Омогућава кокошкама да много брже производе ресурсе.'
+  name: '&eСавршена комора за побуђивање'
   stats:
   - '&8⇨ &e⚡ &7100 J/s'
   type:
   - '&7&oМашина'
 GENETIC_SEQUENCER:
+  description:
+  - '&7Одређује генотип кокошке.'
+  name: '&eГенетски секвенцер'
   stats:
   - '&8⇨ &e⚡ &76 J/s'
   type:
   - '&7&oМашина'
 GROWTH_CHAMBER:
+  description:
+  - '&7Може да одгаја пилиће помоћу семена пшенице.'
+  name: '&eКомора за раст'
   stats:
   - '&8⇨ &e⚡ &720 J/s'
   type:
   - '&7&oМашина'
 LAVA_EGG:
+  description:
+  - '&7Садржи лаву.'
+  name: '&cЈаје са лавом'
   type:
   - '&7&oРесурс'
   usage:
   - '&eДесни клик&7 за коришћење'
 POCKET_CHICKEN:
+  description:
+  - '&7Кокошка, учињена преносивом.'
+  name: '&bЏепна кокошка'
   type:
   - '&7&oРесурс'
+  usage:
+  - '&7Десни клик на блок да пустиш кокошку.'
 PRIVATE_COOP:
+  description:
+  - '&7Може да чува кокошке.'
+  name: '&eПриватни кокошињац'
   stats:
   - '&8⇨ &e⚡ &72 J/s'
   type:
   - '&7&oМашина'
 RESTORATION_CHAMBER:
+  description:
+  - '&7Може да лечи кокошке.'
+  name: '&eКомора за опоравак'
   stats:
   - '&8⇨ &e⚡ &74 J/s'
   type:
   - '&7&oМашина'
 WATER_EGG:
+  description:
+  - '&7Садржи воду.'
+  name: '&9Јаје са водом'
   type:
   - '&7&oРесурс'
   usage:
