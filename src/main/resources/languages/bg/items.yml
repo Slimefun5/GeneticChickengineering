@@ -1,52 +1,87 @@
 CHICKEN_NET:
+  description:
+  - '&7Прави пилето преносимо.'
+  name: '&aМрежа за пилета'
   type:
   - '&7&oИнструмент'
   usage:
   - '&eДесен Клик&7 за употреба'
 EXCITATION_CHAMBER:
+  description:
+  - '&7Позволява на пилетата да произвеждат ресурси.'
+  name: '&eКамера за възбуждане'
   stats:
   - '&8⇨ &e⚡ &710 J/s'
   type:
   - '&7&oМашина'
 EXCITATION_CHAMBER_2:
+  description:
+  - '&7Позволява на пилетата да произвеждат ресурси по-бързо.'
+  name: '&eУсилена камера за възбуждане'
   stats:
   - '&8⇨ &e⚡ &715 J/s'
   type:
   - '&7&oМашина'
 EXCITATION_CHAMBER_3:
+  description:
+  - '&7Позволява на пилетата да произвеждат ресурси много по-бързо.'
+  name: '&eКрайна камера за възбуждане'
   stats:
   - '&8⇨ &e⚡ &7100 J/s'
   type:
   - '&7&oМашина'
 GENETIC_SEQUENCER:
+  description:
+  - '&7Определя генотипа на пилето.'
+  name: '&eГенетичен секвенатор'
   stats:
   - '&8⇨ &e⚡ &76 J/s'
   type:
   - '&7&oМашина'
 GROWTH_CHAMBER:
+  description:
+  - '&7Може да отглежда пиленца с пшенични семена.'
+  name: '&eКамера за растеж'
   stats:
   - '&8⇨ &e⚡ &720 J/s'
   type:
   - '&7&oМашина'
 LAVA_EGG:
+  description:
+  - '&7Съдържа лава.'
+  name: '&cЛавово яйце'
   type:
   - '&7&oРесурс'
   usage:
   - '&eДесен Клик&7 за употреба'
 POCKET_CHICKEN:
+  description:
+  - '&7Пиле, направено преносимо.'
+  name: '&bДжобно пиле'
   type:
   - '&7&oРесурс'
+  usage:
+  - '&7Десен клик върху блок, за да пуснеш пилето.'
 PRIVATE_COOP:
+  description:
+  - '&7Може да съхранява пилета.'
+  name: '&eЧастен курник'
   stats:
   - '&8⇨ &e⚡ &72 J/s'
   type:
   - '&7&oМашина'
 RESTORATION_CHAMBER:
+  description:
+  - '&7Може да лекува пилета.'
+  name: '&eКамера за възстановяване'
   stats:
   - '&8⇨ &e⚡ &74 J/s'
   type:
   - '&7&oМашина'
 WATER_EGG:
+  description:
+  - '&7Съдържа вода.'
+  name: '&9Водно яйце'
   type:
   - '&7&oРесурс'
   usage:
