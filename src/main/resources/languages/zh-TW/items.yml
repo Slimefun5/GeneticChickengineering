@@ -1,52 +1,87 @@
 CHICKEN_NET:
+  description:
+  - '&7讓雞變得可以攜帶。'
+  name: '&a捕雞網'
   type:
   - '&7&o工具'
   usage:
   - '&e右鍵點擊&7使用'
 EXCITATION_CHAMBER:
+  description:
+  - '&7讓雞能夠生產資源。'
+  name: '&e激發室'
   stats:
   - '&8⇨ &e⚡ &710 J/秒'
   type:
   - '&7&o機器'
 EXCITATION_CHAMBER_2:
+  description:
+  - '&7讓雞能夠更快生產資源。'
+  name: '&e強化激發室'
   stats:
   - '&8⇨ &e⚡ &715 J/秒'
   type:
   - '&7&o機器'
 EXCITATION_CHAMBER_3:
+  description:
+  - '&7讓雞生產資源的速度快上許多。'
+  name: '&e終極激發室'
   stats:
   - '&8⇨ &e⚡ &7100 J/秒'
   type:
   - '&7&o機器'
 GENETIC_SEQUENCER:
+  description:
+  - '&7判定一隻雞的基因型。'
+  name: '&e基因定序儀'
   stats:
   - '&8⇨ &e⚡ &76 J/秒'
   type:
   - '&7&o機器'
 GROWTH_CHAMBER:
+  description:
+  - '&7可以用小麥種子把小雞養大。'
+  name: '&e生長室'
   stats:
   - '&8⇨ &e⚡ &720 J/秒'
   type:
   - '&7&o機器'
 LAVA_EGG:
+  description:
+  - '&7內含熔岩。'
+  name: '&c熔岩蛋'
   type:
   - '&7&o資源'
   usage:
   - '&e右鍵點擊&7使用'
 POCKET_CHICKEN:
+  description:
+  - '&7一隻可以隨身攜帶的雞。'
+  name: '&b口袋雞'
   type:
   - '&7&o資源'
+  usage:
+  - '&7右鍵點擊方塊即可放出這隻雞。'
 PRIVATE_COOP:
+  description:
+  - '&7可以存放雞。'
+  name: '&e私人雞舍'
   stats:
   - '&8⇨ &e⚡ &72 J/秒'
   type:
   - '&7&o機器'
 RESTORATION_CHAMBER:
+  description:
+  - '&7可以治療雞。'
+  name: '&e復原室'
   stats:
   - '&8⇨ &e⚡ &74 J/秒'
   type:
   - '&7&o機器'
 WATER_EGG:
+  description:
+  - '&7內含水。'
+  name: '&9水蛋'
   type:
   - '&7&o資源'
   usage:
