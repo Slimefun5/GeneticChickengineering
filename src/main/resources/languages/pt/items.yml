@@ -1,52 +1,87 @@
 CHICKEN_NET:
+  description:
+  - '&7Torna um frango portátil.'
+  name: '&aRede de Apanhar Frangos'
   type:
   - '&7&oFerramenta'
   usage:
   - '&eClique Direito&7 para usar'
 EXCITATION_CHAMBER:
+  description:
+  - '&7Permite que os frangos produzam recursos.'
+  name: '&eCâmara de Excitação'
   stats:
   - '&8⇨ &e⚡ &710 J/s'
   type:
   - '&7&oMáquina'
 EXCITATION_CHAMBER_2:
+  description:
+  - '&7Permite que os frangos produzam recursos mais depressa.'
+  name: '&eCâmara de Excitação Potenciada'
   stats:
   - '&8⇨ &e⚡ &715 J/s'
   type:
   - '&7&oMáquina'
 EXCITATION_CHAMBER_3:
+  description:
+  - '&7Permite que os frangos produzam recursos muito mais depressa.'
+  name: '&eCâmara de Excitação Derradeira'
   stats:
   - '&8⇨ &e⚡ &7100 J/s'
   type:
   - '&7&oMáquina'
 GENETIC_SEQUENCER:
+  description:
+  - '&7Determina o genótipo de um frango.'
+  name: '&eSequenciador Genético'
   stats:
   - '&8⇨ &e⚡ &76 J/s'
   type:
   - '&7&oMáquina'
 GROWTH_CHAMBER:
+  description:
+  - '&7Pode criar pintainhos com sementes de trigo.'
+  name: '&eCâmara de Crescimento'
   stats:
   - '&8⇨ &e⚡ &720 J/s'
   type:
   - '&7&oMáquina'
 LAVA_EGG:
+  description:
+  - '&7Contém lava.'
+  name: '&cOvo de Lava'
   type:
   - '&7&oRecurso'
   usage:
   - '&eClique Direito&7 para usar'
 POCKET_CHICKEN:
+  description:
+  - '&7Um frango, tornado portátil.'
+  name: '&bFrango de Bolso'
   type:
   - '&7&oRecurso'
+  usage:
+  - '&7Clique Direito num bloco para libertar o frango.'
 PRIVATE_COOP:
+  description:
+  - '&7Pode armazenar frangos.'
+  name: '&eCapoeira Privada'
   stats:
   - '&8⇨ &e⚡ &72 J/s'
   type:
   - '&7&oMáquina'
 RESTORATION_CHAMBER:
+  description:
+  - '&7Pode curar frangos.'
+  name: '&eCâmara de Restauro'
   stats:
   - '&8⇨ &e⚡ &74 J/s'
   type:
   - '&7&oMáquina'
 WATER_EGG:
+  description:
+  - '&7Contém água.'
+  name: '&9Ovo de Água'
   type:
   - '&7&oRecurso'
   usage:
