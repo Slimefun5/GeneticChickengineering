@@ -1,52 +1,87 @@
 CHICKEN_NET:
+  description:
+  - '&7Gør en kylling bærbar.'
+  name: '&aKyllingenet'
   type:
   - '&7&oVærktøj'
   usage:
   - '&eHøjreklik&7 for at bruge'
 EXCITATION_CHAMBER:
+  description:
+  - '&7Gør kyllinger i stand til at producere ressourcer.'
+  name: '&eStimuleringskammer'
   stats:
   - '&8⇨ &e⚡ &710 J/s'
   type:
   - '&7&oMaskine'
 EXCITATION_CHAMBER_2:
+  description:
+  - '&7Gør kyllinger i stand til at producere ressourcer hurtigere.'
+  name: '&eForstærket stimuleringskammer'
   stats:
   - '&8⇨ &e⚡ &715 J/s'
   type:
   - '&7&oMaskine'
 EXCITATION_CHAMBER_3:
+  description:
+  - '&7Gør kyllinger i stand til at producere ressourcer meget hurtigere.'
+  name: '&eUltimativt stimuleringskammer'
   stats:
   - '&8⇨ &e⚡ &7100 J/s'
   type:
   - '&7&oMaskine'
 GENETIC_SEQUENCER:
+  description:
+  - '&7Bestemmer en kyllings genotype.'
+  name: '&eGenetisk sekventerer'
   stats:
   - '&8⇨ &e⚡ &76 J/s'
   type:
   - '&7&oMaskine'
 GROWTH_CHAMBER:
+  description:
+  - '&7Kan opfostre kyllingeunger med hvedefrø.'
+  name: '&eVækstkammer'
   stats:
   - '&8⇨ &e⚡ &720 J/s'
   type:
   - '&7&oMaskine'
 LAVA_EGG:
+  description:
+  - '&7Indeholder lava.'
+  name: '&cLavaæg'
   type:
   - '&7&oRessource'
   usage:
   - '&eHøjreklik&7 for at bruge'
 POCKET_CHICKEN:
+  description:
+  - '&7En kylling, gjort bærbar.'
+  name: '&bLommekylling'
   type:
   - '&7&oRessource'
+  usage:
+  - '&7Højreklik på en blok for at slippe kyllingen fri.'
 PRIVATE_COOP:
+  description:
+  - '&7Kan opbevare kyllinger.'
+  name: '&ePrivat hønsehus'
   stats:
   - '&8⇨ &e⚡ &72 J/s'
   type:
   - '&7&oMaskine'
 RESTORATION_CHAMBER:
+  description:
+  - '&7Kan helbrede kyllinger.'
+  name: '&eGenopretningskammer'
   stats:
   - '&8⇨ &e⚡ &74 J/s'
   type:
   - '&7&oMaskine'
 WATER_EGG:
+  description:
+  - '&7Indeholder vand.'
+  name: '&9Vandæg'
   type:
   - '&7&oRessource'
   usage:
