@@ -1,52 +1,87 @@
 CHICKEN_NET:
+  description:
+  - '&7Gör en kyckling bärbar.'
+  name: '&aKycklingnät'
   type:
   - '&7&oVerktyg'
   usage:
   - '&eHögerklicka&7 för att använda'
 EXCITATION_CHAMBER:
+  description:
+  - '&7Låter kycklingar producera resurser.'
+  name: '&eExcitationskammare'
   stats:
   - '&8⇨ &e⚡ &710 J/s'
   type:
   - '&7&oMaskin'
 EXCITATION_CHAMBER_2:
+  description:
+  - '&7Låter kycklingar producera resurser snabbare.'
+  name: '&eFörstärkt excitationskammare'
   stats:
   - '&8⇨ &e⚡ &715 J/s'
   type:
   - '&7&oMaskin'
 EXCITATION_CHAMBER_3:
+  description:
+  - '&7Låter kycklingar producera resurser mycket snabbare.'
+  name: '&eUltimat excitationskammare'
   stats:
   - '&8⇨ &e⚡ &7100 J/s'
   type:
   - '&7&oMaskin'
 GENETIC_SEQUENCER:
+  description:
+  - '&7Fastställer en kycklings genotyp.'
+  name: '&eGenetisk sekvenserare'
   stats:
   - '&8⇨ &e⚡ &76 J/s'
   type:
   - '&7&oMaskin'
 GROWTH_CHAMBER:
+  description:
+  - '&7Kan föda upp kycklingungar med vetefrön.'
+  name: '&eTillväxtkammare'
   stats:
   - '&8⇨ &e⚡ &720 J/s'
   type:
   - '&7&oMaskin'
 LAVA_EGG:
+  description:
+  - '&7Innehåller lava.'
+  name: '&cLavaägg'
   type:
   - '&7&oRåmaterial'
   usage:
   - '&eHögerklicka&7 för att använda'
 POCKET_CHICKEN:
+  description:
+  - '&7En kyckling, gjord bärbar.'
+  name: '&bFickkyckling'
   type:
   - '&7&oRåmaterial'
+  usage:
+  - '&7Högerklicka på ett block för att släppa ut kycklingen.'
 PRIVATE_COOP:
+  description:
+  - '&7Kan lagra kycklingar.'
+  name: '&ePrivat hönshus'
   stats:
   - '&8⇨ &e⚡ &72 J/s'
   type:
   - '&7&oMaskin'
 RESTORATION_CHAMBER:
+  description:
+  - '&7Kan läka kycklingar.'
+  name: '&eÅterställningskammare'
   stats:
   - '&8⇨ &e⚡ &74 J/s'
   type:
   - '&7&oMaskin'
 WATER_EGG:
+  description:
+  - '&7Innehåller vatten.'
+  name: '&9Vattenägg'
   type:
   - '&7&oRåmaterial'
   usage:
