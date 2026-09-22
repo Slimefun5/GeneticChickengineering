@@ -1,52 +1,87 @@
 CHICKEN_NET:
+  description:
+  - '&7Membuat seekor ayam menjadi portabel.'
+  name: '&aJaring Ayam'
   type:
   - '&7&oAlat'
   usage:
   - '&eKlik Kanan&7 untuk menggunakan'
 EXCITATION_CHAMBER:
+  description:
+  - '&7Memungkinkan ayam memproduksi sumber daya.'
+  name: '&eRuang Eksitasi'
   stats:
   - '&8⇨ &e⚡ &710 J/s'
   type:
   - '&7&oMesin'
 EXCITATION_CHAMBER_2:
+  description:
+  - '&7Memungkinkan ayam memproduksi sumber daya lebih cepat.'
+  name: '&eRuang Eksitasi Terpacu'
   stats:
   - '&8⇨ &e⚡ &715 J/s'
   type:
   - '&7&oMesin'
 EXCITATION_CHAMBER_3:
+  description:
+  - '&7Memungkinkan ayam memproduksi sumber daya jauh lebih cepat.'
+  name: '&eRuang Eksitasi Pamungkas'
   stats:
   - '&8⇨ &e⚡ &7100 J/s'
   type:
   - '&7&oMesin'
 GENETIC_SEQUENCER:
+  description:
+  - '&7Menentukan genotipe seekor ayam.'
+  name: '&ePengurut Genetik'
   stats:
   - '&8⇨ &e⚡ &76 J/s'
   type:
   - '&7&oMesin'
 GROWTH_CHAMBER:
+  description:
+  - '&7Dapat membesarkan anak ayam dengan benih gandum.'
+  name: '&eRuang Pertumbuhan'
   stats:
   - '&8⇨ &e⚡ &720 J/s'
   type:
   - '&7&oMesin'
 LAVA_EGG:
+  description:
+  - '&7Berisi lava.'
+  name: '&cTelur Lava'
   type:
   - '&7&oSumber Daya'
   usage:
   - '&eKlik Kanan&7 untuk menggunakan'
 POCKET_CHICKEN:
+  description:
+  - '&7Seekor ayam yang dibuat portabel.'
+  name: '&bAyam Saku'
   type:
   - '&7&oSumber Daya'
+  usage:
+  - '&7Klik Kanan pada blok untuk melepaskan ayamnya.'
 PRIVATE_COOP:
+  description:
+  - '&7Dapat menyimpan ayam.'
+  name: '&eKandang Pribadi'
   stats:
   - '&8⇨ &e⚡ &72 J/s'
   type:
   - '&7&oMesin'
 RESTORATION_CHAMBER:
+  description:
+  - '&7Dapat menyembuhkan ayam.'
+  name: '&eRuang Pemulihan'
   stats:
   - '&8⇨ &e⚡ &74 J/s'
   type:
   - '&7&oMesin'
 WATER_EGG:
+  description:
+  - '&7Berisi air.'
+  name: '&9Telur Air'
   type:
   - '&7&oSumber Daya'
   usage:
