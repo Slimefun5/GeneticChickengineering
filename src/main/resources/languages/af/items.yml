@@ -1,52 +1,87 @@
 CHICKEN_NET:
+  description:
+  - '&7Maak ''n hoender draagbaar.'
+  name: '&aHoendernet'
   type:
   - '&7&oGereedskap'
   usage:
   - '&eRegskliek&7 om te gebruik'
 EXCITATION_CHAMBER:
+  description:
+  - '&7Stel hoenders in staat om hulpbronne te produseer.'
+  name: '&eOpwekkingskamer'
   stats:
   - '&8⇨ &e⚡ &710 J/s'
   type:
   - '&7&oMasjien'
 EXCITATION_CHAMBER_2:
+  description:
+  - '&7Stel hoenders in staat om hulpbronne vinniger te produseer.'
+  name: '&eVersterkte Opwekkingskamer'
   stats:
   - '&8⇨ &e⚡ &715 J/s'
   type:
   - '&7&oMasjien'
 EXCITATION_CHAMBER_3:
+  description:
+  - '&7Stel hoenders in staat om hulpbronne baie vinniger te produseer.'
+  name: '&eUiterste Opwekkingskamer'
   stats:
   - '&8⇨ &e⚡ &7100 J/s'
   type:
   - '&7&oMasjien'
 GENETIC_SEQUENCER:
+  description:
+  - '&7Bepaal ''n hoender se genotipe.'
+  name: '&eGenetiese Volgordebepaler'
   stats:
   - '&8⇨ &e⚡ &76 J/s'
   type:
   - '&7&oMasjien'
 GROWTH_CHAMBER:
+  description:
+  - '&7Kan kuikens met koringsaad grootmaak.'
+  name: '&eGroeikamer'
   stats:
   - '&8⇨ &e⚡ &720 J/s'
   type:
   - '&7&oMasjien'
 LAVA_EGG:
+  description:
+  - '&7Bevat lawa.'
+  name: '&cLawa-eier'
   type:
   - '&7&oHulpbron'
   usage:
   - '&eRegskliek&7 om te gebruik'
 POCKET_CHICKEN:
+  description:
+  - '&7''n Hoender, draagbaar gemaak.'
+  name: '&bSakhoender'
   type:
   - '&7&oHulpbron'
+  usage:
+  - '&7Regsklik op ''n blok om die hoender los te laat.'
 PRIVATE_COOP:
+  description:
+  - '&7Kan hoenders stoor.'
+  name: '&ePrivaat Hoenderhok'
   stats:
   - '&8⇨ &e⚡ &72 J/s'
   type:
   - '&7&oMasjien'
 RESTORATION_CHAMBER:
+  description:
+  - '&7Kan hoenders genees.'
+  name: '&eHerstelkamer'
   stats:
   - '&8⇨ &e⚡ &74 J/s'
   type:
   - '&7&oMasjien'
 WATER_EGG:
+  description:
+  - '&7Bevat water.'
+  name: '&9Watereier'
   type:
   - '&7&oHulpbron'
   usage:
