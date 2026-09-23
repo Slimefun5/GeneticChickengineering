@@ -1,52 +1,87 @@
 CHICKEN_NET:
+  description:
+  - '&7Hace portátil a un pollo.'
+  name: '&aRed para Pollos'
   type:
   - '&7&oHerramienta'
   usage:
   - '&eClic Derecho&7 para usar'
 EXCITATION_CHAMBER:
+  description:
+  - '&7Permite a los pollos producir recursos.'
+  name: '&eCámara de Excitación'
   stats:
   - '&8⇨ &e⚡ &710 J/s'
   type:
   - '&7&oMáquina'
 EXCITATION_CHAMBER_2:
+  description:
+  - '&7Permite a los pollos producir recursos más rápido.'
+  name: '&eCámara de Excitación Potenciada'
   stats:
   - '&8⇨ &e⚡ &715 J/s'
   type:
   - '&7&oMáquina'
 EXCITATION_CHAMBER_3:
+  description:
+  - '&7Permite a los pollos producir recursos mucho más rápido.'
+  name: '&eCámara de Excitación Definitiva'
   stats:
   - '&8⇨ &e⚡ &7100 J/s'
   type:
   - '&7&oMáquina'
 GENETIC_SEQUENCER:
+  description:
+  - '&7Determina el genotipo de un pollo.'
+  name: '&eSecuenciador Genético'
   stats:
   - '&8⇨ &e⚡ &76 J/s'
   type:
   - '&7&oMáquina'
 GROWTH_CHAMBER:
+  description:
+  - '&7Puede criar pollitos con semillas de trigo.'
+  name: '&eCámara de Crecimiento'
   stats:
   - '&8⇨ &e⚡ &720 J/s'
   type:
   - '&7&oMáquina'
 LAVA_EGG:
+  description:
+  - '&7Contiene lava.'
+  name: '&cHuevo de Lava'
   type:
   - '&7&oRecurso'
   usage:
   - '&eClic Derecho&7 para usar'
 POCKET_CHICKEN:
+  description:
+  - '&7Un pollo, hecho portátil.'
+  name: '&bPollo de Bolsillo'
   type:
   - '&7&oRecurso'
+  usage:
+  - '&7Clic derecho en un bloque para soltar el pollo.'
 PRIVATE_COOP:
+  description:
+  - '&7Puede almacenar pollos.'
+  name: '&eGallinero Privado'
   stats:
   - '&8⇨ &e⚡ &72 J/s'
   type:
   - '&7&oMáquina'
 RESTORATION_CHAMBER:
+  description:
+  - '&7Puede curar pollos.'
+  name: '&eCámara de Restauración'
   stats:
   - '&8⇨ &e⚡ &74 J/s'
   type:
   - '&7&oMáquina'
 WATER_EGG:
+  description:
+  - '&7Contiene agua.'
+  name: '&9Huevo de Agua'
   type:
   - '&7&oRecurso'
   usage:
