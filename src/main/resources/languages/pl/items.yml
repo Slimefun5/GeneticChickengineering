@@ -1,52 +1,87 @@
 CHICKEN_NET:
+  description:
+  - '&7Zmienia kurczaka w przenośny przedmiot.'
+  name: '&aSiatka na kurczaki'
   type:
   - '&7&oNarzędzie'
   usage:
   - '&ePrawy przycisk&7, aby użyć'
 EXCITATION_CHAMBER:
+  description:
+  - '&7Pozwala kurczakom produkować surowce.'
+  name: '&eKomora pobudzania'
   stats:
   - '&8⇨ &e⚡ &710 J/s'
   type:
   - '&7&oMaszyna'
 EXCITATION_CHAMBER_2:
+  description:
+  - '&7Pozwala kurczakom produkować surowce szybciej.'
+  name: '&eWzmocniona komora pobudzania'
   stats:
   - '&8⇨ &e⚡ &715 J/s'
   type:
   - '&7&oMaszyna'
 EXCITATION_CHAMBER_3:
+  description:
+  - '&7Pozwala kurczakom produkować surowce znacznie szybciej.'
+  name: '&eOstateczna komora pobudzania'
   stats:
   - '&8⇨ &e⚡ &7100 J/s'
   type:
   - '&7&oMaszyna'
 GENETIC_SEQUENCER:
+  description:
+  - '&7Określa genotyp kurczaka.'
+  name: '&eSekwencer genetyczny'
   stats:
   - '&8⇨ &e⚡ &76 J/s'
   type:
   - '&7&oMaszyna'
 GROWTH_CHAMBER:
+  description:
+  - '&7Może wychowywać pisklęta na nasionach pszenicy.'
+  name: '&eKomora wzrostu'
   stats:
   - '&8⇨ &e⚡ &720 J/s'
   type:
   - '&7&oMaszyna'
 LAVA_EGG:
+  description:
+  - '&7Zawiera lawę.'
+  name: '&cJajo lawy'
   type:
   - '&7&oSurowiec'
   usage:
   - '&ePrawy przycisk&7, aby użyć'
 POCKET_CHICKEN:
+  description:
+  - '&7Kurczak w przenośnej formie.'
+  name: '&bKieszonkowy kurczak'
   type:
   - '&7&oSurowiec'
+  usage:
+  - '&7Kliknij prawym na blok, aby wypuścić kurczaka.'
 PRIVATE_COOP:
+  description:
+  - '&7Może przechowywać kurczaki.'
+  name: '&ePrywatny kurnik'
   stats:
   - '&8⇨ &e⚡ &72 J/s'
   type:
   - '&7&oMaszyna'
 RESTORATION_CHAMBER:
+  description:
+  - '&7Może leczyć kurczaki.'
+  name: '&eKomora regeneracji'
   stats:
   - '&8⇨ &e⚡ &74 J/s'
   type:
   - '&7&oMaszyna'
 WATER_EGG:
+  description:
+  - '&7Zawiera wodę.'
+  name: '&9Jajo wody'
   type:
   - '&7&oSurowiec'
   usage:
