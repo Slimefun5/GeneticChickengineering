@@ -1,52 +1,87 @@
 CHICKEN_NET:
+  description:
+  - '&7Maakt een kip draagbaar.'
+  name: '&aKippennet'
   type:
   - '&7&oGereedschap'
   usage:
   - '&eRechtermuisklik&7 om te gebruiken'
 EXCITATION_CHAMBER:
+  description:
+  - '&7Stelt kippen in staat grondstoffen te produceren.'
+  name: '&eExcitatiekamer'
   stats:
   - '&8⇨ &e⚡ &710 J/s'
   type:
   - '&7&oMachine'
 EXCITATION_CHAMBER_2:
+  description:
+  - '&7Stelt kippen in staat sneller grondstoffen te produceren.'
+  name: '&eVersterkte excitatiekamer'
   stats:
   - '&8⇨ &e⚡ &715 J/s'
   type:
   - '&7&oMachine'
 EXCITATION_CHAMBER_3:
+  description:
+  - '&7Stelt kippen in staat veel sneller grondstoffen te produceren.'
+  name: '&eUltieme excitatiekamer'
   stats:
   - '&8⇨ &e⚡ &7100 J/s'
   type:
   - '&7&oMachine'
 GENETIC_SEQUENCER:
+  description:
+  - '&7Bepaalt het genotype van een kip.'
+  name: '&eGenetische sequencer'
   stats:
   - '&8⇨ &e⚡ &76 J/s'
   type:
   - '&7&oMachine'
 GROWTH_CHAMBER:
+  description:
+  - '&7Kan kuikens grootbrengen met tarwezaden.'
+  name: '&eGroeikamer'
   stats:
   - '&8⇨ &e⚡ &720 J/s'
   type:
   - '&7&oMachine'
 LAVA_EGG:
+  description:
+  - '&7Bevat lava.'
+  name: '&cLava-ei'
   type:
   - '&7&oGrondstof'
   usage:
   - '&eRechtermuisklik&7 om te gebruiken'
 POCKET_CHICKEN:
+  description:
+  - '&7Een kip, draagbaar gemaakt.'
+  name: '&bZakkip'
   type:
   - '&7&oGrondstof'
+  usage:
+  - '&7Rechtsklik op een blok om de kip vrij te laten.'
 PRIVATE_COOP:
+  description:
+  - '&7Kan kippen opslaan.'
+  name: '&ePrivéhok'
   stats:
   - '&8⇨ &e⚡ &72 J/s'
   type:
   - '&7&oMachine'
 RESTORATION_CHAMBER:
+  description:
+  - '&7Kan kippen genezen.'
+  name: '&eHerstelkamer'
   stats:
   - '&8⇨ &e⚡ &74 J/s'
   type:
   - '&7&oMachine'
 WATER_EGG:
+  description:
+  - '&7Bevat water.'
+  name: '&9Waterei'
   type:
   - '&7&oGrondstof'
   usage:
