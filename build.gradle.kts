@@ -7,7 +7,7 @@ plugins {
 group = "net.guizhanss"
 description = "An addon for Slimefun that adds resource chickens, rewritten by ybw0014."
 
-apply(from = "https://raw.githubusercontent.com/Slimefun5/gradle/stable/slimefun-addon.gradle")
+apply(from = "https://raw.githubusercontent.com/Slimefun5/gradle/main/slimefun-addon.gradle")
 
 repositories {
     // WildStackerAPI
