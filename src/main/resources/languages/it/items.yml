@@ -1,52 +1,87 @@
 CHICKEN_NET:
+  description:
+  - '&7Rende un pollo portatile.'
+  name: '&aRetino per Polli'
   type:
   - '&7&oStrumento'
   usage:
   - '&eClic destro&7 per usare'
 EXCITATION_CHAMBER:
+  description:
+  - '&7Permette ai polli di produrre risorse.'
+  name: '&eCamera di Eccitazione'
   stats:
   - '&8⇨ &e⚡ &710 J/s'
   type:
   - '&7&oMacchina'
 EXCITATION_CHAMBER_2:
+  description:
+  - '&7Permette ai polli di produrre risorse più velocemente.'
+  name: '&eCamera di Eccitazione Potenziata'
   stats:
   - '&8⇨ &e⚡ &715 J/s'
   type:
   - '&7&oMacchina'
 EXCITATION_CHAMBER_3:
+  description:
+  - '&7Permette ai polli di produrre risorse molto più velocemente.'
+  name: '&eCamera di Eccitazione Definitiva'
   stats:
   - '&8⇨ &e⚡ &7100 J/s'
   type:
   - '&7&oMacchina'
 GENETIC_SEQUENCER:
+  description:
+  - '&7Determina il genotipo di un pollo.'
+  name: '&eSequenziatore Genetico'
   stats:
   - '&8⇨ &e⚡ &76 J/s'
   type:
   - '&7&oMacchina'
 GROWTH_CHAMBER:
+  description:
+  - '&7Può far crescere i pulcini con semi di grano.'
+  name: '&eCamera di Crescita'
   stats:
   - '&8⇨ &e⚡ &720 J/s'
   type:
   - '&7&oMacchina'
 LAVA_EGG:
+  description:
+  - '&7Contiene lava.'
+  name: '&cUovo di Lava'
   type:
   - '&7&oRisorsa'
   usage:
   - '&eClic destro&7 per usare'
 POCKET_CHICKEN:
+  description:
+  - '&7Un pollo, reso portatile.'
+  name: '&bPollo Tascabile'
   type:
   - '&7&oRisorsa'
+  usage:
+  - '&7Clic Destro su un blocco per liberare il pollo.'
 PRIVATE_COOP:
+  description:
+  - '&7Può conservare i polli.'
+  name: '&ePollaio Privato'
   stats:
   - '&8⇨ &e⚡ &72 J/s'
   type:
   - '&7&oMacchina'
 RESTORATION_CHAMBER:
+  description:
+  - '&7Può curare i polli.'
+  name: '&eCamera di Ripristino'
   stats:
   - '&8⇨ &e⚡ &74 J/s'
   type:
   - '&7&oMacchina'
 WATER_EGG:
+  description:
+  - '&7Contiene acqua.'
+  name: '&9Uovo d''Acqua'
   type:
   - '&7&oRisorsa'
   usage:
