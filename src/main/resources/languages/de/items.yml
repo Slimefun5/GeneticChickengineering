@@ -1,52 +1,87 @@
 CHICKEN_NET:
+  description:
+  - '&7Macht ein Huhn tragbar.'
+  name: '&aHühnernetz'
   type:
   - '&7&oWerkzeug'
   usage:
   - '&eRechtsklick&7 zum Benutzen'
 EXCITATION_CHAMBER:
+  description:
+  - '&7Ermöglicht Hühnern, Ressourcen zu produzieren.'
+  name: '&eAnregungskammer'
   stats:
   - '&8⇨ &e⚡ &710 J/s'
   type:
   - '&7&oMaschine'
 EXCITATION_CHAMBER_2:
+  description:
+  - '&7Ermöglicht Hühnern, Ressourcen schneller zu produzieren.'
+  name: '&eVerstärkte Anregungskammer'
   stats:
   - '&8⇨ &e⚡ &715 J/s'
   type:
   - '&7&oMaschine'
 EXCITATION_CHAMBER_3:
+  description:
+  - '&7Ermöglicht Hühnern, Ressourcen viel schneller zu produzieren.'
+  name: '&eUltimative Anregungskammer'
   stats:
   - '&8⇨ &e⚡ &7100 J/s'
   type:
   - '&7&oMaschine'
 GENETIC_SEQUENCER:
+  description:
+  - '&7Bestimmt den Genotyp eines Huhns.'
+  name: '&eGenetischer Sequenzierer'
   stats:
   - '&8⇨ &e⚡ &76 J/s'
   type:
   - '&7&oMaschine'
 GROWTH_CHAMBER:
+  description:
+  - '&7Kann Küken mit Weizensamen aufziehen.'
+  name: '&eWachstumskammer'
   stats:
   - '&8⇨ &e⚡ &720 J/s'
   type:
   - '&7&oMaschine'
 LAVA_EGG:
+  description:
+  - '&7Enthält Lava.'
+  name: '&cLavaei'
   type:
   - '&7&oRohstoff'
   usage:
   - '&eRechtsklick&7 zum Benutzen'
 POCKET_CHICKEN:
+  description:
+  - '&7Ein Huhn, tragbar gemacht.'
+  name: '&bTaschenhuhn'
   type:
   - '&7&oRohstoff'
+  usage:
+  - '&7Rechtsklick auf einen Block, um das Huhn freizulassen.'
 PRIVATE_COOP:
+  description:
+  - '&7Kann Hühner aufbewahren.'
+  name: '&ePrivater Hühnerstall'
   stats:
   - '&8⇨ &e⚡ &72 J/s'
   type:
   - '&7&oMaschine'
 RESTORATION_CHAMBER:
+  description:
+  - '&7Kann Hühner heilen.'
+  name: '&eWiederherstellungskammer'
   stats:
   - '&8⇨ &e⚡ &74 J/s'
   type:
   - '&7&oMaschine'
 WATER_EGG:
+  description:
+  - '&7Enthält Wasser.'
+  name: '&9Wasserei'
   type:
   - '&7&oRohstoff'
   usage:
