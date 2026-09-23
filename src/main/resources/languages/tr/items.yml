@@ -1,52 +1,87 @@
 CHICKEN_NET:
+  description:
+  - '&7Bir tavuğu taşınabilir yapar.'
+  name: '&aTavuk Filesi'
   type:
   - '&7&oAlet'
   usage:
   - '&eSağ Tıklama&7 ile kullanın'
 EXCITATION_CHAMBER:
+  description:
+  - '&7Tavukların kaynak üretmesini sağlar.'
+  name: '&eUyarım Odası'
   stats:
   - '&8⇨ &e⚡ &710 J/s'
   type:
   - '&7&oMakine'
 EXCITATION_CHAMBER_2:
+  description:
+  - '&7Tavukların kaynakları daha hızlı üretmesini sağlar.'
+  name: '&eGüçlendirilmiş Uyarım Odası'
   stats:
   - '&8⇨ &e⚡ &715 J/s'
   type:
   - '&7&oMakine'
 EXCITATION_CHAMBER_3:
+  description:
+  - '&7Tavukların kaynakları çok daha hızlı üretmesini sağlar.'
+  name: '&eNihai Uyarım Odası'
   stats:
   - '&8⇨ &e⚡ &7100 J/s'
   type:
   - '&7&oMakine'
 GENETIC_SEQUENCER:
+  description:
+  - '&7Bir tavuğun genotipini belirler.'
+  name: '&eGenetik Dizileyici'
   stats:
   - '&8⇨ &e⚡ &76 J/s'
   type:
   - '&7&oMakine'
 GROWTH_CHAMBER:
+  description:
+  - '&7Buğday tohumuyla civcivleri büyütebilir.'
+  name: '&eBüyüme Odası'
   stats:
   - '&8⇨ &e⚡ &720 J/s'
   type:
   - '&7&oMakine'
 LAVA_EGG:
+  description:
+  - '&7Lav içerir.'
+  name: '&cLav Yumurtası'
   type:
   - '&7&oKaynak'
   usage:
   - '&eSağ Tıklama&7 ile kullanın'
 POCKET_CHICKEN:
+  description:
+  - '&7Taşınabilir hale getirilmiş bir tavuk.'
+  name: '&bCep Tavuğu'
   type:
   - '&7&oKaynak'
+  usage:
+  - '&7Tavuğu salmak için bir bloğa Sağ Tıkla.'
 PRIVATE_COOP:
+  description:
+  - '&7Tavukları depolayabilir.'
+  name: '&eÖzel Kümes'
   stats:
   - '&8⇨ &e⚡ &72 J/s'
   type:
   - '&7&oMakine'
 RESTORATION_CHAMBER:
+  description:
+  - '&7Tavukları iyileştirebilir.'
+  name: '&eİyileştirme Odası'
   stats:
   - '&8⇨ &e⚡ &74 J/s'
   type:
   - '&7&oMakine'
 WATER_EGG:
+  description:
+  - '&7Su içerir.'
+  name: '&9Su Yumurtası'
   type:
   - '&7&oKaynak'
   usage:
