@@ -1,52 +1,87 @@
 CHICKEN_NET:
+  description:
+  - '&7Rend un poulet portable.'
+  name: '&aFilet à poulets'
   type:
   - '&7&oOutil'
   usage:
   - '&eClic droit&7 pour utiliser'
 EXCITATION_CHAMBER:
+  description:
+  - '&7Permet aux poulets de produire des ressources.'
+  name: '&eChambre d''excitation'
   stats:
   - '&8⇨ &e⚡ &710 J/s'
   type:
   - '&7&oMachine'
 EXCITATION_CHAMBER_2:
+  description:
+  - '&7Permet aux poulets de produire des ressources plus vite.'
+  name: '&eChambre d''excitation améliorée'
   stats:
   - '&8⇨ &e⚡ &715 J/s'
   type:
   - '&7&oMachine'
 EXCITATION_CHAMBER_3:
+  description:
+  - '&7Permet aux poulets de produire des ressources bien plus vite.'
+  name: '&eChambre d''excitation ultime'
   stats:
   - '&8⇨ &e⚡ &7100 J/s'
   type:
   - '&7&oMachine'
 GENETIC_SEQUENCER:
+  description:
+  - '&7Détermine le génotype d''un poulet.'
+  name: '&eSéquenceur génétique'
   stats:
   - '&8⇨ &e⚡ &76 J/s'
   type:
   - '&7&oMachine'
 GROWTH_CHAMBER:
+  description:
+  - '&7Peut élever des poussins avec des graines de blé.'
+  name: '&eChambre de croissance'
   stats:
   - '&8⇨ &e⚡ &720 J/s'
   type:
   - '&7&oMachine'
 LAVA_EGG:
+  description:
+  - '&7Contient de la lave.'
+  name: '&cŒuf de lave'
   type:
   - '&7&oRessource'
   usage:
   - '&eClic droit&7 pour utiliser'
 POCKET_CHICKEN:
+  description:
+  - '&7Un poulet, rendu portable.'
+  name: '&bPoulet de poche'
   type:
   - '&7&oRessource'
+  usage:
+  - '&7Clic droit sur un bloc pour libérer le poulet.'
 PRIVATE_COOP:
+  description:
+  - '&7Peut stocker des poulets.'
+  name: '&ePoulailler privé'
   stats:
   - '&8⇨ &e⚡ &72 J/s'
   type:
   - '&7&oMachine'
 RESTORATION_CHAMBER:
+  description:
+  - '&7Peut soigner les poulets.'
+  name: '&eChambre de restauration'
   stats:
   - '&8⇨ &e⚡ &74 J/s'
   type:
   - '&7&oMachine'
 WATER_EGG:
+  description:
+  - '&7Contient de l''eau.'
+  name: '&9Œuf d''eau'
   type:
   - '&7&oRessource'
   usage:
