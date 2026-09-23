@@ -1,52 +1,87 @@
 CHICKEN_NET:
+  description:
+  - '&7Делает курицу портативной.'
+  name: '&aКуриный сачок'
   type:
   - '&7&oИнструмент'
   usage:
   - '&eПравый клик&7, чтобы использовать'
 EXCITATION_CHAMBER:
+  description:
+  - '&7Позволяет курицам производить ресурсы.'
+  name: '&eКамера возбуждения'
   stats:
   - '&8⇨ &e⚡ &710 J/s'
   type:
   - '&7&oМашина'
 EXCITATION_CHAMBER_2:
+  description:
+  - '&7Позволяет курицам производить ресурсы быстрее.'
+  name: '&eУлучшенная камера возбуждения'
   stats:
   - '&8⇨ &e⚡ &715 J/s'
   type:
   - '&7&oМашина'
 EXCITATION_CHAMBER_3:
+  description:
+  - '&7Позволяет курицам производить ресурсы намного быстрее.'
+  name: '&eАбсолютная камера возбуждения'
   stats:
   - '&8⇨ &e⚡ &7100 J/s'
   type:
   - '&7&oМашина'
 GENETIC_SEQUENCER:
+  description:
+  - '&7Определяет генотип курицы.'
+  name: '&eГенетический секвенатор'
   stats:
   - '&8⇨ &e⚡ &76 J/s'
   type:
   - '&7&oМашина'
 GROWTH_CHAMBER:
+  description:
+  - '&7Может растить цыплят на семенах пшеницы.'
+  name: '&eКамера роста'
   stats:
   - '&8⇨ &e⚡ &720 J/s'
   type:
   - '&7&oМашина'
 LAVA_EGG:
+  description:
+  - '&7Содержит лаву.'
+  name: '&cЛавовое яйцо'
   type:
   - '&7&oРесурс'
   usage:
   - '&eПравый клик&7, чтобы использовать'
 POCKET_CHICKEN:
+  description:
+  - '&7Курица, ставшая портативной.'
+  name: '&bКарманная курица'
   type:
   - '&7&oРесурс'
+  usage:
+  - '&7Правый клик по блоку, чтобы выпустить курицу.'
 PRIVATE_COOP:
+  description:
+  - '&7Может хранить куриц.'
+  name: '&eЛичный курятник'
   stats:
   - '&8⇨ &e⚡ &72 J/s'
   type:
   - '&7&oМашина'
 RESTORATION_CHAMBER:
+  description:
+  - '&7Может лечить куриц.'
+  name: '&eКамера восстановления'
   stats:
   - '&8⇨ &e⚡ &74 J/s'
   type:
   - '&7&oМашина'
 WATER_EGG:
+  description:
+  - '&7Содержит воду.'
+  name: '&9Водяное яйцо'
   type:
   - '&7&oРесурс'
   usage:
