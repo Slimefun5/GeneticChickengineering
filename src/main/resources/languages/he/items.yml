@@ -1,52 +1,87 @@
 CHICKEN_NET:
+  description:
+  - '&7הופכת עוף לנייד.'
+  name: '&aרשת עופות'
   type:
   - '&7&oכלי'
   usage:
   - '&eקליק ימני&7 כדי להשתמש'
 EXCITATION_CHAMBER:
+  description:
+  - '&7מאפשר לעופות לייצר משאבים.'
+  name: '&eחדר עירור'
   stats:
   - '&8⇨ &e⚡ &710 J/שנייה'
   type:
   - '&7&oמכונה'
 EXCITATION_CHAMBER_2:
+  description:
+  - '&7מאפשר לעופות לייצר משאבים מהר יותר.'
+  name: '&eחדר עירור מוגבר'
   stats:
   - '&8⇨ &e⚡ &715 J/שנייה'
   type:
   - '&7&oמכונה'
 EXCITATION_CHAMBER_3:
+  description:
+  - '&7מאפשר לעופות לייצר משאבים מהר בהרבה.'
+  name: '&eחדר עירור מושלם'
   stats:
   - '&8⇨ &e⚡ &7100 J/שנייה'
   type:
   - '&7&oמכונה'
 GENETIC_SEQUENCER:
+  description:
+  - '&7קובע את הגנוטיפ של העוף.'
+  name: '&eמרצף גנטי'
   stats:
   - '&8⇨ &e⚡ &76 J/שנייה'
   type:
   - '&7&oמכונה'
 GROWTH_CHAMBER:
+  description:
+  - '&7יכול לגדל אפרוחים בעזרת זרעי חיטה.'
+  name: '&eחדר גדילה'
   stats:
   - '&8⇨ &e⚡ &720 J/שנייה'
   type:
   - '&7&oמכונה'
 LAVA_EGG:
+  description:
+  - '&7מכילה לבה.'
+  name: '&cביצת לבה'
   type:
   - '&7&oמשאב'
   usage:
   - '&eקליק ימני&7 כדי להשתמש'
 POCKET_CHICKEN:
+  description:
+  - '&7עוף, שהפך לנייד.'
+  name: '&bעוף כיס'
   type:
   - '&7&oמשאב'
+  usage:
+  - '&7לחיצה ימנית על בלוק לשחרור העוף.'
 PRIVATE_COOP:
+  description:
+  - '&7יכול לאחסן עופות.'
+  name: '&eלול פרטי'
   stats:
   - '&8⇨ &e⚡ &72 J/שנייה'
   type:
   - '&7&oמכונה'
 RESTORATION_CHAMBER:
+  description:
+  - '&7יכול לרפא עופות.'
+  name: '&eחדר שיקום'
   stats:
   - '&8⇨ &e⚡ &74 J/שנייה'
   type:
   - '&7&oמכונה'
 WATER_EGG:
+  description:
+  - '&7מכילה מים.'
+  name: '&9ביצת מים'
   type:
   - '&7&oמשאב'
   usage:
