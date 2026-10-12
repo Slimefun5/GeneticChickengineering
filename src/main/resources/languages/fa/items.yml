@@ -1,52 +1,87 @@
 CHICKEN_NET:
+  description:
+  - '&7مرغ را قابل‌حمل می‌کند.'
+  name: '&aتور مرغ'
   type:
   - '&7&oابزار'
   usage:
   - '&eکلیک راست&7 برای استفاده'
 EXCITATION_CHAMBER:
+  description:
+  - '&7به مرغ‌ها امکان تولید منابع را می‌دهد.'
+  name: '&eمحفظه تحریک'
   stats:
   - '&8⇨ &e⚡ &710 J/s'
   type:
   - '&7&oماشین'
 EXCITATION_CHAMBER_2:
+  description:
+  - '&7به مرغ‌ها امکان تولید سریع‌تر منابع را می‌دهد.'
+  name: '&eمحفظه تحریک تقویت‌شده'
   stats:
   - '&8⇨ &e⚡ &715 J/s'
   type:
   - '&7&oماشین'
 EXCITATION_CHAMBER_3:
+  description:
+  - '&7به مرغ‌ها امکان تولید بسیار سریع‌تر منابع را می‌دهد.'
+  name: '&eمحفظه تحریک نهایی'
   stats:
   - '&8⇨ &e⚡ &7100 J/s'
   type:
   - '&7&oماشین'
 GENETIC_SEQUENCER:
+  description:
+  - '&7ژن‌نمود مرغ را تعیین می‌کند.'
+  name: '&eتوالی‌یاب ژنتیکی'
   stats:
   - '&8⇨ &e⚡ &76 J/s'
   type:
   - '&7&oماشین'
 GROWTH_CHAMBER:
+  description:
+  - '&7می‌تواند جوجه‌ها را با دانه‌های گندم بزرگ کند.'
+  name: '&eمحفظه رشد'
   stats:
   - '&8⇨ &e⚡ &720 J/s'
   type:
   - '&7&oماشین'
 LAVA_EGG:
+  description:
+  - '&7شامل گدازه است.'
+  name: '&cتخم گدازه'
   type:
   - '&7&oمنبع'
   usage:
   - '&eکلیک راست&7 برای استفاده'
 POCKET_CHICKEN:
+  description:
+  - '&7مرغی که قابل‌حمل شده است.'
+  name: '&bمرغ جیبی'
   type:
   - '&7&oمنبع'
+  usage:
+  - '&7برای رها کردن مرغ روی یک بلوک کلیک راست کنید.'
 PRIVATE_COOP:
+  description:
+  - '&7می‌تواند مرغ‌ها را ذخیره کند.'
+  name: '&eمرغدانی خصوصی'
   stats:
   - '&8⇨ &e⚡ &72 J/s'
   type:
   - '&7&oماشین'
 RESTORATION_CHAMBER:
+  description:
+  - '&7می‌تواند مرغ‌ها را درمان کند.'
+  name: '&eمحفظه بازیابی'
   stats:
   - '&8⇨ &e⚡ &74 J/s'
   type:
   - '&7&oماشین'
 WATER_EGG:
+  description:
+  - '&7شامل آب است.'
+  name: '&9تخم آب'
   type:
   - '&7&oمنبع'
   usage:
