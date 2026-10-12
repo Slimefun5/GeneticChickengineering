@@ -1,52 +1,87 @@
 CHICKEN_NET:
+  description:
+  - '&7ทำให้ไก่พกพาได้'
+  name: '&aตาข่ายจับไก่'
   type:
   - '&7&oเครื่องมือ'
   usage:
   - '&eคลิกขวา&7 เพื่อใช้งาน'
 EXCITATION_CHAMBER:
+  description:
+  - '&7ทำให้ไก่ผลิตทรัพยากรได้'
+  name: '&eห้องกระตุ้น'
   stats:
   - '&8⇨ &e⚡ &710 J/s'
   type:
   - '&7&oเครื่องจักร'
 EXCITATION_CHAMBER_2:
+  description:
+  - '&7ทำให้ไก่ผลิตทรัพยากรได้เร็วขึ้น'
+  name: '&eห้องกระตุ้นเร่งกำลัง'
   stats:
   - '&8⇨ &e⚡ &715 J/s'
   type:
   - '&7&oเครื่องจักร'
 EXCITATION_CHAMBER_3:
+  description:
+  - '&7ทำให้ไก่ผลิตทรัพยากรได้เร็วขึ้นอย่างมาก'
+  name: '&eห้องกระตุ้นขั้นสุดยอด'
   stats:
   - '&8⇨ &e⚡ &7100 J/s'
   type:
   - '&7&oเครื่องจักร'
 GENETIC_SEQUENCER:
+  description:
+  - '&7ตรวจหาลักษณะทางพันธุกรรมของไก่'
+  name: '&eเครื่องถอดรหัสพันธุกรรม'
   stats:
   - '&8⇨ &e⚡ &76 J/s'
   type:
   - '&7&oเครื่องจักร'
 GROWTH_CHAMBER:
+  description:
+  - '&7เลี้ยงลูกไก่ให้โตด้วยเมล็ดข้าวสาลีได้'
+  name: '&eห้องเจริญเติบโต'
   stats:
   - '&8⇨ &e⚡ &720 J/s'
   type:
   - '&7&oเครื่องจักร'
 LAVA_EGG:
+  description:
+  - '&7บรรจุลาวาไว้ภายใน'
+  name: '&cไข่ลาวา'
   type:
   - '&7&oทรัพยากร'
   usage:
   - '&eคลิกขวา&7 เพื่อใช้งาน'
 POCKET_CHICKEN:
+  description:
+  - '&7ไก่ที่ทำให้พกพาได้'
+  name: '&bไก่พกพา'
   type:
   - '&7&oทรัพยากร'
+  usage:
+  - '&7คลิกขวาที่บล็อกเพื่อปล่อยไก่ออกมา'
 PRIVATE_COOP:
+  description:
+  - '&7เก็บไก่ไว้ได้'
+  name: '&eเล้าส่วนตัว'
   stats:
   - '&8⇨ &e⚡ &72 J/s'
   type:
   - '&7&oเครื่องจักร'
 RESTORATION_CHAMBER:
+  description:
+  - '&7รักษาไก่ได้'
+  name: '&eห้องฟื้นฟู'
   stats:
   - '&8⇨ &e⚡ &74 J/s'
   type:
   - '&7&oเครื่องจักร'
 WATER_EGG:
+  description:
+  - '&7บรรจุน้ำไว้ภายใน'
+  name: '&9ไข่น้ำ'
   type:
   - '&7&oทรัพยากร'
   usage:
