@@ -1,52 +1,87 @@
 CHICKEN_NET:
+  description:
+  - '&7Hordozhatóvá tesz egy csirkét.'
+  name: '&aCsirkeháló'
   type:
   - '&7&oEszköz'
   usage:
   - '&eJobb kattintás&7 a használathoz'
 EXCITATION_CHAMBER:
+  description:
+  - '&7Lehetővé teszi, hogy a csirkék nyersanyagokat termeljenek.'
+  name: '&eGerjesztő Kamra'
   stats:
   - '&8⇨ &e⚡ &710 J/s'
   type:
   - '&7&oGép'
 EXCITATION_CHAMBER_2:
+  description:
+  - '&7Lehetővé teszi, hogy a csirkék gyorsabban termeljenek nyersanyagokat.'
+  name: '&eFelerősített Gerjesztő Kamra'
   stats:
   - '&8⇨ &e⚡ &715 J/s'
   type:
   - '&7&oGép'
 EXCITATION_CHAMBER_3:
+  description:
+  - '&7Lehetővé teszi, hogy a csirkék sokkal gyorsabban termeljenek nyersanyagokat.'
+  name: '&eVégső Gerjesztő Kamra'
   stats:
   - '&8⇨ &e⚡ &7100 J/s'
   type:
   - '&7&oGép'
 GENETIC_SEQUENCER:
+  description:
+  - '&7Meghatározza egy csirke genotípusát.'
+  name: '&eGenetikai Szekvenátor'
   stats:
   - '&8⇨ &e⚡ &76 J/s'
   type:
   - '&7&oGép'
 GROWTH_CHAMBER:
+  description:
+  - '&7Kiscsirkéket tud felnevelni búzamaggal.'
+  name: '&eNövekedési Kamra'
   stats:
   - '&8⇨ &e⚡ &720 J/s'
   type:
   - '&7&oGép'
 LAVA_EGG:
+  description:
+  - '&7Lávát tartalmaz.'
+  name: '&cLávás Tojás'
   type:
   - '&7&oNyersanyag'
   usage:
   - '&eJobb kattintás&7 a használathoz'
 POCKET_CHICKEN:
+  description:
+  - '&7Egy csirke, hordozhatóvá téve.'
+  name: '&bZsebcsirke'
   type:
   - '&7&oNyersanyag'
+  usage:
+  - '&7Jobb Klikk egy blokkra a csirke kiszabadításához.'
 PRIVATE_COOP:
+  description:
+  - '&7Csirkéket tud tárolni.'
+  name: '&ePrivát Csirkeól'
   stats:
   - '&8⇨ &e⚡ &72 J/s'
   type:
   - '&7&oGép'
 RESTORATION_CHAMBER:
+  description:
+  - '&7Csirkéket tud gyógyítani.'
+  name: '&eHelyreállító Kamra'
   stats:
   - '&8⇨ &e⚡ &74 J/s'
   type:
   - '&7&oGép'
 WATER_EGG:
+  description:
+  - '&7Vizet tartalmaz.'
+  name: '&9Vizes Tojás'
   type:
   - '&7&oNyersanyag'
   usage:
