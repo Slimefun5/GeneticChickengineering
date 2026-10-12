@@ -1,52 +1,87 @@
 CHICKEN_NET:
+  description:
+  - '&7කුකුළෙකු අතේ ගෙනයන ලෙස සාදයි.'
+  name: '&aකුකුළු දැල'
   type:
   - '&7&oමෙවලම'
   usage:
   - '&eදකුණු ක්ලික්&7 කර භාවිත කරන්න'
 EXCITATION_CHAMBER:
+  description:
+  - '&7කුකුළන්ට සම්පත් නිපදවීමට හැකියාව දෙයි.'
+  name: '&eඋත්තේජන කුටිය'
   stats:
   - '&8⇨ &e⚡ &710 J/s'
   type:
   - '&7&oයන්ත්‍රය'
 EXCITATION_CHAMBER_2:
+  description:
+  - '&7කුකුළන්ට සම්පත් වේගයෙන් නිපදවීමට හැකියාව දෙයි.'
+  name: '&eවර්ධිත උත්තේජන කුටිය'
   stats:
   - '&8⇨ &e⚡ &715 J/s'
   type:
   - '&7&oයන්ත්‍රය'
 EXCITATION_CHAMBER_3:
+  description:
+  - '&7කුකුළන්ට සම්පත් බොහෝ වේගයෙන් නිපදවීමට හැකියාව දෙයි.'
+  name: '&eපරම උත්තේජන කුටිය'
   stats:
   - '&8⇨ &e⚡ &7100 J/s'
   type:
   - '&7&oයන්ත්‍රය'
 GENETIC_SEQUENCER:
+  description:
+  - '&7කුකුළෙකුගේ ජාන වර්ගය තීරණය කරයි.'
+  name: '&eජාන අනුක්‍රමකය'
   stats:
   - '&8⇨ &e⚡ &76 J/s'
   type:
   - '&7&oයන්ත්‍රය'
 GROWTH_CHAMBER:
+  description:
+  - '&7තිරිඟු බීජ සමඟ කුකුළු පැටවුන් හදාගත හැක.'
+  name: '&eවර්ධන කුටිය'
   stats:
   - '&8⇨ &e⚡ &720 J/s'
   type:
   - '&7&oයන්ත්‍රය'
 LAVA_EGG:
+  description:
+  - '&7ලාවා අඩංගු වේ.'
+  name: '&cලාවා බිත්තරය'
   type:
   - '&7&oසම්පත'
   usage:
   - '&eදකුණු ක්ලික්&7 කර භාවිත කරන්න'
 POCKET_CHICKEN:
+  description:
+  - '&7අතේ ගෙනයන ලෙස සාදන ලද කුකුළෙක්.'
+  name: '&bසාක්කු කුකුළා'
   type:
   - '&7&oසම්පත'
+  usage:
+  - '&7කුකුළා මුදා හැරීමට කුට්ටියක් මත දකුණු ක්ලික් කරන්න.'
 PRIVATE_COOP:
+  description:
+  - '&7කුකුළන් ගබඩා කළ හැක.'
+  name: '&eපෞද්ගලික කුකුළු කූඩුව'
   stats:
   - '&8⇨ &e⚡ &72 J/s'
   type:
   - '&7&oයන්ත්‍රය'
 RESTORATION_CHAMBER:
+  description:
+  - '&7කුකුළන් සුව කළ හැක.'
+  name: '&eයථා කිරීමේ කුටිය'
   stats:
   - '&8⇨ &e⚡ &74 J/s'
   type:
   - '&7&oයන්ත්‍රය'
 WATER_EGG:
+  description:
+  - '&7ජලය අඩංගු වේ.'
+  name: '&9ජල බිත්තරය'
   type:
   - '&7&oසම්පත'
   usage:
