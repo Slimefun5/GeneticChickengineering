@@ -1,52 +1,87 @@
 CHICKEN_NET:
+  description:
+  - '&7Ginagawang portable ang manok.'
+  name: '&aLambat ng Manok'
   type:
   - '&7&oKasangkapan'
   usage:
   - '&eKanang Klik&7 para gamitin'
 EXCITATION_CHAMBER:
+  description:
+  - '&7Nagbibigay-daan sa mga manok na gumawa ng mga yaman.'
+  name: '&eSilid ng Pagpapasigla'
   stats:
   - '&8⇨ &e⚡ &710 J/s'
   type:
   - '&7&oMakina'
 EXCITATION_CHAMBER_2:
+  description:
+  - '&7Nagbibigay-daan sa mga manok na gumawa ng mga yaman nang mas mabilis.'
+  name: '&ePinalakas na Silid ng Pagpapasigla'
   stats:
   - '&8⇨ &e⚡ &715 J/s'
   type:
   - '&7&oMakina'
 EXCITATION_CHAMBER_3:
+  description:
+  - '&7Nagbibigay-daan sa mga manok na gumawa ng mga yaman nang higit na mabilis.'
+  name: '&ePinakahusay na Silid ng Pagpapasigla'
   stats:
   - '&8⇨ &e⚡ &7100 J/s'
   type:
   - '&7&oMakina'
 GENETIC_SEQUENCER:
+  description:
+  - '&7Tinutukoy ang henotipo ng manok.'
+  name: '&eGenetikong Sekwensiyador'
   stats:
   - '&8⇨ &e⚡ &76 J/s'
   type:
   - '&7&oMakina'
 GROWTH_CHAMBER:
+  description:
+  - '&7Nakakapagpalaki ng mga sisiw sa binhi ng trigo.'
+  name: '&eSilid ng Pagtubo'
   stats:
   - '&8⇨ &e⚡ &720 J/s'
   type:
   - '&7&oMakina'
 LAVA_EGG:
+  description:
+  - '&7Naglalaman ng lava.'
+  name: '&cItlog ng Lava'
   type:
   - '&7&oRekurso'
   usage:
   - '&eKanang Klik&7 para gamitin'
 POCKET_CHICKEN:
+  description:
+  - '&7Isang manok, ginawang portable.'
+  name: '&bManok sa Bulsa'
   type:
   - '&7&oRekurso'
+  usage:
+  - '&7Kanang Pindot sa bloke para palabasin ang manok.'
 PRIVATE_COOP:
+  description:
+  - '&7Nakakapag-imbak ng mga manok.'
+  name: '&ePribadong Kulungan ng Manok'
   stats:
   - '&8⇨ &e⚡ &72 J/s'
   type:
   - '&7&oMakina'
 RESTORATION_CHAMBER:
+  description:
+  - '&7Nakakapagpagaling ng mga manok.'
+  name: '&eSilid ng Pagpapagaling'
   stats:
   - '&8⇨ &e⚡ &74 J/s'
   type:
   - '&7&oMakina'
 WATER_EGG:
+  description:
+  - '&7Naglalaman ng tubig.'
+  name: '&9Itlog ng Tubig'
   type:
   - '&7&oRekurso'
   usage:
