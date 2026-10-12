@@ -1,52 +1,87 @@
 CHICKEN_NET:
+  description:
+  - '&7Tekee kanasta kannettavan.'
+  name: '&aKanahaavi'
   type:
   - '&7&oTyökalu'
   usage:
   - '&eOikea klikkaus&7 käyttääksesi'
 EXCITATION_CHAMBER:
+  description:
+  - '&7Antaa kanojen tuottaa resursseja.'
+  name: '&eVirityskammio'
   stats:
   - '&8⇨ &e⚡ &710 J/s'
   type:
   - '&7&oKone'
 EXCITATION_CHAMBER_2:
+  description:
+  - '&7Antaa kanojen tuottaa resursseja nopeammin.'
+  name: '&eTehostettu virityskammio'
   stats:
   - '&8⇨ &e⚡ &715 J/s'
   type:
   - '&7&oKone'
 EXCITATION_CHAMBER_3:
+  description:
+  - '&7Antaa kanojen tuottaa resursseja paljon nopeammin.'
+  name: '&eÄärimmäinen virityskammio'
   stats:
   - '&8⇨ &e⚡ &7100 J/s'
   type:
   - '&7&oKone'
 GENETIC_SEQUENCER:
+  description:
+  - '&7Määrittää kanan genotyypin.'
+  name: '&eGeneettinen sekvensoija'
   stats:
   - '&8⇨ &e⚡ &76 J/s'
   type:
   - '&7&oKone'
 GROWTH_CHAMBER:
+  description:
+  - '&7Voi kasvattaa kananpoikia vehnänsiemenillä.'
+  name: '&eKasvukammio'
   stats:
   - '&8⇨ &e⚡ &720 J/s'
   type:
   - '&7&oKone'
 LAVA_EGG:
+  description:
+  - '&7Sisältää laavaa.'
+  name: '&cLaavamuna'
   type:
   - '&7&oResurssi'
   usage:
   - '&eOikea klikkaus&7 käyttääksesi'
 POCKET_CHICKEN:
+  description:
+  - '&7Kana, josta on tehty kannettava.'
+  name: '&bTaskukana'
   type:
   - '&7&oResurssi'
+  usage:
+  - '&7Napsauta oikealla palikkaa vapauttaaksesi kanan.'
 PRIVATE_COOP:
+  description:
+  - '&7Voi varastoida kanoja.'
+  name: '&eYksityinen kanala'
   stats:
   - '&8⇨ &e⚡ &72 J/s'
   type:
   - '&7&oKone'
 RESTORATION_CHAMBER:
+  description:
+  - '&7Voi parantaa kanoja.'
+  name: '&ePalautuskammio'
   stats:
   - '&8⇨ &e⚡ &74 J/s'
   type:
   - '&7&oKone'
 WATER_EGG:
+  description:
+  - '&7Sisältää vettä.'
+  name: '&9Vesimuna'
   type:
   - '&7&oResurssi'
   usage:
