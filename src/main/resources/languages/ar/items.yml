@@ -1,52 +1,87 @@
 CHICKEN_NET:
+  description:
+  - '&7تجعل الدجاجة قابلة للحمل.'
+  name: '&aشبكة الدجاج'
   type:
   - '&7&oأداة'
   usage:
   - '&eانقر بالزر الأيمن&7 للاستخدام'
 EXCITATION_CHAMBER:
+  description:
+  - '&7تمكّن الدجاج من إنتاج الموارد.'
+  name: '&eحجرة إثارة'
   stats:
   - '&8⇨ &e⚡ &710 جول/ث'
   type:
   - '&7&oآلة'
 EXCITATION_CHAMBER_2:
+  description:
+  - '&7تمكّن الدجاج من إنتاج الموارد أسرع.'
+  name: '&eحجرة إثارة معزّزة'
   stats:
   - '&8⇨ &e⚡ &715 جول/ث'
   type:
   - '&7&oآلة'
 EXCITATION_CHAMBER_3:
+  description:
+  - '&7تمكّن الدجاج من إنتاج الموارد أسرع بكثير.'
+  name: '&eحجرة إثارة نهائية'
   stats:
   - '&8⇨ &e⚡ &7100 جول/ث'
   type:
   - '&7&oآلة'
 GENETIC_SEQUENCER:
+  description:
+  - '&7يحدّد النمط الجيني للدجاجة.'
+  name: '&eمُسلسِل جيني'
   stats:
   - '&8⇨ &e⚡ &76 جول/ث'
   type:
   - '&7&oآلة'
 GROWTH_CHAMBER:
+  description:
+  - '&7يمكنها تربية الصيصان ببذور القمح.'
+  name: '&eحجرة النمو'
   stats:
   - '&8⇨ &e⚡ &720 جول/ث'
   type:
   - '&7&oآلة'
 LAVA_EGG:
+  description:
+  - '&7تحتوي على حمم.'
+  name: '&cبيضة حمم'
   type:
   - '&7&oمورد'
   usage:
   - '&eانقر بالزر الأيمن&7 للاستخدام'
 POCKET_CHICKEN:
+  description:
+  - '&7دجاجة صارت قابلة للحمل.'
+  name: '&bدجاجة الجيب'
   type:
   - '&7&oمورد'
+  usage:
+  - '&7انقر بالزر الأيمن على كتلة لإطلاق الدجاجة.'
 PRIVATE_COOP:
+  description:
+  - '&7يمكنه تخزين الدجاج.'
+  name: '&eقن خاص'
   stats:
   - '&8⇨ &e⚡ &72 جول/ث'
   type:
   - '&7&oآلة'
 RESTORATION_CHAMBER:
+  description:
+  - '&7يمكنها شفاء الدجاج.'
+  name: '&eحجرة استشفاء'
   stats:
   - '&8⇨ &e⚡ &74 جول/ث'
   type:
   - '&7&oآلة'
 WATER_EGG:
+  description:
+  - '&7تحتوي على ماء.'
+  name: '&9بيضة ماء'
   type:
   - '&7&oمورد'
   usage:
