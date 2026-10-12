@@ -1,52 +1,87 @@
 CHICKEN_NET:
+  description:
+  - '&7Face un pui portabil.'
+  name: '&aPlasă de Pui'
   type:
   - '&7&oUnealtă'
   usage:
   - '&eClick dreapta&7 pentru a folosi'
 EXCITATION_CHAMBER:
+  description:
+  - '&7Permite puilor să producă resurse.'
+  name: '&eCameră de Excitație'
   stats:
   - '&8⇨ &e⚡ &710 J/s'
   type:
   - '&7&oMașină'
 EXCITATION_CHAMBER_2:
+  description:
+  - '&7Permite puilor să producă resurse mai repede.'
+  name: '&eCameră de Excitație Amplificată'
   stats:
   - '&8⇨ &e⚡ &715 J/s'
   type:
   - '&7&oMașină'
 EXCITATION_CHAMBER_3:
+  description:
+  - '&7Permite puilor să producă resurse mult mai repede.'
+  name: '&eCameră de Excitație Supremă'
   stats:
   - '&8⇨ &e⚡ &7100 J/s'
   type:
   - '&7&oMașină'
 GENETIC_SEQUENCER:
+  description:
+  - '&7Determină genotipul unui pui.'
+  name: '&eSecvențiator Genetic'
   stats:
   - '&8⇨ &e⚡ &76 J/s'
   type:
   - '&7&oMașină'
 GROWTH_CHAMBER:
+  description:
+  - '&7Poate crește puii mici cu semințe de grâu.'
+  name: '&eCameră de Creștere'
   stats:
   - '&8⇨ &e⚡ &720 J/s'
   type:
   - '&7&oMașină'
 LAVA_EGG:
+  description:
+  - '&7Conține lavă.'
+  name: '&cOu de Lavă'
   type:
   - '&7&oResursă'
   usage:
   - '&eClick dreapta&7 pentru a folosi'
 POCKET_CHICKEN:
+  description:
+  - '&7Un pui, făcut portabil.'
+  name: '&bPui de Buzunar'
   type:
   - '&7&oResursă'
+  usage:
+  - '&7Clic dreapta pe un bloc pentru a elibera puiul.'
 PRIVATE_COOP:
+  description:
+  - '&7Poate stoca pui.'
+  name: '&eCoteț Privat'
   stats:
   - '&8⇨ &e⚡ &72 J/s'
   type:
   - '&7&oMașină'
 RESTORATION_CHAMBER:
+  description:
+  - '&7Poate vindeca puii.'
+  name: '&eCameră de Refacere'
   stats:
   - '&8⇨ &e⚡ &74 J/s'
   type:
   - '&7&oMașină'
 WATER_EGG:
+  description:
+  - '&7Conține apă.'
+  name: '&9Ou de Apă'
   type:
   - '&7&oResursă'
   usage:
