@@ -1,52 +1,87 @@
 CHICKEN_NET:
+  description:
+  - '&7닭을 휴대용으로 만듭니다.'
+  name: '&a닭 그물'
   type:
   - '&7&o도구'
   usage:
   - '&e우클릭&7하여 사용'
 EXCITATION_CHAMBER:
+  description:
+  - '&7닭이 자원을 생산하게 합니다.'
+  name: '&e자극 챔버'
   stats:
   - '&8⇨ &e⚡ &710 J/초'
   type:
   - '&7&o기계'
 EXCITATION_CHAMBER_2:
+  description:
+  - '&7닭이 자원을 더 빠르게 생산하게 합니다.'
+  name: '&e강화 자극 챔버'
   stats:
   - '&8⇨ &e⚡ &715 J/초'
   type:
   - '&7&o기계'
 EXCITATION_CHAMBER_3:
+  description:
+  - '&7닭이 자원을 훨씬 빠르게 생산하게 합니다.'
+  name: '&e궁극 자극 챔버'
   stats:
   - '&8⇨ &e⚡ &7100 J/초'
   type:
   - '&7&o기계'
 GENETIC_SEQUENCER:
+  description:
+  - '&7닭의 유전자형을 판별합니다.'
+  name: '&e유전자 해독기'
   stats:
   - '&8⇨ &e⚡ &76 J/초'
   type:
   - '&7&o기계'
 GROWTH_CHAMBER:
+  description:
+  - '&7밀 씨앗으로 병아리를 키울 수 있습니다.'
+  name: '&e성장 챔버'
   stats:
   - '&8⇨ &e⚡ &720 J/초'
   type:
   - '&7&o기계'
 LAVA_EGG:
+  description:
+  - '&7용암이 담겨 있습니다.'
+  name: '&c용암 알'
   type:
   - '&7&o자원'
   usage:
   - '&e우클릭&7하여 사용'
 POCKET_CHICKEN:
+  description:
+  - '&7휴대용으로 만든 닭입니다.'
+  name: '&b주머니 닭'
   type:
   - '&7&o자원'
+  usage:
+  - '&7블록에 우클릭하면 닭을 풀어놓습니다.'
 PRIVATE_COOP:
+  description:
+  - '&7닭을 보관할 수 있습니다.'
+  name: '&e전용 닭장'
   stats:
   - '&8⇨ &e⚡ &72 J/초'
   type:
   - '&7&o기계'
 RESTORATION_CHAMBER:
+  description:
+  - '&7닭을 치유할 수 있습니다.'
+  name: '&e회복 챔버'
   stats:
   - '&8⇨ &e⚡ &74 J/초'
   type:
   - '&7&o기계'
 WATER_EGG:
+  description:
+  - '&7물이 담겨 있습니다.'
+  name: '&9물 알'
   type:
   - '&7&o자원'
   usage:
