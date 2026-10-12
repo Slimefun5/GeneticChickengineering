@@ -1,52 +1,87 @@
 CHICKEN_NET:
+  description:
+  - '&7Giúp mang theo một con gà.'
+  name: '&aLưới bắt Gà'
   type:
   - '&7&oDụng Cụ'
   usage:
   - '&eChuột Phải&7 để sử dụng'
 EXCITATION_CHAMBER:
+  description:
+  - '&7Cho phép gà sản xuất tài nguyên.'
+  name: '&eBuồng Kích thích'
   stats:
   - '&8⇨ &e⚡ &710 J/s'
   type:
   - '&7&oMáy Móc'
 EXCITATION_CHAMBER_2:
+  description:
+  - '&7Cho phép gà sản xuất tài nguyên nhanh hơn.'
+  name: '&eBuồng Kích thích Tăng cường'
   stats:
   - '&8⇨ &e⚡ &715 J/s'
   type:
   - '&7&oMáy Móc'
 EXCITATION_CHAMBER_3:
+  description:
+  - '&7Cho phép gà sản xuất tài nguyên nhanh hơn rất nhiều.'
+  name: '&eBuồng Kích thích Cực đại'
   stats:
   - '&8⇨ &e⚡ &7100 J/s'
   type:
   - '&7&oMáy Móc'
 GENETIC_SEQUENCER:
+  description:
+  - '&7Xác định kiểu gen của một con gà.'
+  name: '&eMáy Giải trình tự Gen'
   stats:
   - '&8⇨ &e⚡ &76 J/s'
   type:
   - '&7&oMáy Móc'
 GROWTH_CHAMBER:
+  description:
+  - '&7Có thể nuôi gà con bằng hạt lúa mì.'
+  name: '&eBuồng Tăng trưởng'
   stats:
   - '&8⇨ &e⚡ &720 J/s'
   type:
   - '&7&oMáy Móc'
 LAVA_EGG:
+  description:
+  - '&7Chứa dung nham.'
+  name: '&cTrứng Dung nham'
   type:
   - '&7&oTài Nguyên'
   usage:
   - '&eChuột Phải&7 để sử dụng'
 POCKET_CHICKEN:
+  description:
+  - '&7Một con gà có thể mang theo người.'
+  name: '&bGà Bỏ túi'
   type:
   - '&7&oTài Nguyên'
+  usage:
+  - '&7Chuột phải vào một khối để thả con gà ra.'
 PRIVATE_COOP:
+  description:
+  - '&7Có thể lưu trữ gà.'
+  name: '&eChuồng Riêng'
   stats:
   - '&8⇨ &e⚡ &72 J/s'
   type:
   - '&7&oMáy Móc'
 RESTORATION_CHAMBER:
+  description:
+  - '&7Có thể chữa lành cho gà.'
+  name: '&eBuồng Hồi phục'
   stats:
   - '&8⇨ &e⚡ &74 J/s'
   type:
   - '&7&oMáy Móc'
 WATER_EGG:
+  description:
+  - '&7Chứa nước.'
+  name: '&9Trứng Nước'
   type:
   - '&7&oTài Nguyên'
   usage:
