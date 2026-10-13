@@ -1,0 +1,88 @@
+CHICKEN_NET:
+  description:
+  - '&7ニワトリを持ち運び可能にする。'
+  name: '&aチキンネット'
+  type:
+  - '&7&o道具'
+  usage:
+  - '&e右クリック&7で使用'
+EXCITATION_CHAMBER:
+  description:
+  - '&7ニワトリが資源を生産できるようにする。'
+  name: '&e励起チャンバー'
+  stats:
+  - '&8⇨ &e⚡ &710 J/s'
+  type:
+  - '&7&o機械'
+EXCITATION_CHAMBER_2:
+  description:
+  - '&7ニワトリの資源生産をより速くする。'
+  name: '&e強化励起チャンバー'
+  stats:
+  - '&8⇨ &e⚡ &715 J/s'
+  type:
+  - '&7&o機械'
+EXCITATION_CHAMBER_3:
+  description:
+  - '&7ニワトリの資源生産を大幅に加速する。'
+  name: '&e究極励起チャンバー'
+  stats:
+  - '&8⇨ &e⚡ &7100 J/s'
+  type:
+  - '&7&o機械'
+GENETIC_SEQUENCER:
+  description:
+  - '&7ニワトリの遺伝子型を判定する。'
+  name: '&e遺伝子シーケンサー'
+  stats:
+  - '&8⇨ &e⚡ &76 J/s'
+  type:
+  - '&7&o機械'
+GROWTH_CHAMBER:
+  description:
+  - '&7小麦の種でヒナを育てられる。'
+  name: '&e成長チャンバー'
+  stats:
+  - '&8⇨ &e⚡ &720 J/s'
+  type:
+  - '&7&o機械'
+LAVA_EGG:
+  description:
+  - '&7溶岩が入っている。'
+  name: '&c溶岩の卵'
+  type:
+  - '&7&o資源'
+  usage:
+  - '&e右クリック&7で使用'
+POCKET_CHICKEN:
+  description:
+  - '&7持ち運び可能にしたニワトリ。'
+  name: '&bポケットチキン'
+  type:
+  - '&7&o資源'
+  usage:
+  - '&7ブロックを右クリックしてニワトリを放す。'
+PRIVATE_COOP:
+  description:
+  - '&7ニワトリを収納できる。'
+  name: '&e専用鶏舎'
+  stats:
+  - '&8⇨ &e⚡ &72 J/s'
+  type:
+  - '&7&o機械'
+RESTORATION_CHAMBER:
+  description:
+  - '&7ニワトリを回復できる。'
+  name: '&e回復チャンバー'
+  stats:
+  - '&8⇨ &e⚡ &74 J/s'
+  type:
+  - '&7&o機械'
+WATER_EGG:
+  description:
+  - '&7水が入っている。'
+  name: '&9水の卵'
+  type:
+  - '&7&o資源'
+  usage:
+  - '&e右クリック&7で使用'
