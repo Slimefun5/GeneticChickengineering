@@ -128,6 +128,7 @@ public class GeneticChickengineering extends JavaPlugin implements SlimefunAddon
 
         // Contribute this addon's per-language item translations (languages/<lang>/items.yml).
         Slimefun.getItemTranslationService().registerTranslations(this);
+        Slimefun.getAddonMessageService().registerTranslations(this);
 
         // The chicken-icon dictionary items are named at runtime from the chicken product, keyed only on
         // a numeric typing, so they can't live in items.yml - a resolver reproduces their display.

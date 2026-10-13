@@ -4,6 +4,7 @@ import java.util.Optional;
 
 import javax.annotation.Nonnull;
 
+import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
 import org.bukkit.Material;
 import org.bukkit.World;
@@ -23,6 +24,7 @@ import io.github.thebusybiscuit.slimefun5.libraries.dough.protection.Interaction
 import net.guizhanss.gcereborn.GeneticChickengineering;
 import net.guizhanss.gcereborn.core.genetics.DNA;
 import net.guizhanss.gcereborn.items.GCEItems;
+import net.guizhanss.gcereborn.util.Messages;
 import net.guizhanss.gcereborn.utils.ChickenUtils;
 import net.guizhanss.gcereborn.utils.CompatUtils;
 
@@ -65,7 +67,7 @@ public class ResourceEgg extends SimpleSlimefunItem<ItemUseHandler> implements N
             Block b = block.get();
             Block place = b.getRelative(e.getClickedFace());
             if (!Slimefun.getProtectionManager().hasPermission(e.getPlayer(), place.getLocation(), Interaction.PLACE_BLOCK)) {
-                GeneticChickengineering.getLocalization().sendMessage(e.getPlayer(), "no-permission");
+                Messages.send(e.getPlayer(), ChatColor.RED, "command.no-permission", "You do not have permission!");
                 return;
             }
             // Block#isReplaceable() postdates the fork's Java-8-compatible spigot-api compile baseline

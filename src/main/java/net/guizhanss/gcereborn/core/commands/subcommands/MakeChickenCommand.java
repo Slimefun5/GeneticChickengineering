@@ -8,6 +8,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 import net.guizhanss.gcereborn.libs.guizhanlib.commands.AbstractCommand;
 
+import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -15,6 +16,7 @@ import org.bukkit.inventory.ItemStack;
 import net.guizhanss.gcereborn.GeneticChickengineering;
 import net.guizhanss.gcereborn.core.commands.AbstractSubCommand;
 import net.guizhanss.gcereborn.core.genetics.DNA;
+import net.guizhanss.gcereborn.util.Messages;
 import net.guizhanss.gcereborn.utils.ChickenUtils;
 import net.guizhanss.gcereborn.libs.guizhanlib.utils.InventoryUtil;
 
@@ -28,18 +30,18 @@ public final class MakeChickenCommand extends AbstractSubCommand implements DnaC
     @ParametersAreNonnullByDefault
     public void onExecute(CommandSender sender, String[] args) {
         if (!hasPermission(sender)) {
-            GeneticChickengineering.getLocalization().sendMessage(sender, "no-permission");
+            Messages.send(sender, ChatColor.RED, "command.no-permission", "You do not have permission!");
             return;
         }
         if (!(sender instanceof Player)) {
-            GeneticChickengineering.getLocalization().sendMessage(sender, "no-console");
+            Messages.send(sender, ChatColor.RED, "command.no-console", "You must be a player to do this!");
             return;
         }
         Player p = (Player) sender;
 
         String notation = args[0];
         if (!DNA.isValidSequence(notation)) {
-            GeneticChickengineering.getLocalization().sendMessage(sender, "invalid-dna-notation", notation);
+            Messages.send(sender, ChatColor.RED, "command.invalid-dna-notation", "Invalid DNA notation: {0}", notation);
             return;
         }
         boolean isBaby = true;

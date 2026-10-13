@@ -1,0 +1,7 @@
+command:
+  no-permission: "You do not have permission!"
+  no-console: "You must be a player to do this!"
+  invalid-dna-notation: "Invalid DNA notation: {0}"
+  chance-result: "There is a {0}% chance for parent 1 ({1}) and parent 2 ({2}) to have a child ({3})."
+  calcchance-description: "Calculate the chance of getting a chicken with the given 2 parent DNAs and child DNA."
+  makechicken-description: "Create a chicken item with the given DNA."

@@ -5,6 +5,7 @@ import java.util.List;
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
+import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 
 import net.guizhanss.gcereborn.GeneticChickengineering;
@@ -12,6 +13,7 @@ import net.guizhanss.gcereborn.core.commands.AbstractSubCommand;
 import net.guizhanss.gcereborn.core.genetics.DNA;
 import net.guizhanss.gcereborn.core.genetics.Gene;
 import net.guizhanss.gcereborn.libs.guizhanlib.commands.AbstractCommand;
+import net.guizhanss.gcereborn.util.Messages;
 
 public final class CalcChanceCommand extends AbstractSubCommand implements DnaCompletion {
 
@@ -23,13 +25,13 @@ public final class CalcChanceCommand extends AbstractSubCommand implements DnaCo
     @ParametersAreNonnullByDefault
     public void onExecute(CommandSender sender, String[] args) {
         if (!hasPermission(sender)) {
-            GeneticChickengineering.getLocalization().sendMessage(sender, "no-permission");
+            Messages.send(sender, ChatColor.RED, "command.no-permission", "You do not have permission!");
             return;
         }
 
         for (int i = 0; i < 3; i++) {
             if (!DNA.isValidSequence(args[i])) {
-                GeneticChickengineering.getLocalization().sendMessage(sender, "invalid-dna-notation", args[i]);
+                Messages.send(sender, ChatColor.RED, "command.invalid-dna-notation", "Invalid DNA notation: {0}", args[i]);
                 return;
             }
         }
@@ -53,7 +55,9 @@ public final class CalcChanceCommand extends AbstractSubCommand implements DnaCo
             chanceTotal *= matches * 0.25;
         }
         long readableChance = Math.round(chanceTotal * 100);
-        GeneticChickengineering.getLocalization().sendMessage(sender, "chance-result", readableChance, p1dna, p2dna, cdna);
+        Messages.send(sender, ChatColor.YELLOW, "command.chance-result",
+                "There is a {0}% chance for parent 1 ({1}) and parent 2 ({2}) to have a child ({3}).",
+                readableChance, p1dna, p2dna, cdna);
     }
 
     @Override

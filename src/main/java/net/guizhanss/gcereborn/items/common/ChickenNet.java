@@ -2,6 +2,7 @@ package net.guizhanss.gcereborn.items.common;
 
 import javax.annotation.Nonnull;
 
+import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.entity.Chicken;
 import org.bukkit.entity.EntityType;
@@ -19,6 +20,7 @@ import io.github.thebusybiscuit.slimefun5.implementation.items.SimpleSlimefunIte
 import io.github.thebusybiscuit.slimefun5.libraries.dough.protection.Interaction;
 
 import net.guizhanss.gcereborn.GeneticChickengineering;
+import net.guizhanss.gcereborn.util.Messages;
 import net.guizhanss.gcereborn.utils.ChickenUtils;
 import net.guizhanss.gcereborn.utils.CompatUtils;
 
@@ -41,7 +43,7 @@ public class ChickenNet extends SimpleSlimefunItem<EntityInteractHandler> implem
             Chicken chicken = (Chicken) e.getRightClicked();
 
             if (!Slimefun.getProtectionManager().hasPermission(e.getPlayer(), chicken.getLocation(), Interaction.INTERACT_ENTITY)) {
-                GeneticChickengineering.getLocalization().sendMessage(e.getPlayer(), "no-permission");
+                Messages.send(e.getPlayer(), ChatColor.RED, "command.no-permission", "You do not have permission!");
                 return;
             }
 
