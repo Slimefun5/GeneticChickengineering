@@ -1,0 +1,7 @@
+command:
+  no-permission: "Nie masz uprawnień!"
+  no-console: "Aby to zrobić, musisz być graczem!"
+  invalid-dna-notation: "Nieprawidłowy zapis DNA: {0}"
+  chance-result: "Jest {0}% szans, że rodzic 1 ({1}) i rodzic 2 ({2}) będą mieć potomka ({3})."
+  calcchance-description: "Obliczy szansę na otrzymanie kury z podanymi DNA obojga rodziców i potomka."
+  makechicken-description: "Tworzy przedmiot kura z podanym DNA."

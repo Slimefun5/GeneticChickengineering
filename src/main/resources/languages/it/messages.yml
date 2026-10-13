@@ -1,0 +1,7 @@
+command:
+  no-permission: "Non hai il permesso!"
+  no-console: "Per farlo devi essere un giocatore!"
+  invalid-dna-notation: "Notazione del DNA non valida: {0}"
+  chance-result: "C'è una probabilità del {0}% che il genitore 1 ({1}) e il genitore 2 ({2}) abbiano un pulcino ({3})."
+  calcchance-description: "Calcola la probabilità di ottenere una gallina con i DNA dati dei due genitori e del pulcino."
+  makechicken-description: "Crea un oggetto gallina con il DNA dato."

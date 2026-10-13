@@ -1,0 +1,7 @@
+command:
+  no-permission: "Du hast keine Berechtigung!"
+  no-console: "Dafür musst du ein Spieler sein!"
+  invalid-dna-notation: "Ungültige DNA-Schreibweise: {0}"
+  chance-result: "Es besteht eine Chance von {0}%, dass Elternteil 1 ({1}) und Elternteil 2 ({2}) ein Küken ({3}) bekommen."
+  calcchance-description: "Berechnet die Chance, ein Huhn mit den angegebenen DNA beider Eltern und des Kükens zu erhalten."
+  makechicken-description: "Erstellt einen Huhn-Gegenstand mit der angegebenen DNA."

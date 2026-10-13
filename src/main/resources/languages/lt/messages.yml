@@ -1,0 +1,7 @@
+command:
+  no-permission: "Neturi teisių!"
+  no-console: "Tam reikia būti žaidėju!"
+  invalid-dna-notation: "Netinkamas DNR įrašas: {0}"
+  chance-result: "Yra {0}% tikimybė, kad tėvas 1 ({1}) ir tėvas 2 ({2}) susilauks jauniklio ({3})."
+  calcchance-description: "Apskaičiuoja tikimybę gauti vištą pagal duotus abiejų tėvų ir jauniklio DNR."
+  makechicken-description: "Sukuria vištos daiktą su duotu DNR."

@@ -1,0 +1,7 @@
+command:
+  no-permission: "Nincs engedélyed!"
+  no-console: "Ehhez játékosnak kell lenned!"
+  invalid-dna-notation: "Érvénytelen DNS-jelölés: {0}"
+  chance-result: "{0}% esély van rá, hogy az 1. szülő ({1}) és a 2. szülő ({2}) utódot ({3}) kapjon."
+  calcchance-description: "Kiszámolja, mekkora eséllyel kapsz csirkét a megadott két szülői és utód DNS alapján."
+  makechicken-description: "Létrehoz egy csirke tárgyat a megadott DNS-sel."

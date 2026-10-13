@@ -1,0 +1,7 @@
+command:
+  no-permission: "Sinulla ei ole oikeutta!"
+  no-console: "Tähän täytyy olla pelaaja!"
+  invalid-dna-notation: "Virheellinen DNA-merkintä: {0}"
+  chance-result: "On {0}% mahdollisuus, että vanhempi 1 ({1}) ja vanhempi 2 ({2}) saavat poikasen ({3})."
+  calcchance-description: "Laskee mahdollisuuden saada kana annetuilla vanhempien ja poikasen DNA:illa."
+  makechicken-description: "Luo kanaesineen annetulla DNA:lla."

@@ -1,0 +1,7 @@
+command:
+  no-permission: "Je hebt geen toestemming!"
+  no-console: "Hiervoor moet je een speler zijn!"
+  invalid-dna-notation: "Ongeldige DNA-notatie: {0}"
+  chance-result: "Er is {0}% kans dat ouder 1 ({1}) en ouder 2 ({2}) een kuiken ({3}) krijgen."
+  calcchance-description: "Berekent de kans op een hoen met de gegeven DNA van beide ouders en het kuiken."
+  makechicken-description: "Maakt een hoen-item met het gegeven DNA."

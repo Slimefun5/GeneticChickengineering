@@ -1,0 +1,7 @@
+command:
+  no-permission: "Wala kang pahintulot!"
+  no-console: "Kailangan ka munang maging manlalaro para gawin ito!"
+  invalid-dna-notation: "Hindi wastong notasyon ng DNA: {0}"
+  chance-result: "May {0}% na tsansa na magkaanak ({3}) ang magulang 1 ({1}) at magulang 2 ({2})."
+  calcchance-description: "Tinatantya ang tsansang makakuha ng manok mula sa ibinigay na DNA ng dalawang magulang at ng anak."
+  makechicken-description: "Gumagawa ng bagay na manok mula sa ibinigay na DNA."

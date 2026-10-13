@@ -1,0 +1,7 @@
+command:
+  no-permission: "Nemáš oprávnění!"
+  no-console: "Na tohle musíš být hráč!"
+  invalid-dna-notation: "Neplatný zápis DNA: {0}"
+  chance-result: "Je {0}% šance, že rodič 1 ({1}) a rodič 2 ({2}) budou mít potomka ({3})."
+  calcchance-description: "Vypočítá šanci na získání slepice se zadanými DNA obou rodičů a potomka."
+  makechicken-description: "Vytvoří předmět slepice se zadanou DNA."

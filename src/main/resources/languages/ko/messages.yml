@@ -1,0 +1,7 @@
+command:
+  no-permission: "권한이 없습니다!"
+  no-console: "이것은 플레이어만 할 수 있습니다!"
+  invalid-dna-notation: "잘못된 DNA 표기: {0}"
+  chance-result: "부모 1 ({1}) 과 부모 2 ({2}) 가 자식 ({3}) 을 얻을 확률은 {0}% 입니다."
+  calcchance-description: "주어진 부모 두 마리의 DNA 와 자식 DNA 로 닭을 얻을 확률을 계산합니다."
+  makechicken-description: "주어진 DNA 로 닭 아이템을 만듭니다."

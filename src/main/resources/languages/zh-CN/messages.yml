@@ -1,0 +1,7 @@
+command:
+  no-permission: "你没有权限！"
+  no-console: "只有玩家才能这么做！"
+  invalid-dna-notation: "无效的 DNA 写法：{0}"
+  chance-result: "亲代 1（{1}）和亲代 2（{2}）生出子代（{3}）的概率为 {0}%。"
+  calcchance-description: "计算用给定的两个亲代 DNA 和子代 DNA 获得小鸡的概率。"
+  makechicken-description: "用给定的 DNA 创建一个小鸡物品。"

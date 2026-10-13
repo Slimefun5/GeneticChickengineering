@@ -1,0 +1,7 @@
+command:
+  no-permission: "Anda tiada kebenaran!"
+  no-console: "Anda perlu menjadi pemain untuk melakukan ini!"
+  invalid-dna-notation: "Tatatanda DNA tidak sah: {0}"
+  chance-result: "Ada peluang {0}% induk 1 ({1}) dan induk 2 ({2}) mendapat anak ({3})."
+  calcchance-description: "Mengira peluang mendapat ayam dengan DNA kedua induk dan anak yang diberikan."
+  makechicken-description: "Mencipta barang ayam dengan DNA yang diberikan."

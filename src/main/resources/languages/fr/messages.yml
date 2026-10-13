@@ -1,0 +1,7 @@
+command:
+  no-permission: "Vous n'avez pas la permission !"
+  no-console: "Vous devez être un joueur pour faire ceci !"
+  invalid-dna-notation: "Notation d'ADN invalide : {0}"
+  chance-result: "Il y a {0}% de chance que le parent 1 ({1}) et le parent 2 ({2}) aient un petit ({3})."
+  calcchance-description: "Calcule la chance d'obtenir une poule avec les ADN donnés des deux parents et du petit."
+  makechicken-description: "Crée un objet poule avec l'ADN donné."

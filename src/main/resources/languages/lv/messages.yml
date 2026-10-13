@@ -1,0 +1,7 @@
+command:
+  no-permission: "Tev nav atļaujas!"
+  no-console: "Lai to izdarītu, jābūt spēlētājam!"
+  invalid-dna-notation: "Nederīgs DNS pieraksts: {0}"
+  chance-result: "Pastāv {0}% iespēja, ka vecāks 1 ({1}) un vecāks 2 ({2}) iegūs mazuli ({3})."
+  calcchance-description: "Aprēķina iespēju iegūt vistu ar dotajiem abu vecāku un mazuļa DNS."
+  makechicken-description: "Izveido vistas priekšmetu ar doto DNS."

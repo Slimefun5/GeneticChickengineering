@@ -1,0 +1,7 @@
+command:
+  no-permission: "Nu ai permisiune!"
+  no-console: "Trebuie să fii jucător pentru a face asta!"
+  invalid-dna-notation: "Notație ADN nevalidă: {0}"
+  chance-result: "Există o șansă de {0}% ca părintele 1 ({1}) și părintele 2 ({2}) să aibă un pui ({3})."
+  calcchance-description: "Calculează șansa de a obține o găină cu ADN-urile date ale ambilor părinți și ale puiului."
+  makechicken-description: "Creează un obiect găină cu ADN-ul dat."

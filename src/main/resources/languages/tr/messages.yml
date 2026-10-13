@@ -1,0 +1,7 @@
+command:
+  no-permission: "İznin yok!"
+  no-console: "Bunu yapmak için oyuncu olmalısın!"
+  invalid-dna-notation: "Geçersiz DNA gösterimi: {0}"
+  chance-result: "Ebeveyn 1 ({1}) ile ebeveyn 2 ({2}) için yavru ({3}) olasılığı {0}%."
+  calcchance-description: "Verilen iki ebeveyn ve yavru DNA'sı ile tavuk elde etme olasılığını hesaplar."
+  makechicken-description: "Verilen DNA ile bir tavuk eşyası oluşturur."

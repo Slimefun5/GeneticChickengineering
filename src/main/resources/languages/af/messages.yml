@@ -1,0 +1,7 @@
+command:
+  no-permission: "Jy het nie toestemming nie!"
+  no-console: "Jy moet 'n speler wees om dit te doen!"
+  invalid-dna-notation: "Ongeldige DNS-notasie: {0}"
+  chance-result: "Daar is 'n {0}% kans dat ouer 1 ({1}) en ouer 2 ({2}) 'n kind ({3}) het."
+  calcchance-description: "Bereken die kans om 'n hoender met die gegewe 2 ouer-DNS'e en kind-DNS te kry."
+  makechicken-description: "Skep 'n hoender-item met die gegewe DNS."

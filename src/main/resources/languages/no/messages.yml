@@ -1,0 +1,7 @@
+command:
+  no-permission: "Du har ikke tillatelse!"
+  no-console: "Du må være en spiller for å gjøre dette!"
+  invalid-dna-notation: "Ugyldig DNA-notasjon: {0}"
+  chance-result: "Det er {0}% sjanse for at forelder 1 ({1}) og forelder 2 ({2}) får et avkom ({3})."
+  calcchance-description: "Regner ut sjansen for å få en høne med de oppgitte DNA-ene til begge foreldre og avkommet."
+  makechicken-description: "Lager en høne-gjenstand med det oppgitte DNA-et."

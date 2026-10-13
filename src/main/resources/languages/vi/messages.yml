@@ -1,0 +1,7 @@
+command:
+  no-permission: "Bạn không có quyền!"
+  no-console: "Bạn phải là người chơi để làm việc này!"
+  invalid-dna-notation: "Ký hiệu DNA không hợp lệ: {0}"
+  chance-result: "Có {0}% khả năng bố mẹ 1 ({1}) và bố mẹ 2 ({2}) có con ({3})."
+  calcchance-description: "Tính khả năng nhận được gà từ DNA của hai bố mẹ và con đã cho."
+  makechicken-description: "Tạo một vật phẩm gà với DNA đã cho."

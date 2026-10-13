@@ -1,0 +1,7 @@
+command:
+  no-permission: "Nemaš dopuštenje!"
+  no-console: "Za ovo moraš biti igrač!"
+  invalid-dna-notation: "Nevažeći zapis DNA: {0}"
+  chance-result: "Postoji {0}% šanse da roditelj 1 ({1}) i roditelj 2 ({2}) dobiju mladunče ({3})."
+  calcchance-description: "Izračunava šansu da dobiješ kokoš sa zadanim DNA oba roditelja i mladunčeta."
+  makechicken-description: "Stvara predmet kokoš sa zadanim DNA."
