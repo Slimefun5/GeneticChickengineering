@@ -134,7 +134,8 @@ public class GeneticChickengineering extends JavaPlugin implements SlimefunAddon
 
         // The chicken-icon dictionary items are named at runtime from the chicken product, keyed only on
         // a numeric typing, so they can't live in items.yml - a resolver reproduces their display.
-        Slimefun.getItemTranslationService().registerResolver(new net.guizhanss.gcereborn.utils.ChickenIconResolver());
+        Slimefun.getItemTranslationService().registerResolver(new net.guizhanss.gcereborn.utils.ChickenIconResolver(
+            net.guizhanss.gcereborn.utils.ResolverTexts.load(this, "chicken-icons.yml")));
 
         log(Level.INFO, localization.getString("console.load.researches"));
         Researches.setup();
