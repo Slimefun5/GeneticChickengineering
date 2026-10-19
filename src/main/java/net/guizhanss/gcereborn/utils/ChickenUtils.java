@@ -47,7 +47,7 @@ public final class ChickenUtils {
      * @return Whether the {@link ItemStack} is a {@link PocketChicken}.
      */
     public boolean isPocketChicken(@Nullable ItemStack item) {
-        return item != null && !item.getType().isAir() && item.hasItemMeta() && hasDnaState(item.getItemMeta());
+        return item != null && !MaterialCompat.isAir(item.getType()) && item.hasItemMeta() && hasDnaState(item.getItemMeta());
     }
 
     /**
@@ -283,7 +283,7 @@ public final class ChickenUtils {
     }
 
     public double getHealth(@Nullable ItemStack chicken) {
-        if (chicken == null || chicken.getType().isAir()) {
+        if (chicken == null || MaterialCompat.isAir(chicken.getType())) {
             return 0d;
         }
         ItemMeta meta = chicken.getItemMeta();
@@ -303,7 +303,7 @@ public final class ChickenUtils {
     }
 
     public boolean harm(@Nullable ItemStack chicken, double damage) {
-        if (chicken == null || chicken.getType().isAir()) {
+        if (chicken == null || MaterialCompat.isAir(chicken.getType())) {
             return false;
         }
         ItemMeta meta = chicken.getItemMeta();
@@ -350,7 +350,7 @@ public final class ChickenUtils {
     }
 
     public boolean isFood(@Nullable ItemStack item) {
-        if (item == null || item.getType().isAir() || item.hasItemMeta()) {
+        if (item == null || MaterialCompat.isAir(item.getType()) || item.hasItemMeta()) {
             return false;
         }
         Material type = item.getType();

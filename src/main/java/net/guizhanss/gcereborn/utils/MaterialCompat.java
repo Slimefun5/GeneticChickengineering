@@ -4,6 +4,7 @@ import java.util.EnumMap;
 import java.util.Map;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 import org.bukkit.Material;
 
@@ -89,5 +90,10 @@ public final class MaterialCompat {
         // The substitute itself might need a substitute (chained fallback), one level deep.
         XMaterial subSub = LEGACY_SUBSTITUTES.get(sub);
         return subSub != null ? subSub.parseMaterial() : null;
+    }
+
+    /** {@code Material#isAir()} is 1.13+. */
+    public static boolean isAir(@Nullable Material material) {
+        return io.github.thebusybiscuit.slimefun5.utils.compatibility.MaterialCompat.isAir(material);
     }
 }

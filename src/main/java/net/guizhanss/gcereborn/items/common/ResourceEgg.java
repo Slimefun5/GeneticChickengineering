@@ -27,6 +27,7 @@ import net.guizhanss.gcereborn.items.GCEItems;
 import net.guizhanss.gcereborn.util.Messages;
 import net.guizhanss.gcereborn.utils.ChickenUtils;
 import net.guizhanss.gcereborn.utils.CompatUtils;
+import net.guizhanss.gcereborn.utils.MaterialCompat;
 
 public class ResourceEgg extends SimpleSlimefunItem<ItemUseHandler> implements NotPlaceable {
 
@@ -72,7 +73,7 @@ public class ResourceEgg extends SimpleSlimefunItem<ItemUseHandler> implements N
             }
             // Block#isReplaceable() postdates the fork's Java-8-compatible spigot-api compile baseline
             // (1.16.5); air-or-liquid is a close approximation of the original "replaceable" check.
-            if (place.getType().isAir() || place.isLiquid()) {
+            if (MaterialCompat.isAir(place.getType()) || place.isLiquid()) {
                 if (resource == Material.WATER && !allowInNether && place.getWorld().getEnvironment() == World.Environment.NETHER) {
                     CompatUtils.spawnParticle(place.getLocation().add(0.5, 0, 0.5), "CLOUD", 5);
                     CompatUtils.playSound(CompatUtils.centerLocation(place.getLocation()), "BLOCK_LAVA_EXTINGUISH", 1F, 1F);
